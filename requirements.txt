@@ -1,4 +1,6 @@
-tensorflow
+tensorflow==1.14
+tensorflow-gpu==1.14
 torch
 torchvision
-numpy
+numpy==1.16.4
+matplotlib

@@ -1,0 +1,5 @@
+- Added Makefile for easy venv/reqs maintenance
+- Ran 2to3 on run_split.py
+  - Fixed gzip/pkl issue (use bytes encoding)
+- Fixed range assignment issue in cla_models_multihead.py
+- Added tensorflow-gpu
