@@ -30,8 +30,11 @@ def run_vcl(hidden_size, no_epochs, data_gen, coreset_method, coreset_size=0, ba
         if task_id == 0:
             print_graph_bol = False #set to True if you want to see the graph
             ml_model = Vanilla_NN(in_dim, hidden_size, out_dim, x_train.shape[0])
+            # train for first task
             ml_model.train(x_train, y_train, task_id, no_epochs, bsize)
+            # updated weights of network after SGD on task 1 -- these are means of posterior distribution of weights after task 1 ==> new prior for task 2
             mf_weights = ml_model.get_weights()
+            # use these weights to initialise weights of new task model
             mf_model = MFVI_NN(in_dim, hidden_size, out_dim, x_train.shape[0], single_head = single_head, prev_means=mf_weights)
 
         if not gan_bol:

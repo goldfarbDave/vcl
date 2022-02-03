@@ -44,15 +44,18 @@ class Cla_NN(object):
         for epoch in range(no_epochs):
             perm_inds = np.arange(x_train.shape[0])
             np.random.shuffle(perm_inds)
+            # randomly shuffle datapoints in batch for each epoch
             cur_x_train = x_train[perm_inds]
             cur_y_train = y_train[perm_inds]
 
             avg_cost = 0.
+            # number of batches
             total_batch = int(np.ceil(N * 1.0 / batch_size))
             # Loop over all batches
             for i in range(total_batch):
                 start_ind = i*batch_size
                 end_ind = np.min([(i+1)*batch_size, N])
+                # retrieve current batch data for SGD
                 batch_x = torch.Tensor(cur_x_train[start_ind:end_ind, :]).to(device = device)
                 batch_y = torch.Tensor(cur_y_train[start_ind:end_ind]).to(device = device)
 
@@ -88,12 +91,14 @@ class Vanilla_NN(Cla_NN):
                  input_size, hidden_size, output_size)
         # no of hidden + input layers
         self.no_layers = len(hidden_size) + 1
+        # list of all parameters [theta in paper]
         self.weights = self.W + self.b + self.W_last + self.b_last
         self.training_size = training_size
         self.optimizer = optim.Adam(self.weights, lr=learning_rate)
 
     def _prediction(self, inputs, task_idx):
         act = inputs
+        # forward pass through network
         for i in range(self.no_layers-1):
              pre = torch.add(torch.matmul(act, self.W[i]), self.b[i])
              act = F.relu(pre)
@@ -101,7 +106,7 @@ class Vanilla_NN(Cla_NN):
         return pre
 
     def _logpred(self, inputs, targets, task_idx):
-
+        # expected log likelihood of data - first term in eqn 4 of paper
         loss = torch.nn.CrossEntropyLoss()
         pred = self._prediction(inputs, task_idx)
         log_lik = - loss(pred, targets.type(torch.long))
@@ -112,6 +117,7 @@ class Vanilla_NN(Cla_NN):
         return prob
 
     def get_loss(self, batch_x, batch_y, task_idx):
+        # no kl term for first task since q_t(theta) = q_t-1(theta) = p(theta)
         return -self._logpred(batch_x, batch_y, task_idx)
 
     def create_weights(self, in_dim, hidden_size, out_dim):
@@ -165,18 +171,23 @@ class MFVI_NN(Cla_NN):
         self.size = hidden_size
         self.single_head = single_head
 
+        # hidden layer weight and bias means and variances - shared across tasks
         self.W_m, self.b_m = m1[0], m1[1]
         self.W_v, self.b_v = v1[0], v1[1]
 
+        # output layer weight and bias means and variances - independent for each task
+        # these will be populated as and when we get new tasks - initially no task heads
         self.W_last_m, self.b_last_m = [], []
         self.W_last_v, self.b_last_v = [], []
 
-
         m2, v2 = self.create_prior(input_size, self.size, output_size)
 
+        # prior means and variances on shared weights and biases
         self.prior_W_m, self.prior_b_m, = m2[0], m2[1]
         self.prior_W_v, self.prior_b_v = v2[0], v2[1]
 
+        # prior means and variances on task-specific weights and biases
+        # these will be populated as and when we get new tasks - initially no task heads
         self.prior_W_last_m, self.prior_b_last_m = [], []
         self.prior_W_last_v, self.prior_b_last_v = [], []
 
@@ -194,8 +205,10 @@ class MFVI_NN(Cla_NN):
         self.learning_rate = learning_rate
 
         if prev_means is not None:
+            # initialise first task head
             self.init_first_head(prev_means)
         else:
+            # create new task head -- involves new prior and posterior weights and biases for the new task
             self.create_head()
 
 
@@ -211,6 +224,7 @@ class MFVI_NN(Cla_NN):
         self.optimizer = optim.Adam(self.weights, lr=learning_rate)
 
     def get_loss(self, batch_x, batch_y, task_idx):
+        # equation 4
         return torch.div(self._KL_term(), self.training_size) - self._logpred(batch_x, batch_y, task_idx)
 
     def _prediction(self, inputs, task_idx, no_samples):
@@ -223,6 +237,7 @@ class MFVI_NN(Cla_NN):
             dout = self.size[i+1]
             eps_w = torch.normal(torch.zeros((K, din, dout)), torch.ones((K, din, dout))).to(device = device)
             eps_b = torch.normal(torch.zeros((K, 1, dout)), torch.ones((K, 1, dout))).to(device = device)
+            # random sample weight from distribution -- reparameterisation trick
             weights = torch.add(eps_w * torch.exp(0.5*self.W_v[i]), self.W_m[i])
             biases = torch.add(eps_b * torch.exp(0.5*self.b_v[i]), self.b_m[i])
             pre = torch.add(torch.einsum('mni,mio->mno', act, weights), biases)
@@ -238,6 +253,7 @@ class MFVI_NN(Cla_NN):
         btask_m = self.b_last_m[task_idx]
         btask_v = self.b_last_v[task_idx]
 
+        # random sample weight from distribution -- reparameterisation trick
         weights = torch.add(eps_w * torch.exp(0.5*Wtask_v),Wtask_m)
         biases = torch.add(eps_b * torch.exp(0.5*btask_v), btask_m)
         act = torch.unsqueeze(act, 3)
@@ -259,7 +275,9 @@ class MFVI_NN(Cla_NN):
         for i in range(self.no_layers-1):
             din = self.size[i]
             dout = self.size[i+1]
+            # weight from current posterior - q_t(theta)
             m, v = self.W_m[i], self.W_v[i]
+            # weight from prev posterior - q_t-1(theta)
             m0, v0 = self.prior_W_m[i], self.prior_W_v[i]
 
             const_term = -0.5 * dout * din
@@ -267,7 +285,9 @@ class MFVI_NN(Cla_NN):
             mu_diff_term = 0.5 * torch.sum((torch.exp(v) + (m0 - m)**2) / v0)
             kl += const_term + log_std_diff + mu_diff_term
 
+            # bias from current posterior - q_t(theta)
             m, v = self.b_m[i], self.b_v[i]
+            # bias from prev posterior - q_t-1(theta)
             m0, v0 = self.prior_b_m[i], self.prior_b_v[i]
 
             const_term = -0.5 * dout
@@ -406,6 +426,7 @@ class MFVI_NN(Cla_NN):
         self.prior_W_last_v.append(W_v_p)
         self.prior_b_last_m.append(b_m_p)
         self.prior_b_last_v.append(b_v_p)
+        # update weights list to contain shared plus task-specific weights and biases
         self.weights = []
         self.weights += self.W_m
         self.weights += self.W_v
@@ -421,7 +442,7 @@ class MFVI_NN(Cla_NN):
 
 
     def init_first_head(self, prev_means):
-        ''''When the MFVI_NN is instanciated, we initialize weights with those of the Vanilla NN'''
+        ''''When the MFVI_NN is instantiated, we initialize weights with those of the Vanilla NN'''
         print("initializing first head")
         din = self.size[-2]
         dout = self.size[-1]
@@ -430,6 +451,7 @@ class MFVI_NN(Cla_NN):
         self.prior_W_last_v =  [init_tensor(1,  dout = dout, din = din)]
         self.prior_b_last_v = [init_tensor(1, dout = dout)]
 
+        # initialising the first task head
         W_last_m = prev_means[2][0].detach().data
         W_last_m.requires_grad = True
         self.W_last_m = [W_last_m]
@@ -458,15 +480,19 @@ class MFVI_NN(Cla_NN):
             din = hidden_size[i]
             dout = hidden_size[i+1]
             if prev_means is not None:
+                # new prior means are old posteriors means from prev task
                 W_m_i = prev_means[0][i].detach().data
                 W_m_i.requires_grad = True
                 bi_m_i = prev_means[1][i].detach().data
                 bi_m_i.requires_grad = True
             else:
+            # This is same as prior weights - initialise with truncated normals
             #Initializiation values of means
                 W_m_i= truncated_normal([din, dout], stddev=0.1, variable=True)
                 bi_m_i= truncated_normal([dout], stddev=0.1, variable=True)
+           
             #Initializiation values of variances
+            # how are variances negative?
             W_v_i = init_tensor(-6.0,  dout = dout, din = din, variable = True)
             bi_v_i = init_tensor(-6.0,  dout = dout, variable = True)
 
@@ -476,6 +502,7 @@ class MFVI_NN(Cla_NN):
             W_v.append(W_v_i)
             b_v.append(bi_v_i)
 
+        # return means and variances
         return [W_m, b_m], [W_v, b_v], hidden_size
 
     def create_prior(self, in_dim, hidden_size, out_dim, initial_mean = 0, initial_variance = 1):
@@ -512,6 +539,7 @@ class MFVI_NN(Cla_NN):
 
     def update_prior(self):
         print("updating prior...")
+        # update new prior to be old posterior weights and biases means and vars
         for i in range(len(self.W_m)):
             self.prior_W_m[i].data.copy_(self.W_m[i].clone().detach().data)
             self.prior_b_m[i].data.copy_(self.b_m[i].clone().detach().data)
