@@ -272,6 +272,7 @@ class MFVI_NN(Cla_NN):
 
     def _KL_term(self):
         kl = 0
+        # theta_S
         for i in range(self.no_layers-1):
             din = self.size[i]
             dout = self.size[i+1]
@@ -299,6 +300,7 @@ class MFVI_NN(Cla_NN):
         din = self.size[-2]
         dout = self.size[-1]
 
+        # theta_Hs
         for i in range(no_tasks):
             m, v = self.W_last_m[i], self.W_last_v[i]
             m0, v0 = self.prior_W_last_m[i], self.prior_W_last_v[i]

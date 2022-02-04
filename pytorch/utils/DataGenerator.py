@@ -2,6 +2,67 @@ import numpy as np
 import gzip
 import pickle as cp
 from copy import deepcopy
+import matplotlib.pyplot as plt
+
+'''
+This class replicates the dataset on page 17 of VCL paper. It has two tasks and each task has 2 classes.
+'''
+class ToyDatasetGenerator():
+    def __init__(self, num_samples_per_class):
+        self.cur_task = 0
+        self.num_samples_per_class = num_samples_per_class
+        # the below variables contains <num_tasks> arrays
+        # self.train_data[i] contains the train data for task i
+        # self.train_label[i] contains the train label for task i
+        # self.test_data[i] contains the test data for task i
+        # self.test_label[i] contains the test label for task i
+        self.train_data, self.train_label, self.test_data, self.test_label = self.generate_data()
+
+    def next_task(self):
+        if(self.cur_task >= 2):
+            raise Exception('Number of tasks exceeded!')
+        else:
+            self.cur_task += 1
+            return np.asarray(self.train_data[self.cur_task-1]), np.asarray(self.train_label[self.cur_task-1]), np.asarray(self.test_data[self.cur_task-1]), np.asarray(self.test_label[self.cur_task-1])
+
+    def generate_data(self):
+        # fix seed to generate same dataset everytime
+        np.random.seed(1)
+
+        # first task first class data = second task first class data
+        # mean = [0, 0]
+        # cov = [1 0; 0 1]
+        samples_1_1 = np.random.multivariate_normal([0, 0], [[0.15, 0], [0, 0.15]], self.num_samples_per_class)
+        samples_2_1 = samples_1_1
+
+        # first task second class data
+        # mean = [1.5, 0]
+        # cov = [0.25 0; 0 2]
+        samples_1_2 = np.random.multivariate_normal([1.5, 0], [[0.12, 0], [0, 1]], self.num_samples_per_class)
+
+        # second task second class data
+        # mean = [0, 1.5]
+        # cov = [2 0; 0 0.25]
+        samples_2_2 = np.random.multivariate_normal([0, 1.5], [[1, 0], [0, 0.12]], self.num_samples_per_class)
+
+        # plot samples to vis
+        plt.figure()
+        plt.scatter(samples_1_1[:, 0], samples_1_1[:, 1], c='g')
+        plt.scatter(samples_1_2[:, 0], samples_1_2[:, 1], c='b')
+        plt.xlim(-3, 3)
+        plt.ylim(-3, 3)
+        plt.savefig('../data/toy/toy-task-1.png')
+
+        plt.figure()
+        plt.scatter(samples_2_1[:, 0], samples_2_1[:, 1], c='g')
+        plt.scatter(samples_2_2[:, 0], samples_2_2[:, 1], c='b')
+        plt.xlim(-3, 3)
+        plt.ylim(-3, 3)
+        plt.savefig('../data/toy/toy-task-2.png')
+
+        # each task training set contains 160 samples -- 80 samples from each class
+        # each task test set contains 40 samples -- 20 samples from each class
+        return [list(samples_1_1[:80]) + list(samples_1_2[:80]), list(samples_2_1[:80]) + list(samples_2_2[:80])], [[0]*80 + [1]*80, [0]*80 + [1]*80], [list(samples_1_1[:20]) + list(samples_1_2[:20]), list(samples_2_1[:20]) +list(samples_2_2[:20])], [[0]*20 + [1]*20, [0]*20 + [1]*20]
 
 class PermutedMnistGenerator():
     def __init__(self, max_iter=10):
@@ -90,3 +151,9 @@ class SplitMnistGenerator():
             self.cur_iter += 1
 
             return next_x_train, next_y_train, next_x_test, next_y_test
+
+if __name__ == '__main__':
+    data_gen = ToyDatasetGenerator(100)
+    for i in range(2):
+        train_d, train_l, test_d, test_l = data_gen.next_task()
+        print(train_d.shape, train_l.shape, test_d.shape, test_l.shape)
