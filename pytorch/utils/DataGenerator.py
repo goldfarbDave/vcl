@@ -10,6 +10,8 @@ This class replicates the dataset on page 17 of VCL paper. It has two tasks and 
 class ToyDatasetGenerator():
     def __init__(self, num_samples_per_class):
         self.cur_task = 0
+        # fix number of tasks to be 2
+        self.max_iter = 2
         self.num_samples_per_class = num_samples_per_class
         # the below variables contains <num_tasks> arrays
         # self.train_data[i] contains the train data for task i
@@ -24,6 +26,10 @@ class ToyDatasetGenerator():
         else:
             self.cur_task += 1
             return np.asarray(self.train_data[self.cur_task-1]), np.asarray(self.train_label[self.cur_task-1]), np.asarray(self.test_data[self.cur_task-1]), np.asarray(self.test_label[self.cur_task-1])
+
+    def get_dims(self):
+        # Get data input and output dimensions
+        return np.asarray(self.train_data[0]).shape[1], 2
 
     def generate_data(self):
         # fix seed to generate same dataset everytime
@@ -46,19 +52,19 @@ class ToyDatasetGenerator():
         samples_2_2 = np.random.multivariate_normal([0, 1.5], [[1, 0], [0, 0.12]], self.num_samples_per_class)
 
         # plot samples to vis
-        plt.figure()
-        plt.scatter(samples_1_1[:, 0], samples_1_1[:, 1], c='g')
-        plt.scatter(samples_1_2[:, 0], samples_1_2[:, 1], c='b')
-        plt.xlim(-3, 3)
-        plt.ylim(-3, 3)
-        plt.savefig('../data/toy/toy-task-1.png')
+        # plt.figure()
+        # plt.scatter(samples_1_1[:, 0], samples_1_1[:, 1], c='g')
+        # plt.scatter(samples_1_2[:, 0], samples_1_2[:, 1], c='b')
+        # plt.xlim(-3, 3)
+        # plt.ylim(-3, 3)
+        # plt.savefig('../data/toy/toy-task-1.png')
 
-        plt.figure()
-        plt.scatter(samples_2_1[:, 0], samples_2_1[:, 1], c='g')
-        plt.scatter(samples_2_2[:, 0], samples_2_2[:, 1], c='b')
-        plt.xlim(-3, 3)
-        plt.ylim(-3, 3)
-        plt.savefig('../data/toy/toy-task-2.png')
+        # plt.figure()
+        # plt.scatter(samples_2_1[:, 0], samples_2_1[:, 1], c='g')
+        # plt.scatter(samples_2_2[:, 0], samples_2_2[:, 1], c='b')
+        # plt.xlim(-3, 3)
+        # plt.ylim(-3, 3)
+        # plt.savefig('../data/toy/toy-task-2.png')
 
         # each task training set contains 160 samples -- 80 samples from each class
         # each task test set contains 40 samples -- 20 samples from each class

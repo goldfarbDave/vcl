@@ -1,7 +1,7 @@
 import numpy as np
-import discriminative.utils.vcl as vcl
-import discriminative.utils.coreset as coreset
-from discriminative.utils.DataGenerator import SplitMnistGenerator
+import utils.vcl as vcl
+import utils.coreset as coreset
+from utils.DataGenerator import SplitMnistGenerator
 
 
 hidden_size = [256, 256]

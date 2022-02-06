@@ -1,6 +1,7 @@
 import argparse
 import os
 import numpy as np
+from . import flags 
 import torchvision.transforms as transforms
 from torchvision.utils import save_image
 from torch.utils.data import DataLoader
@@ -8,6 +9,7 @@ from torchvision import datasets
 from torch.autograd import Variable
 import torch.nn as nn
 import torch
+torch.manual_seed(flags.FLAGS['torch_seed'])
 
 n_epochs = 50
 batch_size = 64
@@ -21,10 +23,10 @@ img_size = 28
 channels = 1
 sample_interval = 400
 threshold = 0.99
-# device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-device = "cpu"
-# cuda = True if torch.cuda.is_available() else False
-cuda = False
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+# device = "cpu"
+cuda = True if torch.cuda.is_available() else False
+# cuda = False
 FloatTensor = torch.cuda.FloatTensor if cuda else torch.FloatTensor
 LongTensor = torch.cuda.LongTensor if cuda else torch.LongTensor
 

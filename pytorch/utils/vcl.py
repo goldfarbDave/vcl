@@ -1,7 +1,9 @@
 import numpy as np
 import utils.test  as test
 from utils.multihead_models import Vanilla_NN, MFVI_NN
+from . import flags 
 import torch
+torch.manual_seed(flags.FLAGS['torch_seed'])
 import utils.GAN as GAN
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 try:
@@ -9,7 +11,7 @@ try:
 except ImportError:
     print("Torchviz was not found.")
 
-def run_vcl(hidden_size, no_epochs, data_gen, coreset_method, coreset_size=0, batch_size=None, single_head=True, gan_bol = False):
+def run_vcl(hidden_size, no_epochs, data_gen, coreset_method, coreset_size=0, batch_size=None, single_head=True, gan_bol = False, is_toy=False):
     in_dim, out_dim = data_gen.get_dims()
     x_coresets, y_coresets = [], []
     x_testsets, y_testsets = [], []

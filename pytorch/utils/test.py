@@ -1,9 +1,11 @@
 import numpy as np
 import matplotlib
 matplotlib.use('agg')
+from . import flags 
 import torch
-# device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-device = "cpu"
+torch.manual_seed(flags.FLAGS['torch_seed'])
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+# device = "cpu"
 
 def merge_coresets(x_coresets, y_coresets):
     merged_x, merged_y = x_coresets[0], y_coresets[0]

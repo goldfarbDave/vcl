@@ -1,11 +1,13 @@
 import torch
+from . import flags 
+torch.manual_seed(flags.FLAGS['torch_seed'])
 import numpy as np
 import torch.optim as optim
 import torch.nn.functional as F
 from scipy.stats import truncnorm
 from copy import deepcopy
-# device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-device = "cpu"
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+# device = "cpu"
 
 np.random.seed(0)
 
