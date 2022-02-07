@@ -209,9 +209,13 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
         print(result_list[i])
         
     # save results
+    if not os.path.isdir("results/"):
+        os.mkdir("results/")
     fname = 'results/' + data_name + '_%s.pkl' % string
+
     import pickle
-    pickle.dump(result_list, open(fname, 'wb'))
+    with open(fname, 'wb') as f:
+        pickle.dump(result_list, f)
     print('test-ll results saved in', fname)
 
 if __name__ == '__main__':
