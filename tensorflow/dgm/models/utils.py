@@ -33,19 +33,18 @@ def save_params(sess, filename, checkpoint):
     param_dict = dict()
     for v in params:
         param_dict[v.name] = sess.run(v)
-    filename = filename + '_' + str(checkpoint)
-    f = open(filename + '.pkl', 'w')
-    pickle.dump(param_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
-    print('parameters saved at ' + filename + '.pkl')    
-    f.close()
+    filename = filename + '_' + str(checkpoint) + ".pkl"
+    with open(filename, 'wb') as f:
+        pickle.dump(param_dict, f, protocol=pickle.HIGHEST_PROTOCOL)
+    print('parameters saved at ' + filename)
 
 def load_params(sess, filename, checkpoint, init_all = True):
     params = tf.trainable_variables()
-    filename = filename + '_' + str(checkpoint)
-    f = open(filename + '.pkl', 'r')
-    param_dict = pickle.load(f)
+    filename = filename + '_' + str(checkpoint) + ".pkl"
+    with open(filename, 'rb') as f:
+        param_dict = pickle.load(f)
     print('param loaded', len(param_dict))
-    f.close()
+
     ops = []
     for v in params:
         if v.name in list(param_dict.keys()):
