@@ -73,7 +73,7 @@ class Cla_NN(object):
             if epoch % display_epoch == 0:
                 print("Epoch:", '%04d' % (epoch+1), "cost=", \
                     "{:.9f}".format(avg_cost))
-            costs.append(avg_cost)
+            costs.append(avg_cost.item())
         print("Optimization Finished!")
         return costs
 
