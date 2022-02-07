@@ -1,5 +1,5 @@
-from keras.utils import np_utils
-from keras.datasets import mnist
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.datasets import mnist
 import numpy as np
 
 def load_mnist(digits = None, conv = False):
@@ -12,11 +12,11 @@ def load_mnist(digits = None, conv = False):
     X_test = X_test.astype('float32')
     X_train /= 255
     X_test /= 255
-    
+
     # convert class vectors to binary class matrices
-    Y_train = np_utils.to_categorical(y_train, 10)
-    Y_test = np_utils.to_categorical(y_test, 10)
-    
+    Y_train = to_categorical(y_train, 10)
+    Y_test = to_categorical(y_test, 10)
+
     # collect the corresponding digits
     if digits is not None:
         ind_train = []
@@ -26,9 +26,9 @@ def load_mnist(digits = None, conv = False):
             ind_test = ind_test + list(np.where(Y_test[:, i] == 1)[0])
         X_train = X_train[ind_train]; Y_train = Y_train[ind_train]
         X_test = X_test[ind_test]; Y_test = Y_test[ind_test]
-    
+
     if conv:
         X_train = X_train.reshape(X_train.shape[0], 28, 28, 1)
         X_test = X_test.reshape(X_test.shape[0], 28, 28, 1)
-    
+
     return X_train, X_test, Y_train, Y_test
