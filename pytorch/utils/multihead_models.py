@@ -157,6 +157,99 @@ class Vanilla_NN(Cla_NN):
     def get_weights(self):
         weights = [self.weights[:self.no_layers-1], self.weights[self.no_layers-1:2*(self.no_layers-1)], [self.weights[-2]], [self.weights[-1]]]
         return weights
+""" Neural Network Model """
+class Vanilla_CNN(Cla_NN):
+    def __init__(self, input_size, hidden_size, output_size, training_size, learning_rate=0.005, kern_size=3):
+        super(Vanilla_CNN, self).__init__(input_size, hidden_size, output_size, training_size)
+        # # init weights and biases
+        self.W, self.b, self.kern_weights, self.kern_bias, self.W_last, self.b_last, self.size = self.create_weights(
+                 input_size, hidden_size, output_size, kern_size)
+        # no of hidden + input layers + conv layer
+        self.no_layers = len(hidden_size) + 1
+        # list of all parameters [theta in paper]
+        self.weights = self.W + self.b + self.kern_weights + self.kern_bias + self.W_last + self.b_last
+        self.training_size = training_size
+        self.optimizer = optim.Adam(self.weights, lr=learning_rate)
+
+    def _prediction(self, inputs, task_idx):
+        act = inputs
+        # forward pass through network
+        image_edge_size = np.sqrt(inputs.shape[-1])
+        assert image_edge_size == int(image_edge_size)
+        d = int(image_edge_size)
+        act = act.view((-1, 1, d, d))
+        for idx,(weights,bias) in enumerate(zip(self.kern_weights, self.kern_bias)):
+            pre = F.conv2d(input=act, weight=weights, bias=bias, stride=idx+1)
+            act = F.relu(pre)
+        #import pdb; pdb.set_trace()
+        act = act.view((-1, np.prod(act.shape[-2:])))
+        for i in range(self.no_layers-1):
+             pre = torch.add(torch.matmul(act, self.W[i]), self.b[i])
+             act = F.relu(pre)
+        pre = torch.add(torch.matmul(act, self.W_last[task_idx]), self.b_last[task_idx])
+        return pre
+
+    def _logpred(self, inputs, targets, task_idx):
+        # expected log likelihood of data - first term in eqn 4 of paper
+        loss = torch.nn.CrossEntropyLoss()
+        pred = self._prediction(inputs, task_idx)
+        log_lik = - loss(pred, targets.type(torch.long))
+        return log_lik
+
+    def prediction_prob(self, x_test, task_idx):
+        prob = F.softmax(self._prediction(x_test, task_idx), dim=-1)
+        return prob
+
+    def get_loss(self, batch_x, batch_y, task_idx):
+        # no kl term for first task since q_t(theta) = q_t-1(theta) = p(theta)
+        return -self._logpred(batch_x, batch_y, task_idx)
+
+    def create_weights(self, in_dim, hidden_size, out_dim, kern_size):
+        hidden_size = deepcopy(hidden_size)
+        hidden_size.append(out_dim)
+        hidden_size.insert(0, in_dim)
+
+        # no of hidden + input layers
+        no_layers = len(hidden_size) - 1
+        W = []
+        b = []
+        # output layer weights and biases
+        W_last = []
+        b_last = []
+        # iterating over only hidden layers
+        for i in range(no_layers-1):
+            din = hidden_size[i]
+            dout = hidden_size[i+1]
+
+            #Initializiation values of means
+            Wi_m = truncated_normal([din, dout], stddev=0.1, variable = True)
+            bi_m = truncated_normal([dout], stddev=0.1, variable = True)
+
+            #Append to list weights
+            W.append(Wi_m)
+            b.append(bi_m)
+
+        # last layer weight matrix and bias distribution initialisation
+        Wi = truncated_normal([hidden_size[-2], out_dim], stddev=0.1, variable = True)
+        bi = truncated_normal([out_dim], stddev=0.1, variable = True)
+        W_last.append(Wi)
+        b_last.append(bi)
+
+        # 4->2 channels
+                # kern_weights = [truncated_normal([4,1,kern_size, kern_size], stddev=0.1, variable=True),
+        #                 truncated_normal([1,4,kern_size, kern_size], stddev=0.1, variable=True)]
+        # kern_bias = [truncated_normal([4], stddev=0.1, variable=True),
+        #              truncated_normal([1], stddev=0.1, variable=True)]
+
+
+        kern_weights = [truncated_normal([1,1,kern_size, kern_size], stddev=0.1, variable=True) for _ in range(2)]
+        kern_bias = [truncated_normal([1], stddev=0.1, variable=True) for _ in range(2)]
+
+        return W, b, kern_weights, kern_bias, W_last, b_last, hidden_size
+
+    def get_weights(self):
+        weights = [self.weights[:self.no_layers-1], self.weights[self.no_layers-1:2*(self.no_layers-1)], [self.weights[-2]], [self.weights[-1]]]
+        return weights
 
 """ Bayesian Neural Network with Mean field VI approximation """
 class MFVI_NN(Cla_NN):
