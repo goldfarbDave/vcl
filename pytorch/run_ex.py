@@ -38,7 +38,9 @@ with open("cnn_weights_init.pkl", 'rb') as f:
     cnn_weights = pickle.load(f)
 with open("fc_weights_init.pkl", 'rb') as f:
     fc_weights = pickle.load(f)
-# model_fc = MFVI_NN(in_dim_fc, hidden_size_fc, out_dim_fc, x_train.shape[0], single_head=False, prev_means=fc_weights)
+model_fc = MFVI_NN(in_dim_fc, hidden_size_fc, out_dim_fc, x_train.shape[0], single_head=False, prev_means=fc_weights)
 model_cnn = MFVI_CNN(in_dim_cnn, hidden_size_cnn, out_dim_cnn, x_train.shape[0], single_head=False, prev_means=cnn_weights)
+# model_fc.train(x_train, y_train, 0, 50, x_train.shape[0])
+model_cnn.train(x_train, y_train, 0, 50, x_train.shape[0])
 
 import pdb; pdb.set_trace()

@@ -338,13 +338,13 @@ class MFVI_NN(Cla_NN):
     def _prediction(self, inputs, task_idx, no_samples):
         K = no_samples
         size = self.size
-
         act = torch.unsqueeze(inputs, 0).repeat([K, 1, 1])
         for i in range(self.no_layers-1):
             din = self.size[i]
             dout = self.size[i+1]
             eps_w = torch.normal(torch.zeros((K, din, dout)), torch.ones((K, din, dout))).to(device = device)
             eps_b = torch.normal(torch.zeros((K, 1, dout)), torch.ones((K, 1, dout))).to(device = device)
+            #eps_k_w = torch.normal(torch.zeros((K, ))
             # random sample weight from distribution -- reparameterisation trick
             weights = torch.add(eps_w * torch.exp(0.5*self.W_v[i]), self.W_m[i])
             biases = torch.add(eps_b * torch.exp(0.5*self.b_v[i]), self.b_m[i])
@@ -738,7 +738,6 @@ class MFVI_CNN(Cla_NN):
 
         self.optimizer = optim.Adam(self.weights, lr=learning_rate)
 
-
     def get_loss(self, batch_x, batch_y, task_idx):
         # equation 4
         return torch.div(self._KL_term(), self.training_size) - self._logpred(batch_x, batch_y, task_idx)
@@ -746,8 +745,22 @@ class MFVI_CNN(Cla_NN):
     def _prediction(self, inputs, task_idx, no_samples):
         K = no_samples
         size = self.size
+        image_edge_size = np.sqrt(inputs.shape[-1])
+        assert image_edge_size == int(image_edge_size)
+        d = int(image_edge_size)
 
         act = torch.unsqueeze(inputs, 0).repeat([K, 1, 1])
+        act = act.view((K, -1, 1, d, d))
+        for i, (kw_m, kb_m, kw_v, kb_v) in enumerate(zip(self.kern_weights_m, self.kern_bias_m, self.kern_weights_v, self.kern_bias_v)):
+            get_eps = lambda ten: torch.normal(torch.zeros(tuple([K, *ten.shape]))).to(device=device)
+            eps_w = get_eps(kw_m)
+            eps_b = get_eps(kb_m)
+            weights = torch.add(eps_w *torch.exp(0.5*kw_v), kw_m)
+            bias = torch.add(eps_b *torch.exp(0.5*kb_v), kb_m)
+            import pdb; pdb.set_trace()
+            #TODO
+            # pre = F.conv2d(input=act, weight=weights.unsqueeze(1), bias=bias.unsqueeze, stride=[i+1])
+            # act = F.relu(pre)
         for i in range(self.no_layers-1):
             din = self.size[i]
             dout = self.size[i+1]
@@ -1022,7 +1035,6 @@ class MFVI_CNN(Cla_NN):
             b_v.append(bi_v_i)
         kern_w_m = prev_means["KernWeights"]
         kern_b_m = prev_means["KernBias"]
-        #import pdb; pdb.set_trace()
         make_ten = lambda ref:[init_tensor(-6.0, ten_like=ten, variable=True) for ten in ref]
         kern_w_v = make_ten(kern_w_m)
         kern_b_v = make_ten(kern_b_m)
