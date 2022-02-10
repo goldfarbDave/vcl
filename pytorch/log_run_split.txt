@@ -1,0 +1,1646 @@
+/homes/as3159/.local/lib/python3.6/site-packages/torch/nn/modules/container.py:141: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
+  input = module(input)
+Torchviz was not found.
+Current task: 0
+Epoch: 0001 cost= 0.761647582
+Epoch: 0006 cost= 0.027379185
+Epoch: 0011 cost= 0.014043191
+Epoch: 0016 cost= 0.008148105
+Epoch: 0021 cost= 0.005421616
+Epoch: 0026 cost= 0.004185960
+Epoch: 0031 cost= 0.003092242
+Epoch: 0036 cost= 0.002299424
+Epoch: 0041 cost= 0.001894492
+Epoch: 0046 cost= 0.001537130
+Epoch: 0051 cost= 0.001305256
+Epoch: 0056 cost= 0.001132944
+Epoch: 0061 cost= 0.000974282
+Epoch: 0066 cost= 0.000846255
+Epoch: 0071 cost= 0.000726286
+Epoch: 0076 cost= 0.000619658
+Epoch: 0081 cost= 0.000523243
+Epoch: 0086 cost= 0.000436283
+Epoch: 0091 cost= 0.000358690
+Epoch: 0096 cost= 0.000292032
+Epoch: 0101 cost= 0.000237667
+Epoch: 0106 cost= 0.000195173
+Epoch: 0111 cost= 0.000161885
+Epoch: 0116 cost= 0.000135735
+Optimization Finished!
+initializing first head
+Epoch: 0001 cost= 52.867420197
+Epoch: 0006 cost= 52.811069489
+Epoch: 0011 cost= 52.753124237
+Epoch: 0016 cost= 52.695285797
+Epoch: 0021 cost= 52.638633728
+Epoch: 0026 cost= 52.581935883
+Epoch: 0031 cost= 52.525566101
+Epoch: 0036 cost= 52.469341278
+Epoch: 0041 cost= 52.413383484
+Epoch: 0046 cost= 52.357738495
+Epoch: 0051 cost= 52.302143097
+Epoch: 0056 cost= 52.246940613
+Epoch: 0061 cost= 52.191741943
+Epoch: 0066 cost= 52.136871338
+Epoch: 0071 cost= 52.082096100
+Epoch: 0076 cost= 52.027347565
+Epoch: 0081 cost= 51.972862244
+Epoch: 0086 cost= 51.918563843
+Epoch: 0091 cost= 51.864330292
+Epoch: 0096 cost= 51.810176849
+Epoch: 0101 cost= 51.756149292
+Epoch: 0106 cost= 51.702247620
+Epoch: 0111 cost= 51.648418427
+Epoch: 0116 cost= 51.594806671
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Accuracy is 0.9995271867612293
+Reloading previous weights after core set training
+creating a new head
+Current task: 1
+Epoch: 0001 cost= 1.170177460
+Epoch: 0006 cost= 0.570947468
+Epoch: 0011 cost= 0.371303886
+Epoch: 0016 cost= 0.350518376
+Epoch: 0021 cost= 0.334657729
+Epoch: 0026 cost= 0.322019398
+Epoch: 0031 cost= 0.340930402
+Epoch: 0036 cost= 0.300145507
+Epoch: 0041 cost= 0.288541079
+Epoch: 0046 cost= 0.297581255
+Epoch: 0051 cost= 0.281998396
+Epoch: 0056 cost= 0.274423271
+Epoch: 0061 cost= 0.271879971
+Epoch: 0066 cost= 0.274320960
+Epoch: 0071 cost= 0.269787848
+Epoch: 0076 cost= 0.310246736
+Epoch: 0081 cost= 0.283083200
+Epoch: 0086 cost= 0.282216489
+Epoch: 0091 cost= 0.261337966
+Epoch: 0096 cost= 0.273339629
+Epoch: 0101 cost= 0.258652687
+Epoch: 0106 cost= 0.263854057
+Epoch: 0111 cost= 0.279675126
+Epoch: 0116 cost= 0.269693017
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Accuracy is 0.9995271867612293
+Accuracy is 0.9745347698334965
+Reloading previous weights after core set training
+creating a new head
+Current task: 2
+Epoch: 0001 cost= 1.166108370
+Epoch: 0006 cost= 0.489613593
+Epoch: 0011 cost= 0.347838223
+Epoch: 0016 cost= 0.304041773
+Epoch: 0021 cost= 0.293918192
+Epoch: 0026 cost= 0.285890490
+Epoch: 0031 cost= 0.271075606
+Epoch: 0036 cost= 0.262353957
+Epoch: 0041 cost= 0.250821471
+Epoch: 0046 cost= 0.264358848
+Epoch: 0051 cost= 0.248261362
+Epoch: 0056 cost= 0.235319257
+Epoch: 0061 cost= 0.227703780
+Epoch: 0066 cost= 0.240350261
+Epoch: 0071 cost= 0.222398043
+Epoch: 0076 cost= 0.221456721
+Epoch: 0081 cost= 0.230877832
+Epoch: 0086 cost= 0.225299478
+Epoch: 0091 cost= 0.212276787
+Epoch: 0096 cost= 0.227698669
+Epoch: 0101 cost= 0.220011815
+Epoch: 0106 cost= 0.221471667
+Epoch: 0111 cost= 0.219385877
+Epoch: 0116 cost= 0.214461982
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Accuracy is 0.9995271867612293
+Accuracy is 0.9779627815866797
+Accuracy is 0.9941302027748132
+Reloading previous weights after core set training
+creating a new head
+Current task: 3
+Epoch: 0001 cost= 1.216684461
+Epoch: 0006 cost= 0.303952634
+Epoch: 0011 cost= 0.217836171
+Epoch: 0016 cost= 0.208370402
+Epoch: 0021 cost= 0.217533842
+Epoch: 0026 cost= 0.206669822
+Epoch: 0031 cost= 0.199219778
+Epoch: 0036 cost= 0.185990259
+Epoch: 0041 cost= 0.180292934
+Epoch: 0046 cost= 0.173461452
+Epoch: 0051 cost= 0.167266741
+Epoch: 0056 cost= 0.167263269
+Epoch: 0061 cost= 0.159653708
+Epoch: 0066 cost= 0.158122122
+Epoch: 0071 cost= 0.158216193
+Epoch: 0076 cost= 0.157623976
+Epoch: 0081 cost= 0.152380496
+Epoch: 0086 cost= 0.152546778
+Epoch: 0091 cost= 0.150615916
+Epoch: 0096 cost= 0.154724389
+Epoch: 0101 cost= 0.149232239
+Epoch: 0106 cost= 0.154541284
+Epoch: 0111 cost= 0.151086986
+Epoch: 0116 cost= 0.150533825
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Accuracy is 0.9990543735224586
+Accuracy is 0.970617042115573
+Accuracy is 0.9941302027748132
+Accuracy is 0.9954682779456193
+Reloading previous weights after core set training
+creating a new head
+Current task: 4
+Epoch: 0001 cost= 1.048701286
+Epoch: 0006 cost= 0.425539166
+Epoch: 0011 cost= 0.325704604
+Epoch: 0016 cost= 0.304884851
+Epoch: 0021 cost= 0.294376671
+Epoch: 0026 cost= 0.293325782
+Epoch: 0031 cost= 0.266843587
+Epoch: 0036 cost= 0.280087620
+Epoch: 0041 cost= 0.264194518
+Epoch: 0046 cost= 0.249690935
+Epoch: 0051 cost= 0.247995317
+Epoch: 0056 cost= 0.244914234
+Epoch: 0061 cost= 0.230909273
+Epoch: 0066 cost= 0.239025265
+Epoch: 0071 cost= 0.230853170
+Epoch: 0076 cost= 0.230705321
+Epoch: 0081 cost= 0.234095067
+Epoch: 0086 cost= 0.228456765
+Epoch: 0091 cost= 0.228157192
+Epoch: 0096 cost= 0.226732910
+Epoch: 0101 cost= 0.220309198
+Epoch: 0106 cost= 0.227889985
+Epoch: 0111 cost= 0.218724281
+Epoch: 0116 cost= 0.230255336
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Accuracy is 0.9872340425531915
+Accuracy is 0.931439764936337
+Accuracy is 0.9887940234791889
+Accuracy is 0.9833836858006042
+Accuracy is 0.9793242561775088
+Reloading previous weights after core set training
+creating a new head
+Current task: 0
+Epoch: 0001 cost= 1.138283968
+Epoch: 0006 cost= 0.050908968
+Epoch: 0011 cost= 0.011686611
+Epoch: 0016 cost= 0.007045225
+Epoch: 0021 cost= 0.005395643
+Epoch: 0026 cost= 0.003853467
+Epoch: 0031 cost= 0.002731954
+Epoch: 0036 cost= 0.002006770
+Epoch: 0041 cost= 0.001572758
+Epoch: 0046 cost= 0.001287602
+Epoch: 0051 cost= 0.001038369
+Epoch: 0056 cost= 0.000852667
+Epoch: 0061 cost= 0.000697782
+Epoch: 0066 cost= 0.000570093
+Epoch: 0071 cost= 0.000459386
+Epoch: 0076 cost= 0.000365503
+Epoch: 0081 cost= 0.000289382
+Epoch: 0086 cost= 0.000231462
+Epoch: 0091 cost= 0.000188376
+Epoch: 0096 cost= 0.000156406
+Epoch: 0101 cost= 0.000132361
+Epoch: 0106 cost= 0.000113604
+Epoch: 0111 cost= 0.000098634
+Epoch: 0116 cost= 0.000086519
+Optimization Finished!
+initializing first head
+Epoch 0/50,  Discriminator loss: 0.8834111094474792, acc: 78.94736842105263%, Generator loss: 1.146336317062378
+Epoch 1/50,  Discriminator loss: 0.8549257516860962, acc: 100.0%, Generator loss: 1.0282025337219238
+Epoch 2/50,  Discriminator loss: 0.8365910649299622, acc: 100.0%, Generator loss: 1.118208646774292
+Epoch 3/50,  Discriminator loss: 0.8325093984603882, acc: 100.0%, Generator loss: 1.0913169384002686
+Epoch 4/50,  Discriminator loss: 0.8316469192504883, acc: 100.0%, Generator loss: 1.1344711780548096
+Epoch 5/50,  Discriminator loss: 0.857012152671814, acc: 100.0%, Generator loss: 1.1112630367279053
+Epoch 6/50,  Discriminator loss: 0.8453238606452942, acc: 100.0%, Generator loss: 1.0855265855789185
+Epoch 7/50,  Discriminator loss: 0.855222225189209, acc: 98.24561403508771%, Generator loss: 1.0973796844482422
+Epoch 8/50,  Discriminator loss: 0.8472761511802673, acc: 100.0%, Generator loss: 1.0474798679351807
+Epoch 9/50,  Discriminator loss: 0.8262423276901245, acc: 100.0%, Generator loss: 1.1303547620773315
+Epoch 10/50,  Discriminator loss: 0.8421575427055359, acc: 100.0%, Generator loss: 1.1159820556640625
+Epoch 11/50,  Discriminator loss: 0.851184070110321, acc: 100.0%, Generator loss: 1.1217560768127441
+Epoch 12/50,  Discriminator loss: 0.8388561606407166, acc: 100.0%, Generator loss: 1.150167465209961
+Epoch 13/50,  Discriminator loss: 0.8378499150276184, acc: 100.0%, Generator loss: 1.1886203289031982
+Epoch 14/50,  Discriminator loss: 0.8447072505950928, acc: 100.0%, Generator loss: 1.1895650625228882
+Epoch 15/50,  Discriminator loss: 0.8613302111625671, acc: 100.0%, Generator loss: 1.09490168094635
+Epoch 16/50,  Discriminator loss: 0.8439802527427673, acc: 100.0%, Generator loss: 1.0243784189224243
+Epoch 17/50,  Discriminator loss: 0.838677167892456, acc: 100.0%, Generator loss: 1.1252388954162598
+Epoch 18/50,  Discriminator loss: 0.8592464923858643, acc: 100.0%, Generator loss: 1.0808229446411133
+Epoch 19/50,  Discriminator loss: 0.8450181484222412, acc: 100.0%, Generator loss: 1.1149970293045044
+Epoch 20/50,  Discriminator loss: 0.8257713913917542, acc: 100.0%, Generator loss: 1.0770494937896729
+Epoch 21/50,  Discriminator loss: 0.838538646697998, acc: 100.0%, Generator loss: 1.1641113758087158
+Epoch 22/50,  Discriminator loss: 0.8394336700439453, acc: 100.0%, Generator loss: 1.1405788660049438
+Epoch 23/50,  Discriminator loss: 0.8611847758293152, acc: 100.0%, Generator loss: 1.1371784210205078
+Epoch 24/50,  Discriminator loss: 0.846969723701477, acc: 100.0%, Generator loss: 1.071729063987732
+Epoch 25/50,  Discriminator loss: 0.8429853916168213, acc: 100.0%, Generator loss: 1.1614786386489868
+Epoch 26/50,  Discriminator loss: 0.8327711820602417, acc: 100.0%, Generator loss: 1.115580677986145
+Epoch 27/50,  Discriminator loss: 0.8441107273101807, acc: 100.0%, Generator loss: 1.1517616510391235
+Epoch 28/50,  Discriminator loss: 0.8421733975410461, acc: 100.0%, Generator loss: 1.0602450370788574
+Epoch 29/50,  Discriminator loss: 0.8263187408447266, acc: 100.0%, Generator loss: 1.1052240133285522
+Epoch 30/50,  Discriminator loss: 0.8330652713775635, acc: 100.0%, Generator loss: 1.1186970472335815
+Epoch 31/50,  Discriminator loss: 0.8374212980270386, acc: 100.0%, Generator loss: 1.0758057832717896
+Epoch 32/50,  Discriminator loss: 0.8504208326339722, acc: 100.0%, Generator loss: 1.1101622581481934
+Epoch 33/50,  Discriminator loss: 0.8348655104637146, acc: 100.0%, Generator loss: 1.1163053512573242
+Epoch 34/50,  Discriminator loss: 0.8147395253181458, acc: 100.0%, Generator loss: 1.149487018585205
+Epoch 35/50,  Discriminator loss: 0.8272421360015869, acc: 100.0%, Generator loss: 1.1571033000946045
+Epoch 36/50,  Discriminator loss: 0.8244831562042236, acc: 100.0%, Generator loss: 1.1102639436721802
+Epoch 37/50,  Discriminator loss: 0.8303102850914001, acc: 100.0%, Generator loss: 1.0876163244247437
+Epoch 38/50,  Discriminator loss: 0.8247641324996948, acc: 100.0%, Generator loss: 1.096603512763977
+Epoch 39/50,  Discriminator loss: 0.8495662808418274, acc: 100.0%, Generator loss: 1.0977203845977783
+Epoch 40/50,  Discriminator loss: 0.8305095434188843, acc: 100.0%, Generator loss: 1.1259899139404297
+Epoch 41/50,  Discriminator loss: 0.8248785734176636, acc: 100.0%, Generator loss: 0.9977604746818542
+Epoch 42/50,  Discriminator loss: 0.8513429164886475, acc: 100.0%, Generator loss: 1.1439918279647827
+Epoch 43/50,  Discriminator loss: 0.8531786203384399, acc: 100.0%, Generator loss: 1.169768214225769
+Epoch 44/50,  Discriminator loss: 0.8264341950416565, acc: 100.0%, Generator loss: 1.1549805402755737
+Epoch 45/50,  Discriminator loss: 0.8451546430587769, acc: 98.24561403508771%, Generator loss: 1.1519427299499512
+Epoch 46/50,  Discriminator loss: 0.8364294767379761, acc: 100.0%, Generator loss: 1.1488430500030518
+Epoch 47/50,  Discriminator loss: 0.829459547996521, acc: 100.0%, Generator loss: 1.209589958190918
+Epoch 48/50,  Discriminator loss: 0.827122151851654, acc: 100.0%, Generator loss: 1.09883451461792
+Epoch 49/50,  Discriminator loss: 0.8171899318695068, acc: 100.0%, Generator loss: 1.1248270273208618
+Epoch: 0001 cost= 52.991348267
+Epoch: 0006 cost= 52.902523041
+Epoch: 0011 cost= 52.795570374
+Epoch: 0016 cost= 52.761394501
+Epoch: 0021 cost= 52.708576202
+Epoch: 0026 cost= 52.667030334
+Epoch: 0031 cost= 52.618816376
+Epoch: 0036 cost= 52.574375153
+Epoch: 0041 cost= 52.525161743
+Epoch: 0046 cost= 52.477664948
+Epoch: 0051 cost= 52.430362701
+Epoch: 0056 cost= 52.382751465
+Epoch: 0061 cost= 52.334571838
+Epoch: 0066 cost= 52.288520813
+Epoch: 0071 cost= 52.239131927
+Epoch: 0076 cost= 52.191265106
+Epoch: 0081 cost= 52.143363953
+Epoch: 0086 cost= 52.093887329
+Epoch: 0091 cost= 52.047065735
+Epoch: 0096 cost= 51.996257782
+Epoch: 0101 cost= 51.947765350
+Epoch: 0106 cost= 51.898838043
+Epoch: 0111 cost= 51.852809906
+Epoch: 0116 cost= 51.801284790
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Reloading previous weights after core set training
+5940
+5943
+Epoch: 0001 cost= 0.017608637
+Epoch: 0006 cost= 0.038936738
+Epoch: 0011 cost= 0.030651646
+Epoch: 0016 cost= 0.040268458
+Epoch: 0021 cost= 0.061634429
+Epoch: 0026 cost= 0.045289937
+Epoch: 0031 cost= 0.039726648
+Epoch: 0036 cost= 0.051645990
+Epoch: 0041 cost= 0.037831333
+Epoch: 0046 cost= 0.034773335
+Epoch: 0051 cost= 0.028430503
+Epoch: 0056 cost= 0.024372509
+Epoch: 0061 cost= 0.028623354
+Epoch: 0066 cost= 0.017968707
+Epoch: 0071 cost= 0.016382031
+Epoch: 0076 cost= 0.024212621
+Epoch: 0081 cost= 0.041897539
+Epoch: 0086 cost= 0.014706831
+Epoch: 0091 cost= 0.015540008
+Epoch: 0096 cost= 0.019094720
+Epoch: 0101 cost= 0.013410633
+Epoch: 0106 cost= 0.019380357
+Epoch: 0111 cost= 0.025583509
+Epoch: 0116 cost= 0.012092772
+Optimization Finished!
+Accuracy is 0.9995271867612293
+Reloading previous weights after core set training
+creating a new head
+Current task: 1
+Epoch 0/50,  Discriminator loss: 0.9564965963363647, acc: 50.877192982456144%, Generator loss: 1.0970792770385742
+Epoch 1/50,  Discriminator loss: 0.859453022480011, acc: 89.47368421052632%, Generator loss: 1.1727906465530396
+Epoch 2/50,  Discriminator loss: 0.8549120426177979, acc: 100.0%, Generator loss: 1.058340311050415
+Epoch 3/50,  Discriminator loss: 0.8638617992401123, acc: 91.22807017543859%, Generator loss: 1.1004201173782349
+Epoch 4/50,  Discriminator loss: 0.8502846360206604, acc: 100.0%, Generator loss: 1.0489935874938965
+Epoch 5/50,  Discriminator loss: 0.8338491320610046, acc: 98.24561403508771%, Generator loss: 1.137724757194519
+Epoch 6/50,  Discriminator loss: 0.8496708273887634, acc: 96.49122807017544%, Generator loss: 1.1354783773422241
+Epoch 7/50,  Discriminator loss: 0.859591543674469, acc: 96.49122807017544%, Generator loss: 1.0570331811904907
+Epoch 8/50,  Discriminator loss: 0.8638164401054382, acc: 98.24561403508771%, Generator loss: 1.0803866386413574
+Epoch 9/50,  Discriminator loss: 0.8554754853248596, acc: 98.24561403508771%, Generator loss: 1.1314866542816162
+Epoch 10/50,  Discriminator loss: 0.8428695201873779, acc: 96.49122807017544%, Generator loss: 1.1578789949417114
+Epoch 11/50,  Discriminator loss: 0.8455640077590942, acc: 98.24561403508771%, Generator loss: 1.1224693059921265
+Epoch 12/50,  Discriminator loss: 0.839540958404541, acc: 98.24561403508771%, Generator loss: 1.1104605197906494
+Epoch 13/50,  Discriminator loss: 0.8454302549362183, acc: 98.24561403508771%, Generator loss: 1.1830109357833862
+Epoch 14/50,  Discriminator loss: 0.8503437042236328, acc: 98.24561403508771%, Generator loss: 1.064320683479309
+Epoch 15/50,  Discriminator loss: 0.8464311361312866, acc: 100.0%, Generator loss: 1.1034915447235107
+Epoch 16/50,  Discriminator loss: 0.8455045223236084, acc: 94.73684210526315%, Generator loss: 1.0727870464324951
+Epoch 17/50,  Discriminator loss: 0.8436091542243958, acc: 94.73684210526315%, Generator loss: 1.1516566276550293
+Epoch 18/50,  Discriminator loss: 0.8416250348091125, acc: 100.0%, Generator loss: 1.0905815362930298
+Epoch 19/50,  Discriminator loss: 0.8327996730804443, acc: 98.24561403508771%, Generator loss: 1.1499807834625244
+Epoch 20/50,  Discriminator loss: 0.8444657921791077, acc: 98.24561403508771%, Generator loss: 1.1382825374603271
+Epoch 21/50,  Discriminator loss: 0.849590539932251, acc: 98.24561403508771%, Generator loss: 1.1444584131240845
+Epoch 22/50,  Discriminator loss: 0.8425167798995972, acc: 100.0%, Generator loss: 1.1304858922958374
+Epoch 23/50,  Discriminator loss: 0.8532596826553345, acc: 98.24561403508771%, Generator loss: 1.0703095197677612
+Epoch 24/50,  Discriminator loss: 0.8544815182685852, acc: 98.24561403508771%, Generator loss: 1.1336556673049927
+Epoch 25/50,  Discriminator loss: 0.8229742050170898, acc: 96.49122807017544%, Generator loss: 1.15519380569458
+Epoch 26/50,  Discriminator loss: 0.8392435312271118, acc: 100.0%, Generator loss: 1.1056123971939087
+Epoch 27/50,  Discriminator loss: 0.8420762419700623, acc: 100.0%, Generator loss: 1.105996012687683
+Epoch 28/50,  Discriminator loss: 0.8379548192024231, acc: 100.0%, Generator loss: 1.0666093826293945
+Epoch 29/50,  Discriminator loss: 0.8303635120391846, acc: 100.0%, Generator loss: 1.046885371208191
+Epoch 30/50,  Discriminator loss: 0.8415318727493286, acc: 100.0%, Generator loss: 1.0897421836853027
+Epoch 31/50,  Discriminator loss: 0.8451324701309204, acc: 96.49122807017544%, Generator loss: 1.1054511070251465
+Epoch 32/50,  Discriminator loss: 0.84315425157547, acc: 98.24561403508771%, Generator loss: 1.103045105934143
+Epoch 33/50,  Discriminator loss: 0.8177657127380371, acc: 100.0%, Generator loss: 1.1045364141464233
+Epoch 34/50,  Discriminator loss: 0.8590388298034668, acc: 98.24561403508771%, Generator loss: 1.0372506380081177
+Epoch 35/50,  Discriminator loss: 0.8483571410179138, acc: 100.0%, Generator loss: 1.072253942489624
+Epoch 36/50,  Discriminator loss: 0.8299816846847534, acc: 100.0%, Generator loss: 1.0794708728790283
+Epoch 37/50,  Discriminator loss: 0.8481161594390869, acc: 98.24561403508771%, Generator loss: 1.05615234375
+Epoch 38/50,  Discriminator loss: 0.8555152416229248, acc: 100.0%, Generator loss: 1.0971217155456543
+Epoch 39/50,  Discriminator loss: 0.8605068325996399, acc: 98.24561403508771%, Generator loss: 1.0954413414001465
+Epoch 40/50,  Discriminator loss: 0.8458520770072937, acc: 100.0%, Generator loss: 1.1461637020111084
+Epoch 41/50,  Discriminator loss: 0.8450303077697754, acc: 100.0%, Generator loss: 1.0893818140029907
+Epoch 42/50,  Discriminator loss: 0.8336972594261169, acc: 100.0%, Generator loss: 1.1236985921859741
+Epoch 43/50,  Discriminator loss: 0.8539801836013794, acc: 100.0%, Generator loss: 1.1808022260665894
+Epoch 44/50,  Discriminator loss: 0.829198956489563, acc: 98.24561403508771%, Generator loss: 1.1303603649139404
+Epoch 45/50,  Discriminator loss: 0.8473470211029053, acc: 100.0%, Generator loss: 1.1477442979812622
+Epoch 46/50,  Discriminator loss: 0.8629183769226074, acc: 96.49122807017544%, Generator loss: 1.1391490697860718
+Epoch 47/50,  Discriminator loss: 0.840610921382904, acc: 100.0%, Generator loss: 1.1230946779251099
+Epoch 48/50,  Discriminator loss: 0.8262360095977783, acc: 100.0%, Generator loss: 1.103774070739746
+Epoch 49/50,  Discriminator loss: 0.8326377272605896, acc: 100.0%, Generator loss: 1.108657956123352
+Epoch: 0001 cost= 2.255793333
+Epoch: 0006 cost= 1.183320880
+Epoch: 0011 cost= 0.723563194
+Epoch: 0016 cost= 0.541856349
+Epoch: 0021 cost= 0.480032891
+Epoch: 0026 cost= 0.413043082
+Epoch: 0031 cost= 0.447406679
+Epoch: 0036 cost= 0.402443051
+Epoch: 0041 cost= 0.374331951
+Epoch: 0046 cost= 0.414519787
+Epoch: 0051 cost= 0.399458945
+Epoch: 0056 cost= 0.352954626
+Epoch: 0061 cost= 0.345472634
+Epoch: 0066 cost= 0.353875756
+Epoch: 0071 cost= 0.320496380
+Epoch: 0076 cost= 0.337209821
+Epoch: 0081 cost= 0.379433036
+Epoch: 0086 cost= 0.324132800
+Epoch: 0091 cost= 0.319425762
+Epoch: 0096 cost= 0.348035991
+Epoch: 0101 cost= 0.357431889
+Epoch: 0106 cost= 0.310417235
+Epoch: 0111 cost= 0.328105986
+Epoch: 0116 cost= 0.299226522
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Reloading previous weights after core set training
+5928
+5951
+Epoch: 0001 cost= 0.053427864
+Epoch: 0006 cost= 0.456191093
+Epoch: 0011 cost= 0.329780817
+Epoch: 0016 cost= 0.032303303
+Epoch: 0021 cost= 0.063333116
+Epoch: 0026 cost= 0.040931534
+Epoch: 0031 cost= 0.062363308
+Epoch: 0036 cost= 0.044989605
+Epoch: 0041 cost= 0.035967011
+Epoch: 0046 cost= 0.033548072
+Epoch: 0051 cost= 0.030679215
+Epoch: 0056 cost= 0.029532366
+Epoch: 0061 cost= 0.022145968
+Epoch: 0066 cost= 0.022067579
+Epoch: 0071 cost= 0.023670889
+Epoch: 0076 cost= 0.025969014
+Epoch: 0081 cost= 0.015793420
+Epoch: 0086 cost= 0.019357156
+Epoch: 0091 cost= 0.019307656
+Epoch: 0096 cost= 0.015134938
+Epoch: 0101 cost= 0.017775491
+Epoch: 0106 cost= 0.013524450
+Epoch: 0111 cost= 0.011477474
+Epoch: 0116 cost= 0.011470140
+Optimization Finished!
+Accuracy is 0.9995271867612293
+Reloading previous weights after core set training
+5730
+5729
+Epoch: 0001 cost= 0.460033864
+Epoch: 0006 cost= 0.350662619
+Epoch: 0011 cost= 0.233601853
+Epoch: 0016 cost= 0.450532764
+Epoch: 0021 cost= 0.369538784
+Epoch: 0026 cost= 0.254341960
+Epoch: 0031 cost= 0.287783235
+Epoch: 0036 cost= 0.145362303
+Epoch: 0041 cost= 0.185944796
+Epoch: 0046 cost= 0.244931236
+Epoch: 0051 cost= 0.168493778
+Epoch: 0056 cost= 0.154473126
+Epoch: 0061 cost= 0.196167558
+Epoch: 0066 cost= 0.172879249
+Epoch: 0071 cost= 0.146079957
+Epoch: 0076 cost= 0.181602955
+Epoch: 0081 cost= 0.129609704
+Epoch: 0086 cost= 0.263728499
+Epoch: 0091 cost= 0.203670427
+Epoch: 0096 cost= 0.124584019
+Epoch: 0101 cost= 0.233855441
+Epoch: 0106 cost= 0.179386169
+Epoch: 0111 cost= 0.210915968
+Epoch: 0116 cost= 0.171072081
+Optimization Finished!
+Accuracy is 0.9755142017629774
+Reloading previous weights after core set training
+creating a new head
+Current task: 2
+Epoch 0/50,  Discriminator loss: 0.9664158821105957, acc: 50.79365079365079%, Generator loss: 1.0858831405639648
+Epoch 1/50,  Discriminator loss: 0.8752972483634949, acc: 95.23809523809523%, Generator loss: 1.1644375324249268
+Epoch 2/50,  Discriminator loss: 0.8674464225769043, acc: 98.4126984126984%, Generator loss: 1.087754249572754
+Epoch 3/50,  Discriminator loss: 0.8623467087745667, acc: 90.47619047619048%, Generator loss: 1.1064867973327637
+Epoch 4/50,  Discriminator loss: 0.8484923839569092, acc: 98.4126984126984%, Generator loss: 1.0721265077590942
+Epoch 5/50,  Discriminator loss: 0.8361316919326782, acc: 100.0%, Generator loss: 1.069400668144226
+Epoch 6/50,  Discriminator loss: 0.8527313470840454, acc: 98.4126984126984%, Generator loss: 1.0720393657684326
+Epoch 7/50,  Discriminator loss: 0.8351744413375854, acc: 98.4126984126984%, Generator loss: 1.1544400453567505
+Epoch 8/50,  Discriminator loss: 0.8349499106407166, acc: 100.0%, Generator loss: 1.1253679990768433
+Epoch 9/50,  Discriminator loss: 0.8284881114959717, acc: 100.0%, Generator loss: 1.1675481796264648
+Epoch 10/50,  Discriminator loss: 0.8470939993858337, acc: 100.0%, Generator loss: 1.133126974105835
+Epoch 11/50,  Discriminator loss: 0.8497010469436646, acc: 98.4126984126984%, Generator loss: 1.1030089855194092
+Epoch 12/50,  Discriminator loss: 0.8304418325424194, acc: 100.0%, Generator loss: 1.1254510879516602
+Epoch 13/50,  Discriminator loss: 0.8478153347969055, acc: 100.0%, Generator loss: 1.125070571899414
+Epoch 14/50,  Discriminator loss: 0.8155408501625061, acc: 100.0%, Generator loss: 1.1273857355117798
+Epoch 15/50,  Discriminator loss: 0.834046483039856, acc: 100.0%, Generator loss: 1.1573494672775269
+Epoch 16/50,  Discriminator loss: 0.8313374519348145, acc: 96.82539682539682%, Generator loss: 1.2091838121414185
+Epoch 17/50,  Discriminator loss: 0.8444871306419373, acc: 96.82539682539682%, Generator loss: 1.1133044958114624
+Epoch 18/50,  Discriminator loss: 0.8208538293838501, acc: 100.0%, Generator loss: 1.1485257148742676
+Epoch 19/50,  Discriminator loss: 0.8237481117248535, acc: 100.0%, Generator loss: 1.1583993434906006
+Epoch 20/50,  Discriminator loss: 0.8201577663421631, acc: 100.0%, Generator loss: 1.1353440284729004
+Epoch 21/50,  Discriminator loss: 0.8435011506080627, acc: 100.0%, Generator loss: 1.1132640838623047
+Epoch 22/50,  Discriminator loss: 0.8427395224571228, acc: 100.0%, Generator loss: 1.1280945539474487
+Epoch 23/50,  Discriminator loss: 0.8466461896896362, acc: 100.0%, Generator loss: 1.1544674634933472
+Epoch 24/50,  Discriminator loss: 0.8313227295875549, acc: 100.0%, Generator loss: 1.1379858255386353
+Epoch 25/50,  Discriminator loss: 0.8222676515579224, acc: 100.0%, Generator loss: 1.1175720691680908
+Epoch 26/50,  Discriminator loss: 0.8225129842758179, acc: 100.0%, Generator loss: 1.1111955642700195
+Epoch 27/50,  Discriminator loss: 0.8363966941833496, acc: 100.0%, Generator loss: 1.0896599292755127
+Epoch 28/50,  Discriminator loss: 0.832757830619812, acc: 100.0%, Generator loss: 1.2003090381622314
+Epoch 29/50,  Discriminator loss: 0.8321251273155212, acc: 98.4126984126984%, Generator loss: 1.1482977867126465
+Epoch 30/50,  Discriminator loss: 0.8407768607139587, acc: 100.0%, Generator loss: 1.1730090379714966
+Epoch 31/50,  Discriminator loss: 0.8293113708496094, acc: 100.0%, Generator loss: 1.1052660942077637
+Epoch 32/50,  Discriminator loss: 0.8396787047386169, acc: 100.0%, Generator loss: 1.1707979440689087
+Epoch 33/50,  Discriminator loss: 0.8487229347229004, acc: 100.0%, Generator loss: 1.0966699123382568
+Epoch 34/50,  Discriminator loss: 0.8329722285270691, acc: 100.0%, Generator loss: 1.0686581134796143
+Epoch 35/50,  Discriminator loss: 0.8389617800712585, acc: 98.4126984126984%, Generator loss: 1.1415176391601562
+Epoch 36/50,  Discriminator loss: 0.8241575360298157, acc: 100.0%, Generator loss: 1.1520212888717651
+Epoch 37/50,  Discriminator loss: 0.836073637008667, acc: 100.0%, Generator loss: 1.1046487092971802
+Epoch 38/50,  Discriminator loss: 0.8318065404891968, acc: 98.4126984126984%, Generator loss: 1.1178762912750244
+Epoch 39/50,  Discriminator loss: 0.851080596446991, acc: 100.0%, Generator loss: 1.0860085487365723
+Epoch 40/50,  Discriminator loss: 0.8437849879264832, acc: 100.0%, Generator loss: 1.1669801473617554
+Epoch 41/50,  Discriminator loss: 0.8413592576980591, acc: 100.0%, Generator loss: 1.0759015083312988
+Epoch 42/50,  Discriminator loss: 0.8575189709663391, acc: 98.4126984126984%, Generator loss: 1.0866198539733887
+Epoch 43/50,  Discriminator loss: 0.8357117176055908, acc: 100.0%, Generator loss: 1.1577317714691162
+Epoch 44/50,  Discriminator loss: 0.8290999531745911, acc: 100.0%, Generator loss: 1.1209558248519897
+Epoch 45/50,  Discriminator loss: 0.8421863913536072, acc: 100.0%, Generator loss: 1.2218129634857178
+Epoch 46/50,  Discriminator loss: 0.8501583933830261, acc: 100.0%, Generator loss: 1.1900895833969116
+Epoch 47/50,  Discriminator loss: 0.8486065864562988, acc: 100.0%, Generator loss: 1.124802827835083
+Epoch 48/50,  Discriminator loss: 0.8373593091964722, acc: 100.0%, Generator loss: 1.130942702293396
+Epoch 49/50,  Discriminator loss: 0.8252602815628052, acc: 100.0%, Generator loss: 1.1389117240905762
+Epoch: 0001 cost= 1.499575853
+Epoch: 0006 cost= 0.667005241
+Epoch: 0011 cost= 0.452149361
+Epoch: 0016 cost= 0.486832023
+Epoch: 0021 cost= 0.415602386
+Epoch: 0026 cost= 0.370387018
+Epoch: 0031 cost= 0.293639272
+Epoch: 0036 cost= 0.308040738
+Epoch: 0041 cost= 0.340258479
+Epoch: 0046 cost= 0.294456303
+Epoch: 0051 cost= 0.281679243
+Epoch: 0056 cost= 0.247350290
+Epoch: 0061 cost= 0.260516435
+Epoch: 0066 cost= 0.258424073
+Epoch: 0071 cost= 0.232722133
+Epoch: 0076 cost= 0.244536430
+Epoch: 0081 cost= 0.230191737
+Epoch: 0086 cost= 0.243436009
+Epoch: 0091 cost= 0.222791046
+Epoch: 0096 cost= 0.226900250
+Epoch: 0101 cost= 0.229425579
+Epoch: 0106 cost= 0.277461797
+Epoch: 0111 cost= 0.261392951
+Epoch: 0116 cost= 0.235459626
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Reloading previous weights after core set training
+5941
+5950
+Epoch: 0001 cost= 0.014224357
+Epoch: 0006 cost= 0.045024939
+Epoch: 0011 cost= 0.193409771
+Epoch: 0016 cost= 0.160172701
+Epoch: 0021 cost= 0.033640571
+Epoch: 0026 cost= 0.049336500
+Epoch: 0031 cost= 0.038141049
+Epoch: 0036 cost= 0.090404257
+Epoch: 0041 cost= 0.033211656
+Epoch: 0046 cost= 0.029683467
+Epoch: 0051 cost= 0.024769779
+Epoch: 0056 cost= 0.024634713
+Epoch: 0061 cost= 0.020101648
+Epoch: 0066 cost= 0.023232330
+Epoch: 0071 cost= 0.019307019
+Epoch: 0076 cost= 0.015452893
+Epoch: 0081 cost= 0.012144746
+Epoch: 0086 cost= 0.015429536
+Epoch: 0091 cost= 0.010965726
+Epoch: 0096 cost= 0.014630979
+Epoch: 0101 cost= 0.013633000
+Epoch: 0106 cost= 0.014044959
+Epoch: 0111 cost= 0.017464714
+Epoch: 0116 cost= 0.016399704
+Optimization Finished!
+Accuracy is 0.9995271867612293
+Reloading previous weights after core set training
+5718
+5732
+Epoch: 0001 cost= 0.898340106
+Epoch: 0006 cost= 0.659249127
+Epoch: 0011 cost= 0.415605664
+Epoch: 0016 cost= 0.569250047
+Epoch: 0021 cost= 0.442921817
+Epoch: 0026 cost= 0.181582958
+Epoch: 0031 cost= 0.204467803
+Epoch: 0036 cost= 0.227787241
+Epoch: 0041 cost= 0.304653525
+Epoch: 0046 cost= 0.200412154
+Epoch: 0051 cost= 0.170696065
+Epoch: 0056 cost= 0.163565099
+Epoch: 0061 cost= 0.170425326
+Epoch: 0066 cost= 0.196288109
+Epoch: 0071 cost= 0.167065054
+Epoch: 0076 cost= 0.159622312
+Epoch: 0081 cost= 0.277985871
+Epoch: 0086 cost= 0.194904387
+Epoch: 0091 cost= 0.125863314
+Epoch: 0096 cost= 0.136310637
+Epoch: 0101 cost= 0.171576083
+Epoch: 0106 cost= 0.159725308
+Epoch: 0111 cost= 0.183129653
+Epoch: 0116 cost= 0.163996518
+Optimization Finished!
+Accuracy is 0.9730656219392753
+Reloading previous weights after core set training
+5855
+5856
+Epoch: 0001 cost= 0.927845895
+Epoch: 0006 cost= 0.407648563
+Epoch: 0011 cost= 0.199559003
+Epoch: 0016 cost= 0.207110584
+Epoch: 0021 cost= 0.161184952
+Epoch: 0026 cost= 0.285410047
+Epoch: 0031 cost= 0.186341226
+Epoch: 0036 cost= 0.157832548
+Epoch: 0041 cost= 0.189087078
+Epoch: 0046 cost= 0.140695095
+Epoch: 0051 cost= 0.143716574
+Epoch: 0056 cost= 0.138385415
+Epoch: 0061 cost= 0.103037357
+Epoch: 0066 cost= 0.271366984
+Epoch: 0071 cost= 0.130229622
+Epoch: 0076 cost= 0.107359901
+Epoch: 0081 cost= 0.105172284
+Epoch: 0086 cost= 0.191820353
+Epoch: 0091 cost= 0.172632471
+Epoch: 0096 cost= 0.164047897
+Epoch: 0101 cost= 0.112868719
+Epoch: 0106 cost= 0.106165886
+Epoch: 0111 cost= 0.173192233
+Epoch: 0116 cost= 0.194166899
+Optimization Finished!
+Accuracy is 0.9898612593383138
+Reloading previous weights after core set training
+creating a new head
+Current task: 3
+Epoch 0/50,  Discriminator loss: 0.9679306149482727, acc: 43.47826086956522%, Generator loss: 1.125404953956604
+Epoch 1/50,  Discriminator loss: 0.8446545004844666, acc: 100.0%, Generator loss: 1.0775151252746582
+Epoch 2/50,  Discriminator loss: 0.8459243178367615, acc: 100.0%, Generator loss: 1.1612447500228882
+Epoch 3/50,  Discriminator loss: 0.8057586550712585, acc: 100.0%, Generator loss: 1.137868046760559
+Epoch 4/50,  Discriminator loss: 0.8322222828865051, acc: 95.65217391304348%, Generator loss: 1.1707390546798706
+Epoch 5/50,  Discriminator loss: 0.8709703087806702, acc: 100.0%, Generator loss: 1.0658661127090454
+Epoch 6/50,  Discriminator loss: 0.8467126488685608, acc: 100.0%, Generator loss: 1.1367461681365967
+Epoch 7/50,  Discriminator loss: 0.8594349026679993, acc: 100.0%, Generator loss: 1.0975277423858643
+Epoch 8/50,  Discriminator loss: 0.8572290539741516, acc: 100.0%, Generator loss: 1.0610002279281616
+Epoch 9/50,  Discriminator loss: 0.8892481923103333, acc: 100.0%, Generator loss: 1.1770817041397095
+Epoch 10/50,  Discriminator loss: 0.8482459783554077, acc: 100.0%, Generator loss: 1.2167983055114746
+Epoch 11/50,  Discriminator loss: 0.8080621361732483, acc: 100.0%, Generator loss: 1.0744467973709106
+Epoch 12/50,  Discriminator loss: 0.8195441365242004, acc: 100.0%, Generator loss: 1.0499545335769653
+Epoch 13/50,  Discriminator loss: 0.8638250827789307, acc: 95.65217391304348%, Generator loss: 1.0229182243347168
+Epoch 14/50,  Discriminator loss: 0.8098258376121521, acc: 100.0%, Generator loss: 1.1080223321914673
+Epoch 15/50,  Discriminator loss: 0.8268099427223206, acc: 100.0%, Generator loss: 1.1821856498718262
+Epoch 16/50,  Discriminator loss: 0.8733652830123901, acc: 100.0%, Generator loss: 1.1187788248062134
+Epoch 17/50,  Discriminator loss: 0.8279131650924683, acc: 100.0%, Generator loss: 1.1142722368240356
+Epoch 18/50,  Discriminator loss: 0.8448554277420044, acc: 100.0%, Generator loss: 1.1641449928283691
+Epoch 19/50,  Discriminator loss: 0.8333054780960083, acc: 100.0%, Generator loss: 1.1730455160140991
+Epoch 20/50,  Discriminator loss: 0.8602011203765869, acc: 100.0%, Generator loss: 1.0441964864730835
+Epoch 21/50,  Discriminator loss: 0.8726982474327087, acc: 100.0%, Generator loss: 1.1270203590393066
+Epoch 22/50,  Discriminator loss: 0.8337743282318115, acc: 100.0%, Generator loss: 1.1519490480422974
+Epoch 23/50,  Discriminator loss: 0.8203336596488953, acc: 100.0%, Generator loss: 1.1242679357528687
+Epoch 24/50,  Discriminator loss: 0.8097603917121887, acc: 100.0%, Generator loss: 1.134896993637085
+Epoch 25/50,  Discriminator loss: 0.8233051300048828, acc: 100.0%, Generator loss: 1.088205099105835
+Epoch 26/50,  Discriminator loss: 0.829793393611908, acc: 100.0%, Generator loss: 1.0433592796325684
+Epoch 27/50,  Discriminator loss: 0.8461713790893555, acc: 100.0%, Generator loss: 1.183302402496338
+Epoch 28/50,  Discriminator loss: 0.8743376135826111, acc: 100.0%, Generator loss: 1.0617949962615967
+Epoch 29/50,  Discriminator loss: 0.8587471842765808, acc: 100.0%, Generator loss: 1.19080650806427
+Epoch 30/50,  Discriminator loss: 0.8157519102096558, acc: 100.0%, Generator loss: 1.048226237297058
+Epoch 31/50,  Discriminator loss: 0.8430092334747314, acc: 100.0%, Generator loss: 1.153951644897461
+Epoch 32/50,  Discriminator loss: 0.8385777473449707, acc: 100.0%, Generator loss: 1.0586974620819092
+Epoch 33/50,  Discriminator loss: 0.8071064352989197, acc: 100.0%, Generator loss: 1.2883431911468506
+Epoch 34/50,  Discriminator loss: 0.7970967888832092, acc: 100.0%, Generator loss: 1.1303330659866333
+Epoch 35/50,  Discriminator loss: 0.8436084985733032, acc: 100.0%, Generator loss: 1.1976019144058228
+Epoch 36/50,  Discriminator loss: 0.814687967300415, acc: 100.0%, Generator loss: 1.1406079530715942
+Epoch 37/50,  Discriminator loss: 0.8175442814826965, acc: 100.0%, Generator loss: 1.0997897386550903
+Epoch 38/50,  Discriminator loss: 0.8354990482330322, acc: 100.0%, Generator loss: 1.140931487083435
+Epoch 39/50,  Discriminator loss: 0.8445734977722168, acc: 100.0%, Generator loss: 1.185143232345581
+Epoch 40/50,  Discriminator loss: 0.8615853786468506, acc: 100.0%, Generator loss: 1.090030550956726
+Epoch 41/50,  Discriminator loss: 0.8031888604164124, acc: 100.0%, Generator loss: 1.1094812154769897
+Epoch 42/50,  Discriminator loss: 0.8594299554824829, acc: 100.0%, Generator loss: 1.0896999835968018
+Epoch 43/50,  Discriminator loss: 0.8538532257080078, acc: 100.0%, Generator loss: 0.9514646530151367
+Epoch 44/50,  Discriminator loss: 0.8371089696884155, acc: 100.0%, Generator loss: 1.1959071159362793
+Epoch 45/50,  Discriminator loss: 0.8275148272514343, acc: 100.0%, Generator loss: 0.9451818466186523
+Epoch 46/50,  Discriminator loss: 0.8616102933883667, acc: 100.0%, Generator loss: 1.3093969821929932
+Epoch 47/50,  Discriminator loss: 0.8308113217353821, acc: 100.0%, Generator loss: 1.0925509929656982
+Epoch 48/50,  Discriminator loss: 0.8008449077606201, acc: 100.0%, Generator loss: 1.2001805305480957
+Epoch 49/50,  Discriminator loss: 0.8397964239120483, acc: 100.0%, Generator loss: 1.0228452682495117
+Epoch: 0001 cost= 1.251111984
+Epoch: 0006 cost= 0.254682750
+Epoch: 0011 cost= 0.245990425
+Epoch: 0016 cost= 0.228238359
+Epoch: 0021 cost= 0.240434021
+Epoch: 0026 cost= 0.221855938
+Epoch: 0031 cost= 0.225035176
+Epoch: 0036 cost= 0.197308838
+Epoch: 0041 cost= 0.190112993
+Epoch: 0046 cost= 0.179864243
+Epoch: 0051 cost= 0.179253429
+Epoch: 0056 cost= 0.179956228
+Epoch: 0061 cost= 0.166846618
+Epoch: 0066 cost= 0.166348577
+Epoch: 0071 cost= 0.177402616
+Epoch: 0076 cost= 0.166241869
+Epoch: 0081 cost= 0.157254070
+Epoch: 0086 cost= 0.180817276
+Epoch: 0091 cost= 0.160117120
+Epoch: 0096 cost= 0.159331217
+Epoch: 0101 cost= 0.159189537
+Epoch: 0106 cost= 0.157243475
+Epoch: 0111 cost= 0.150558695
+Epoch: 0116 cost= 0.167421788
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Reloading previous weights after core set training
+5942
+5929
+Epoch: 0001 cost= 0.150230482
+Epoch: 0006 cost= 0.338292271
+Epoch: 0011 cost= 0.335299999
+Epoch: 0016 cost= 0.037511393
+Epoch: 0021 cost= 0.036667090
+Epoch: 0026 cost= 0.095011801
+Epoch: 0031 cost= 0.042138956
+Epoch: 0036 cost= 0.036411878
+Epoch: 0041 cost= 0.044756349
+Epoch: 0046 cost= 0.029273611
+Epoch: 0051 cost= 0.027802192
+Epoch: 0056 cost= 0.024554875
+Epoch: 0061 cost= 0.024050558
+Epoch: 0066 cost= 0.025655540
+Epoch: 0071 cost= 0.016970061
+Epoch: 0076 cost= 0.029519333
+Epoch: 0081 cost= 0.015529616
+Epoch: 0086 cost= 0.013247751
+Epoch: 0091 cost= 0.013567185
+Epoch: 0096 cost= 0.012109542
+Epoch: 0101 cost= 0.019520283
+Epoch: 0106 cost= 0.010914329
+Epoch: 0111 cost= 0.015528440
+Epoch: 0116 cost= 0.010259521
+Optimization Finished!
+Accuracy is 0.9995271867612293
+Reloading previous weights after core set training
+5753
+5692
+Epoch: 0001 cost= 0.831294835
+Epoch: 0006 cost= 0.373138249
+Epoch: 0011 cost= 0.378041238
+Epoch: 0016 cost= 0.233729213
+Epoch: 0021 cost= 0.236862510
+Epoch: 0026 cost= 0.405210137
+Epoch: 0031 cost= 0.611043394
+Epoch: 0036 cost= 0.377434641
+Epoch: 0041 cost= 0.498271942
+Epoch: 0046 cost= 0.258931458
+Epoch: 0051 cost= 0.190240785
+Epoch: 0056 cost= 0.228230834
+Epoch: 0061 cost= 0.195615962
+Epoch: 0066 cost= 0.194449067
+Epoch: 0071 cost= 0.183817387
+Epoch: 0076 cost= 0.150293887
+Epoch: 0081 cost= 0.168659046
+Epoch: 0086 cost= 0.161012813
+Epoch: 0091 cost= 0.146910727
+Epoch: 0096 cost= 0.177317768
+Epoch: 0101 cost= 0.155213758
+Epoch: 0106 cost= 0.121652395
+Epoch: 0111 cost= 0.127119020
+Epoch: 0116 cost= 0.118898019
+Optimization Finished!
+Accuracy is 0.975024485798237
+Reloading previous weights after core set training
+5857
+5849
+Epoch: 0001 cost= 0.534632266
+Epoch: 0006 cost= 0.712948918
+Epoch: 0011 cost= 0.551707983
+Epoch: 0016 cost= 0.339491934
+Epoch: 0021 cost= 0.236797452
+Epoch: 0026 cost= 0.132945344
+Epoch: 0031 cost= 0.310294360
+Epoch: 0036 cost= 0.156761080
+Epoch: 0041 cost= 0.191251874
+Epoch: 0046 cost= 0.129079238
+Epoch: 0051 cost= 0.114499733
+Epoch: 0056 cost= 0.123311453
+Epoch: 0061 cost= 0.174569145
+Epoch: 0066 cost= 0.114169523
+Epoch: 0071 cost= 0.145119250
+Epoch: 0076 cost= 0.155572459
+Epoch: 0081 cost= 0.093608633
+Epoch: 0086 cost= 0.108796947
+Epoch: 0091 cost= 0.095403805
+Epoch: 0096 cost= 0.097300246
+Epoch: 0101 cost= 0.103064224
+Epoch: 0106 cost= 0.094820023
+Epoch: 0111 cost= 0.134443402
+Epoch: 0116 cost= 0.161695316
+Optimization Finished!
+Accuracy is 0.9909284951974386
+Reloading previous weights after core set training
+5885
+5889
+Epoch: 0001 cost= 0.640148699
+Epoch: 0006 cost= 0.433003187
+Epoch: 0011 cost= 0.396192998
+Epoch: 0016 cost= 0.099182799
+Epoch: 0021 cost= 0.118976519
+Epoch: 0026 cost= 0.141546488
+Epoch: 0031 cost= 0.118669719
+Epoch: 0036 cost= 0.095819533
+Epoch: 0041 cost= 0.162968993
+Epoch: 0046 cost= 0.121392518
+Epoch: 0051 cost= 0.117187619
+Epoch: 0056 cost= 0.095466502
+Epoch: 0061 cost= 0.079676226
+Epoch: 0066 cost= 0.082820788
+Epoch: 0071 cost= 0.087980226
+Epoch: 0076 cost= 0.109691486
+Epoch: 0081 cost= 0.121171236
+Epoch: 0086 cost= 0.074312583
+Epoch: 0091 cost= 0.077095009
+Epoch: 0096 cost= 0.105295494
+Epoch: 0101 cost= 0.070802376
+Epoch: 0106 cost= 0.067205228
+Epoch: 0111 cost= 0.070858389
+Epoch: 0116 cost= 0.185480252
+Optimization Finished!
+Accuracy is 0.9959718026183283
+Reloading previous weights after core set training
+creating a new head
+Current task: 4
+Epoch 0/50,  Discriminator loss: 0.9541406631469727, acc: 50.0%, Generator loss: 1.0922197103500366
+Epoch 1/50,  Discriminator loss: 0.8705844283103943, acc: 91.66666666666666%, Generator loss: 1.096405029296875
+Epoch 2/50,  Discriminator loss: 0.8777461051940918, acc: 91.66666666666666%, Generator loss: 1.0889675617218018
+Epoch 3/50,  Discriminator loss: 0.8349694013595581, acc: 95.83333333333334%, Generator loss: 1.1365556716918945
+Epoch 4/50,  Discriminator loss: 0.8323308825492859, acc: 100.0%, Generator loss: 1.061391830444336
+Epoch 5/50,  Discriminator loss: 0.8384143710136414, acc: 100.0%, Generator loss: 1.1112852096557617
+Epoch 6/50,  Discriminator loss: 0.8242102265357971, acc: 100.0%, Generator loss: 1.0996553897857666
+Epoch 7/50,  Discriminator loss: 0.8344187140464783, acc: 100.0%, Generator loss: 1.078815221786499
+Epoch 8/50,  Discriminator loss: 0.8301588296890259, acc: 95.83333333333334%, Generator loss: 1.0744483470916748
+Epoch 9/50,  Discriminator loss: 0.8263117074966431, acc: 100.0%, Generator loss: 1.1273881196975708
+Epoch 10/50,  Discriminator loss: 0.840487003326416, acc: 100.0%, Generator loss: 1.1134605407714844
+Epoch 11/50,  Discriminator loss: 0.811123788356781, acc: 100.0%, Generator loss: 1.1247613430023193
+Epoch 12/50,  Discriminator loss: 0.8255603909492493, acc: 100.0%, Generator loss: 1.1289002895355225
+Epoch 13/50,  Discriminator loss: 0.8470860123634338, acc: 100.0%, Generator loss: 1.1536977291107178
+Epoch 14/50,  Discriminator loss: 0.8267849683761597, acc: 100.0%, Generator loss: 1.005494236946106
+Epoch 15/50,  Discriminator loss: 0.8375704288482666, acc: 95.83333333333334%, Generator loss: 1.1663551330566406
+Epoch 16/50,  Discriminator loss: 0.831165075302124, acc: 100.0%, Generator loss: 1.0606844425201416
+Epoch 17/50,  Discriminator loss: 0.8318873643875122, acc: 100.0%, Generator loss: 1.208152174949646
+Epoch 18/50,  Discriminator loss: 0.8346119523048401, acc: 100.0%, Generator loss: 1.0995033979415894
+Epoch 19/50,  Discriminator loss: 0.8410877585411072, acc: 100.0%, Generator loss: 1.1360929012298584
+Epoch 20/50,  Discriminator loss: 0.8369566202163696, acc: 100.0%, Generator loss: 1.1167062520980835
+Epoch 21/50,  Discriminator loss: 0.8592199087142944, acc: 100.0%, Generator loss: 1.1656509637832642
+Epoch 22/50,  Discriminator loss: 0.8305530548095703, acc: 100.0%, Generator loss: 1.1785924434661865
+Epoch 23/50,  Discriminator loss: 0.8402732610702515, acc: 95.83333333333334%, Generator loss: 1.1030834913253784
+Epoch 24/50,  Discriminator loss: 0.8571279048919678, acc: 100.0%, Generator loss: 1.0591886043548584
+Epoch 25/50,  Discriminator loss: 0.8664587736129761, acc: 100.0%, Generator loss: 1.1214935779571533
+Epoch 26/50,  Discriminator loss: 0.8223142027854919, acc: 100.0%, Generator loss: 1.1751539707183838
+Epoch 27/50,  Discriminator loss: 0.8436646461486816, acc: 95.83333333333334%, Generator loss: 1.1721174716949463
+Epoch 28/50,  Discriminator loss: 0.8473243713378906, acc: 100.0%, Generator loss: 1.0893584489822388
+Epoch 29/50,  Discriminator loss: 0.8724206686019897, acc: 95.83333333333334%, Generator loss: 1.074735164642334
+Epoch 30/50,  Discriminator loss: 0.8232997059822083, acc: 100.0%, Generator loss: 1.1332380771636963
+Epoch 31/50,  Discriminator loss: 0.8307620286941528, acc: 100.0%, Generator loss: 1.1631582975387573
+Epoch 32/50,  Discriminator loss: 0.8312986493110657, acc: 100.0%, Generator loss: 1.1080549955368042
+Epoch 33/50,  Discriminator loss: 0.8281344175338745, acc: 100.0%, Generator loss: 1.067765474319458
+Epoch 34/50,  Discriminator loss: 0.8500582575798035, acc: 100.0%, Generator loss: 1.1426780223846436
+Epoch 35/50,  Discriminator loss: 0.8281164765357971, acc: 100.0%, Generator loss: 1.2165937423706055
+Epoch 36/50,  Discriminator loss: 0.8364683985710144, acc: 100.0%, Generator loss: 1.0545406341552734
+Epoch 37/50,  Discriminator loss: 0.8509722948074341, acc: 100.0%, Generator loss: 1.0794918537139893
+Epoch 38/50,  Discriminator loss: 0.8473217487335205, acc: 100.0%, Generator loss: 1.1357311010360718
+Epoch 39/50,  Discriminator loss: 0.8424002528190613, acc: 100.0%, Generator loss: 1.2183204889297485
+Epoch 40/50,  Discriminator loss: 0.846070408821106, acc: 100.0%, Generator loss: 1.0518004894256592
+Epoch 41/50,  Discriminator loss: 0.8375372886657715, acc: 100.0%, Generator loss: 1.1671583652496338
+Epoch 42/50,  Discriminator loss: 0.8525010347366333, acc: 95.83333333333334%, Generator loss: 1.0842825174331665
+Epoch 43/50,  Discriminator loss: 0.8433735370635986, acc: 100.0%, Generator loss: 1.127070665359497
+Epoch 44/50,  Discriminator loss: 0.8542019128799438, acc: 100.0%, Generator loss: 1.0939178466796875
+Epoch 45/50,  Discriminator loss: 0.8503720760345459, acc: 100.0%, Generator loss: 1.1603128910064697
+Epoch 46/50,  Discriminator loss: 0.8299398422241211, acc: 100.0%, Generator loss: 1.1074055433273315
+Epoch 47/50,  Discriminator loss: 0.8139500617980957, acc: 100.0%, Generator loss: 1.1208337545394897
+Epoch 48/50,  Discriminator loss: 0.8457260727882385, acc: 100.0%, Generator loss: 1.0933301448822021
+Epoch 49/50,  Discriminator loss: 0.8357011675834656, acc: 100.0%, Generator loss: 1.0677803754806519
+Epoch: 0001 cost= 1.196141362
+Epoch: 0006 cost= 0.409840643
+Epoch: 0011 cost= 0.409416944
+Epoch: 0016 cost= 0.460128397
+Epoch: 0021 cost= 0.347605407
+Epoch: 0026 cost= 0.324096262
+Epoch: 0031 cost= 0.306763351
+Epoch: 0036 cost= 0.296707481
+Epoch: 0041 cost= 0.279957622
+Epoch: 0046 cost= 0.285970211
+Epoch: 0051 cost= 0.278707862
+Epoch: 0056 cost= 0.281353056
+Epoch: 0061 cost= 0.299888879
+Epoch: 0066 cost= 0.264150828
+Epoch: 0071 cost= 0.270300150
+Epoch: 0076 cost= 0.256826788
+Epoch: 0081 cost= 0.253258824
+Epoch: 0086 cost= 0.247319356
+Epoch: 0091 cost= 0.287325799
+Epoch: 0096 cost= 0.274034739
+Epoch: 0101 cost= 0.242622495
+Epoch: 0106 cost= 0.250939965
+Epoch: 0111 cost= 0.262670606
+Epoch: 0116 cost= 0.242142230
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Reloading previous weights after core set training
+5934
+5953
+Epoch: 0001 cost= 0.008502464
+Epoch: 0006 cost= 0.021635938
+Epoch: 0011 cost= 0.076699711
+Epoch: 0016 cost= 0.038991582
+Epoch: 0021 cost= 0.061780002
+Epoch: 0026 cost= 0.051415205
+Epoch: 0031 cost= 0.028269727
+Epoch: 0036 cost= 0.056705009
+Epoch: 0041 cost= 0.026311841
+Epoch: 0046 cost= 0.020911101
+Epoch: 0051 cost= 0.017706305
+Epoch: 0056 cost= 0.018751383
+Epoch: 0061 cost= 0.017571917
+Epoch: 0066 cost= 0.014616681
+Epoch: 0071 cost= 0.014201888
+Epoch: 0076 cost= 0.058447257
+Epoch: 0081 cost= 0.042178195
+Epoch: 0086 cost= 0.024055116
+Epoch: 0091 cost= 0.015641218
+Epoch: 0096 cost= 0.017318074
+Epoch: 0101 cost= 0.016969655
+Epoch: 0106 cost= 0.015310561
+Epoch: 0111 cost= 0.014594223
+Epoch: 0116 cost= 0.012113325
+Optimization Finished!
+Accuracy is 0.9995271867612293
+Reloading previous weights after core set training
+5749
+5736
+Epoch: 0001 cost= 0.502363563
+Epoch: 0006 cost= 0.655793369
+Epoch: 0011 cost= 0.413954616
+Epoch: 0016 cost= 0.376974642
+Epoch: 0021 cost= 0.321337163
+Epoch: 0026 cost= 0.211089969
+Epoch: 0031 cost= 0.244821489
+Epoch: 0036 cost= 0.171836942
+Epoch: 0041 cost= 0.272366375
+Epoch: 0046 cost= 0.158737704
+Epoch: 0051 cost= 0.192202419
+Epoch: 0056 cost= 0.291432858
+Epoch: 0061 cost= 0.195251584
+Epoch: 0066 cost= 0.250456750
+Epoch: 0071 cost= 0.243546784
+Epoch: 0076 cost= 0.270381600
+Epoch: 0081 cost= 0.214321136
+Epoch: 0086 cost= 0.172906920
+Epoch: 0091 cost= 0.119073614
+Epoch: 0096 cost= 0.160864845
+Epoch: 0101 cost= 0.137996867
+Epoch: 0106 cost= 0.132751882
+Epoch: 0111 cost= 0.165902853
+Epoch: 0116 cost= 0.204346538
+Optimization Finished!
+Accuracy is 0.9784524975514202
+Reloading previous weights after core set training
+5861
+5846
+Epoch: 0001 cost= 0.605364859
+Epoch: 0006 cost= 0.595527887
+Epoch: 0011 cost= 0.416675419
+Epoch: 0016 cost= 0.234540686
+Epoch: 0021 cost= 0.291558444
+Epoch: 0026 cost= 0.331033915
+Epoch: 0031 cost= 0.207330376
+Epoch: 0036 cost= 0.221666932
+Epoch: 0041 cost= 0.254969507
+Epoch: 0046 cost= 0.171464145
+Epoch: 0051 cost= 0.119765811
+Epoch: 0056 cost= 0.113249220
+Epoch: 0061 cost= 0.123492897
+Epoch: 0066 cost= 0.132126600
+Epoch: 0071 cost= 0.103508152
+Epoch: 0076 cost= 0.117617436
+Epoch: 0081 cost= 0.122720197
+Epoch: 0086 cost= 0.115975559
+Epoch: 0091 cost= 0.091381744
+Epoch: 0096 cost= 0.093831375
+Epoch: 0101 cost= 0.094612740
+Epoch: 0106 cost= 0.112959541
+Epoch: 0111 cost= 0.162680328
+Epoch: 0116 cost= 0.215525001
+Optimization Finished!
+Accuracy is 0.9898612593383138
+Reloading previous weights after core set training
+5885
+5882
+Epoch: 0001 cost= 0.646825910
+Epoch: 0006 cost= 0.428459734
+Epoch: 0011 cost= 0.207965016
+Epoch: 0016 cost= 0.154055923
+Epoch: 0021 cost= 0.145695657
+Epoch: 0026 cost= 0.157588184
+Epoch: 0031 cost= 0.166551471
+Epoch: 0036 cost= 0.097882293
+Epoch: 0041 cost= 0.107280552
+Epoch: 0046 cost= 0.117850289
+Epoch: 0051 cost= 0.104642943
+Epoch: 0056 cost= 0.084600784
+Epoch: 0061 cost= 0.081586659
+Epoch: 0066 cost= 0.081500031
+Epoch: 0071 cost= 0.104400001
+Epoch: 0076 cost= 0.084675707
+Epoch: 0081 cost= 0.104609191
+Epoch: 0086 cost= 0.075111277
+Epoch: 0091 cost= 0.092122197
+Epoch: 0096 cost= 0.140862674
+Epoch: 0101 cost= 0.087457031
+Epoch: 0106 cost= 0.070837744
+Epoch: 0111 cost= 0.093796283
+Epoch: 0116 cost= 0.087123111
+Optimization Finished!
+Accuracy is 0.9954682779456193
+Reloading previous weights after core set training
+5772
+5765
+Epoch: 0001 cost= 0.763719499
+Epoch: 0006 cost= 1.123167276
+Epoch: 0011 cost= 0.767948449
+Epoch: 0016 cost= 0.366925716
+Epoch: 0021 cost= 0.397648990
+Epoch: 0026 cost= 0.207557321
+Epoch: 0031 cost= 0.223993570
+Epoch: 0036 cost= 0.161784872
+Epoch: 0041 cost= 0.197196990
+Epoch: 0046 cost= 0.177855879
+Epoch: 0051 cost= 0.182027012
+Epoch: 0056 cost= 0.146025196
+Epoch: 0061 cost= 0.151754081
+Epoch: 0066 cost= 0.153905243
+Epoch: 0071 cost= 0.177404821
+Epoch: 0076 cost= 0.177346006
+Epoch: 0081 cost= 0.157989874
+Epoch: 0086 cost= 0.183496952
+Epoch: 0091 cost= 0.140877366
+Epoch: 0096 cost= 0.111957312
+Epoch: 0101 cost= 0.135250211
+Epoch: 0106 cost= 0.109259874
+Epoch: 0111 cost= 0.117043063
+Epoch: 0116 cost= 0.117313318
+Optimization Finished!
+Accuracy is 0.9722642460917801
+Reloading previous weights after core set training
+creating a new head
+[[0.99952719        nan        nan        nan        nan]
+ [0.99952719 0.9755142         nan        nan        nan]
+ [0.99952719 0.97306562 0.98986126        nan        nan]
+ [0.99952719 0.97502449 0.9909285  0.9959718         nan]
+ [0.99952719 0.9784525  0.98986126 0.99546828 0.97226425]]
+Current task: 0
+Epoch: 0001 cost= 0.950403810
+Epoch: 0006 cost= 0.030254865
+Epoch: 0011 cost= 0.011271834
+Epoch: 0016 cost= 0.008176752
+Epoch: 0021 cost= 0.005248540
+Epoch: 0026 cost= 0.004209013
+Epoch: 0031 cost= 0.003409661
+Epoch: 0036 cost= 0.002496611
+Epoch: 0041 cost= 0.001969904
+Epoch: 0046 cost= 0.001609252
+Epoch: 0051 cost= 0.001289815
+Epoch: 0056 cost= 0.001049722
+Epoch: 0061 cost= 0.000851456
+Epoch: 0066 cost= 0.000683911
+Epoch: 0071 cost= 0.000543988
+Epoch: 0076 cost= 0.000429013
+Epoch: 0081 cost= 0.000345323
+Epoch: 0086 cost= 0.000283166
+Epoch: 0091 cost= 0.000237472
+Epoch: 0096 cost= 0.000202518
+Epoch: 0101 cost= 0.000174522
+Epoch: 0106 cost= 0.000152094
+Epoch: 0111 cost= 0.000133079
+Epoch: 0116 cost= 0.000117312
+Optimization Finished!
+initializing first head
+Epoch: 0001 cost= 53.034519196
+Epoch: 0006 cost= 52.976501465
+Epoch: 0011 cost= 52.918773651
+Epoch: 0016 cost= 52.860790253
+Epoch: 0021 cost= 52.803405762
+Epoch: 0026 cost= 52.746059418
+Epoch: 0031 cost= 52.689193726
+Epoch: 0036 cost= 52.632579803
+Epoch: 0041 cost= 52.576213837
+Epoch: 0046 cost= 52.520290375
+Epoch: 0051 cost= 52.464218140
+Epoch: 0056 cost= 52.408676147
+Epoch: 0061 cost= 52.353164673
+Epoch: 0066 cost= 52.298004150
+Epoch: 0071 cost= 52.243087769
+Epoch: 0076 cost= 52.188106537
+Epoch: 0081 cost= 52.133480072
+Epoch: 0086 cost= 52.078720093
+Epoch: 0091 cost= 52.024421692
+Epoch: 0096 cost= 51.970085144
+Epoch: 0101 cost= 51.915992737
+Epoch: 0106 cost= 51.861774445
+Epoch: 0111 cost= 51.807987213
+Epoch: 0116 cost= 51.754062653
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.002167429
+Epoch: 0006 cost= 0.325408936
+Epoch: 0011 cost= 0.200152129
+Epoch: 0016 cost= 0.124082565
+Epoch: 0021 cost= 0.049884371
+Epoch: 0026 cost= 0.012228670
+Epoch: 0031 cost= 0.009460004
+Epoch: 0036 cost= 0.029878458
+Epoch: 0041 cost= 0.010239013
+Epoch: 0046 cost= 0.012720877
+Epoch: 0051 cost= 0.012219019
+Epoch: 0056 cost= 0.011904254
+Epoch: 0061 cost= 0.005585548
+Epoch: 0066 cost= 0.013409754
+Epoch: 0071 cost= 0.007706444
+Epoch: 0076 cost= 0.003971898
+Epoch: 0081 cost= 0.006874026
+Epoch: 0086 cost= 0.004177052
+Epoch: 0091 cost= 0.010245175
+Epoch: 0096 cost= 0.012295002
+Epoch: 0101 cost= 0.010427841
+Epoch: 0106 cost= 0.003213738
+Epoch: 0111 cost= 0.006335642
+Epoch: 0116 cost= 0.004859060
+Optimization Finished!
+Accuracy is 0.9995271867612293
+Reloading previous weights after core set training
+creating a new head
+Current task: 1
+Epoch: 0001 cost= 0.865123272
+Epoch: 0006 cost= 0.502976120
+Epoch: 0011 cost= 0.376426160
+Epoch: 0016 cost= 0.342692256
+Epoch: 0021 cost= 0.323683798
+Epoch: 0026 cost= 0.317306817
+Epoch: 0031 cost= 0.309379578
+Epoch: 0036 cost= 0.300286412
+Epoch: 0041 cost= 0.316230834
+Epoch: 0046 cost= 0.276391327
+Epoch: 0051 cost= 0.278276384
+Epoch: 0056 cost= 0.278633177
+Epoch: 0061 cost= 0.274997264
+Epoch: 0066 cost= 0.265140474
+Epoch: 0071 cost= 0.267827213
+Epoch: 0076 cost= 0.256068170
+Epoch: 0081 cost= 0.257725030
+Epoch: 0086 cost= 0.262744963
+Epoch: 0091 cost= 0.256340086
+Epoch: 0096 cost= 0.277263254
+Epoch: 0101 cost= 0.269380838
+Epoch: 0106 cost= 0.274802566
+Epoch: 0111 cost= 0.260586739
+Epoch: 0116 cost= 0.251994967
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.039392669
+Epoch: 0006 cost= 0.311714828
+Epoch: 0011 cost= 0.204961464
+Epoch: 0016 cost= 0.117021233
+Epoch: 0021 cost= 0.072245367
+Epoch: 0026 cost= 0.062756270
+Epoch: 0031 cost= 0.040558521
+Epoch: 0036 cost= 0.024600402
+Epoch: 0041 cost= 0.031388909
+Epoch: 0046 cost= 0.041773155
+Epoch: 0051 cost= 0.031174943
+Epoch: 0056 cost= 0.028320596
+Epoch: 0061 cost= 0.030204188
+Epoch: 0066 cost= 0.042976096
+Epoch: 0071 cost= 0.029921811
+Epoch: 0076 cost= 0.032346968
+Epoch: 0081 cost= 0.040220495
+Epoch: 0086 cost= 0.022057235
+Epoch: 0091 cost= 0.031176275
+Epoch: 0096 cost= 0.051725425
+Epoch: 0101 cost= 0.039722495
+Epoch: 0106 cost= 0.027191631
+Epoch: 0111 cost= 0.033597253
+Epoch: 0116 cost= 0.021306887
+Optimization Finished!
+Accuracy is 0.9995271867612293
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.335825831
+Epoch: 0006 cost= 0.652178645
+Epoch: 0011 cost= 0.487515181
+Epoch: 0016 cost= 0.457480073
+Epoch: 0021 cost= 0.323709548
+Epoch: 0026 cost= 0.333380789
+Epoch: 0031 cost= 0.294630170
+Epoch: 0036 cost= 0.299750656
+Epoch: 0041 cost= 0.396758288
+Epoch: 0046 cost= 0.353196919
+Epoch: 0051 cost= 0.334893227
+Epoch: 0056 cost= 0.309268951
+Epoch: 0061 cost= 0.370358646
+Epoch: 0066 cost= 0.346413821
+Epoch: 0071 cost= 0.312581450
+Epoch: 0076 cost= 0.315397620
+Epoch: 0081 cost= 0.316743642
+Epoch: 0086 cost= 0.356418997
+Epoch: 0091 cost= 0.343373656
+Epoch: 0096 cost= 0.360525966
+Epoch: 0101 cost= 0.304897904
+Epoch: 0106 cost= 0.326419890
+Epoch: 0111 cost= 0.326490223
+Epoch: 0116 cost= 0.456671536
+Optimization Finished!
+Accuracy is 0.9799216454456415
+Reloading previous weights after core set training
+creating a new head
+Current task: 2
+Epoch: 0001 cost= 0.973919570
+Epoch: 0006 cost= 0.456486613
+Epoch: 0011 cost= 0.347904503
+Epoch: 0016 cost= 0.308711469
+Epoch: 0021 cost= 0.285465300
+Epoch: 0026 cost= 0.271499157
+Epoch: 0031 cost= 0.261947960
+Epoch: 0036 cost= 0.255569756
+Epoch: 0041 cost= 0.251181632
+Epoch: 0046 cost= 0.244182646
+Epoch: 0051 cost= 0.227597415
+Epoch: 0056 cost= 0.231765911
+Epoch: 0061 cost= 0.230800033
+Epoch: 0066 cost= 0.226261824
+Epoch: 0071 cost= 0.222026721
+Epoch: 0076 cost= 0.226934850
+Epoch: 0081 cost= 0.218937218
+Epoch: 0086 cost= 0.214206219
+Epoch: 0091 cost= 0.216200352
+Epoch: 0096 cost= 0.222552776
+Epoch: 0101 cost= 0.218901604
+Epoch: 0106 cost= 0.213443696
+Epoch: 0111 cost= 0.215692535
+Epoch: 0116 cost= 0.225967139
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.122578345
+Epoch: 0006 cost= 0.379769832
+Epoch: 0011 cost= 0.245453373
+Epoch: 0016 cost= 0.188641340
+Epoch: 0021 cost= 0.084676981
+Epoch: 0026 cost= 0.058905382
+Epoch: 0031 cost= 0.055525862
+Epoch: 0036 cost= 0.058089860
+Epoch: 0041 cost= 0.049882427
+Epoch: 0046 cost= 0.084119610
+Epoch: 0051 cost= 0.055538148
+Epoch: 0056 cost= 0.039154761
+Epoch: 0061 cost= 0.060597576
+Epoch: 0066 cost= 0.054243311
+Epoch: 0071 cost= 0.045839556
+Epoch: 0076 cost= 0.048561804
+Epoch: 0081 cost= 0.058638889
+Epoch: 0086 cost= 0.054444734
+Epoch: 0091 cost= 0.043974563
+Epoch: 0096 cost= 0.031697132
+Epoch: 0101 cost= 0.057666510
+Epoch: 0106 cost= 0.039433137
+Epoch: 0111 cost= 0.040351778
+Epoch: 0116 cost= 0.043601535
+Optimization Finished!
+Accuracy is 0.9995271867612293
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.402862310
+Epoch: 0006 cost= 0.705729604
+Epoch: 0011 cost= 0.567445278
+Epoch: 0016 cost= 0.454792976
+Epoch: 0021 cost= 0.408891380
+Epoch: 0026 cost= 0.386330426
+Epoch: 0031 cost= 0.376290292
+Epoch: 0036 cost= 0.378292084
+Epoch: 0041 cost= 0.357195228
+Epoch: 0046 cost= 0.350963324
+Epoch: 0051 cost= 0.342638254
+Epoch: 0056 cost= 0.353102773
+Epoch: 0061 cost= 0.381060362
+Epoch: 0066 cost= 0.391408443
+Epoch: 0071 cost= 0.440860987
+Epoch: 0076 cost= 0.365200400
+Epoch: 0081 cost= 0.336857677
+Epoch: 0086 cost= 0.341839492
+Epoch: 0091 cost= 0.384774178
+Epoch: 0096 cost= 0.393679291
+Epoch: 0101 cost= 0.388664722
+Epoch: 0106 cost= 0.420011997
+Epoch: 0111 cost= 0.389923811
+Epoch: 0116 cost= 0.370704323
+Optimization Finished!
+Accuracy is 0.9730656219392753
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.483160973
+Epoch: 0006 cost= 0.641845584
+Epoch: 0011 cost= 0.522989273
+Epoch: 0016 cost= 0.371244550
+Epoch: 0021 cost= 0.329329669
+Epoch: 0026 cost= 0.329169273
+Epoch: 0031 cost= 0.287209988
+Epoch: 0036 cost= 0.302212268
+Epoch: 0041 cost= 0.253680885
+Epoch: 0046 cost= 0.296134889
+Epoch: 0051 cost= 0.304095894
+Epoch: 0056 cost= 0.293478519
+Epoch: 0061 cost= 0.297348350
+Epoch: 0066 cost= 0.255968750
+Epoch: 0071 cost= 0.259219021
+Epoch: 0076 cost= 0.316694647
+Epoch: 0081 cost= 0.267846316
+Epoch: 0086 cost= 0.296023548
+Epoch: 0091 cost= 0.270632148
+Epoch: 0096 cost= 0.291163743
+Epoch: 0101 cost= 0.251359642
+Epoch: 0106 cost= 0.301663399
+Epoch: 0111 cost= 0.333196849
+Epoch: 0116 cost= 0.259668648
+Optimization Finished!
+Accuracy is 0.9845250800426895
+Reloading previous weights after core set training
+creating a new head
+Current task: 3
+Epoch: 0001 cost= 0.966227114
+Epoch: 0006 cost= 0.277000070
+Epoch: 0011 cost= 0.212079495
+Epoch: 0016 cost= 0.219381928
+Epoch: 0021 cost= 0.214689285
+Epoch: 0026 cost= 0.206909060
+Epoch: 0031 cost= 0.195997402
+Epoch: 0036 cost= 0.185309321
+Epoch: 0041 cost= 0.179934531
+Epoch: 0046 cost= 0.171371773
+Epoch: 0051 cost= 0.167354316
+Epoch: 0056 cost= 0.166256264
+Epoch: 0061 cost= 0.160787210
+Epoch: 0066 cost= 0.158613473
+Epoch: 0071 cost= 0.164517760
+Epoch: 0076 cost= 0.155503228
+Epoch: 0081 cost= 0.153844178
+Epoch: 0086 cost= 0.156442970
+Epoch: 0091 cost= 0.155467853
+Epoch: 0096 cost= 0.151052848
+Epoch: 0101 cost= 0.152055413
+Epoch: 0106 cost= 0.152405336
+Epoch: 0111 cost= 0.150159895
+Epoch: 0116 cost= 0.155425057
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.120334968
+Epoch: 0006 cost= 0.407915145
+Epoch: 0011 cost= 0.247284591
+Epoch: 0016 cost= 0.168566108
+Epoch: 0021 cost= 0.118098065
+Epoch: 0026 cost= 0.094601601
+Epoch: 0031 cost= 0.079861805
+Epoch: 0036 cost= 0.124175563
+Epoch: 0041 cost= 0.063677944
+Epoch: 0046 cost= 0.076963641
+Epoch: 0051 cost= 0.116200104
+Epoch: 0056 cost= 0.090158582
+Epoch: 0061 cost= 0.078647554
+Epoch: 0066 cost= 0.080605328
+Epoch: 0071 cost= 0.072759300
+Epoch: 0076 cost= 0.073685348
+Epoch: 0081 cost= 0.071732149
+Epoch: 0086 cost= 0.076267846
+Epoch: 0091 cost= 0.072692052
+Epoch: 0096 cost= 0.066571727
+Epoch: 0101 cost= 0.084675461
+Epoch: 0106 cost= 0.071038589
+Epoch: 0111 cost= 0.075404271
+Epoch: 0116 cost= 0.074200988
+Optimization Finished!
+Accuracy is 0.9990543735224586
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.452483445
+Epoch: 0006 cost= 0.721024990
+Epoch: 0011 cost= 0.622436702
+Epoch: 0016 cost= 0.571825147
+Epoch: 0021 cost= 0.481662393
+Epoch: 0026 cost= 0.606820047
+Epoch: 0031 cost= 0.518094420
+Epoch: 0036 cost= 0.440068960
+Epoch: 0041 cost= 0.452355742
+Epoch: 0046 cost= 0.458447456
+Epoch: 0051 cost= 0.539815784
+Epoch: 0056 cost= 0.449438930
+Epoch: 0061 cost= 0.474592566
+Epoch: 0066 cost= 0.460837781
+Epoch: 0071 cost= 0.507130623
+Epoch: 0076 cost= 0.453817904
+Epoch: 0081 cost= 0.515571117
+Epoch: 0086 cost= 0.427432090
+Epoch: 0091 cost= 0.494524151
+Epoch: 0096 cost= 0.404074132
+Epoch: 0101 cost= 0.482569456
+Epoch: 0106 cost= 0.489059001
+Epoch: 0111 cost= 0.450588942
+Epoch: 0116 cost= 0.467547238
+Optimization Finished!
+Accuracy is 0.9720861900097943
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.453722984
+Epoch: 0006 cost= 0.673242927
+Epoch: 0011 cost= 0.545432925
+Epoch: 0016 cost= 0.410069287
+Epoch: 0021 cost= 0.338275135
+Epoch: 0026 cost= 0.312149584
+Epoch: 0031 cost= 0.340403706
+Epoch: 0036 cost= 0.363073528
+Epoch: 0041 cost= 0.368121237
+Epoch: 0046 cost= 0.405636728
+Epoch: 0051 cost= 0.410440832
+Epoch: 0056 cost= 0.343321741
+Epoch: 0061 cost= 0.250492394
+Epoch: 0066 cost= 0.375462770
+Epoch: 0071 cost= 0.388558745
+Epoch: 0076 cost= 0.353858173
+Epoch: 0081 cost= 0.381758571
+Epoch: 0086 cost= 0.339603007
+Epoch: 0091 cost= 0.337368965
+Epoch: 0096 cost= 0.433175564
+Epoch: 0101 cost= 0.293814480
+Epoch: 0106 cost= 0.324548066
+Epoch: 0111 cost= 0.365206212
+Epoch: 0116 cost= 0.334907472
+Optimization Finished!
+Accuracy is 0.9898612593383138
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.251361281
+Epoch: 0006 cost= 0.508758008
+Epoch: 0011 cost= 0.356596887
+Epoch: 0016 cost= 0.256328732
+Epoch: 0021 cost= 0.220749512
+Epoch: 0026 cost= 0.228268325
+Epoch: 0031 cost= 0.187387317
+Epoch: 0036 cost= 0.185180694
+Epoch: 0041 cost= 0.122586057
+Epoch: 0046 cost= 0.173899576
+Epoch: 0051 cost= 0.137924552
+Epoch: 0056 cost= 0.128859952
+Epoch: 0061 cost= 0.131599739
+Epoch: 0066 cost= 0.144293606
+Epoch: 0071 cost= 0.122249499
+Epoch: 0076 cost= 0.154302612
+Epoch: 0081 cost= 0.110470511
+Epoch: 0086 cost= 0.137464374
+Epoch: 0091 cost= 0.160460547
+Epoch: 0096 cost= 0.198297441
+Epoch: 0101 cost= 0.152787805
+Epoch: 0106 cost= 0.121741250
+Epoch: 0111 cost= 0.165364712
+Epoch: 0116 cost= 0.166472986
+Optimization Finished!
+Accuracy is 0.9959718026183283
+Reloading previous weights after core set training
+creating a new head
+Current task: 4
+Epoch: 0001 cost= 1.100545168
+Epoch: 0006 cost= 0.383217573
+Epoch: 0011 cost= 0.319659293
+Epoch: 0016 cost= 0.328145325
+Epoch: 0021 cost= 0.294103712
+Epoch: 0026 cost= 0.297305614
+Epoch: 0031 cost= 0.272320718
+Epoch: 0036 cost= 0.265154213
+Epoch: 0041 cost= 0.255790532
+Epoch: 0046 cost= 0.249214947
+Epoch: 0051 cost= 0.252524316
+Epoch: 0056 cost= 0.233139545
+Epoch: 0061 cost= 0.240702972
+Epoch: 0066 cost= 0.231332839
+Epoch: 0071 cost= 0.228681013
+Epoch: 0076 cost= 0.230428070
+Epoch: 0081 cost= 0.226957351
+Epoch: 0086 cost= 0.233076125
+Epoch: 0091 cost= 0.216296881
+Epoch: 0096 cost= 0.219014376
+Epoch: 0101 cost= 0.222495198
+Epoch: 0106 cost= 0.223656416
+Epoch: 0111 cost= 0.224400401
+Epoch: 0116 cost= 0.225182325
+Optimization Finished!
+updating prior...
+Saving weights before core set training
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.408346295
+Epoch: 0006 cost= 0.501291871
+Epoch: 0011 cost= 0.390279949
+Epoch: 0016 cost= 0.404493034
+Epoch: 0021 cost= 0.227926850
+Epoch: 0026 cost= 0.209404796
+Epoch: 0031 cost= 0.180164590
+Epoch: 0036 cost= 0.221614748
+Epoch: 0041 cost= 0.205352962
+Epoch: 0046 cost= 0.247936070
+Epoch: 0051 cost= 0.184307754
+Epoch: 0056 cost= 0.197644025
+Epoch: 0061 cost= 0.209849328
+Epoch: 0066 cost= 0.228442609
+Epoch: 0071 cost= 0.223309994
+Epoch: 0076 cost= 0.229939565
+Epoch: 0081 cost= 0.180462822
+Epoch: 0086 cost= 0.211825892
+Epoch: 0091 cost= 0.242920563
+Epoch: 0096 cost= 0.199824065
+Epoch: 0101 cost= 0.195271790
+Epoch: 0106 cost= 0.180803090
+Epoch: 0111 cost= 0.237887353
+Epoch: 0116 cost= 0.199894667
+Optimization Finished!
+Accuracy is 0.9990543735224586
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.450776368
+Epoch: 0006 cost= 0.791979849
+Epoch: 0011 cost= 0.544650495
+Epoch: 0016 cost= 0.493496478
+Epoch: 0021 cost= 0.508177638
+Epoch: 0026 cost= 0.517240644
+Epoch: 0031 cost= 0.459872335
+Epoch: 0036 cost= 0.396860749
+Epoch: 0041 cost= 0.406831563
+Epoch: 0046 cost= 0.427969307
+Epoch: 0051 cost= 0.454101801
+Epoch: 0056 cost= 0.477620512
+Epoch: 0061 cost= 0.435676485
+Epoch: 0066 cost= 0.414464355
+Epoch: 0071 cost= 0.367485017
+Epoch: 0076 cost= 0.457470208
+Epoch: 0081 cost= 0.431922168
+Epoch: 0086 cost= 0.393389463
+Epoch: 0091 cost= 0.404916584
+Epoch: 0096 cost= 0.418718606
+Epoch: 0101 cost= 0.416110873
+Epoch: 0106 cost= 0.409204692
+Epoch: 0111 cost= 0.463594228
+Epoch: 0116 cost= 0.413022608
+Optimization Finished!
+Accuracy is 0.955435847208619
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.895524442
+Epoch: 0006 cost= 0.794682980
+Epoch: 0011 cost= 0.621894956
+Epoch: 0016 cost= 0.440147996
+Epoch: 0021 cost= 0.428733110
+Epoch: 0026 cost= 0.367124587
+Epoch: 0031 cost= 0.407364309
+Epoch: 0036 cost= 0.449970782
+Epoch: 0041 cost= 0.404266596
+Epoch: 0046 cost= 0.379868776
+Epoch: 0051 cost= 0.394025445
+Epoch: 0056 cost= 0.370829374
+Epoch: 0061 cost= 0.405387223
+Epoch: 0066 cost= 0.394030422
+Epoch: 0071 cost= 0.342355728
+Epoch: 0076 cost= 0.378179818
+Epoch: 0081 cost= 0.384182632
+Epoch: 0086 cost= 0.406265020
+Epoch: 0091 cost= 0.408453643
+Epoch: 0096 cost= 0.343984485
+Epoch: 0101 cost= 0.383409411
+Epoch: 0106 cost= 0.381350875
+Epoch: 0111 cost= 0.410869122
+Epoch: 0116 cost= 0.370468199
+Optimization Finished!
+Accuracy is 0.9871931696905016
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.352434039
+Epoch: 0006 cost= 0.570643902
+Epoch: 0011 cost= 0.405519009
+Epoch: 0016 cost= 0.340790808
+Epoch: 0021 cost= 0.286126643
+Epoch: 0026 cost= 0.237315625
+Epoch: 0031 cost= 0.243824393
+Epoch: 0036 cost= 0.219887465
+Epoch: 0041 cost= 0.204497963
+Epoch: 0046 cost= 0.195765868
+Epoch: 0051 cost= 0.226088479
+Epoch: 0056 cost= 0.261568248
+Epoch: 0061 cost= 0.235999405
+Epoch: 0066 cost= 0.275966436
+Epoch: 0071 cost= 0.256319284
+Epoch: 0076 cost= 0.244605094
+Epoch: 0081 cost= 0.220509067
+Epoch: 0086 cost= 0.222233295
+Epoch: 0091 cost= 0.198976904
+Epoch: 0096 cost= 0.241545081
+Epoch: 0101 cost= 0.188259482
+Epoch: 0106 cost= 0.257861435
+Epoch: 0111 cost= 0.218939349
+Epoch: 0116 cost= 0.277169764
+Optimization Finished!
+Accuracy is 0.9919436052366566
+Reloading previous weights after core set training
+Epoch: 0001 cost= 0.509666383
+Epoch: 0006 cost= 0.850734949
+Epoch: 0011 cost= 0.625200748
+Epoch: 0016 cost= 0.568131387
+Epoch: 0021 cost= 0.543790638
+Epoch: 0026 cost= 0.569120288
+Epoch: 0031 cost= 0.515611887
+Epoch: 0036 cost= 0.516399503
+Epoch: 0041 cost= 0.473467827
+Epoch: 0046 cost= 0.501876056
+Epoch: 0051 cost= 0.496262789
+Epoch: 0056 cost= 0.469943911
+Epoch: 0061 cost= 0.447909713
+Epoch: 0066 cost= 0.456869364
+Epoch: 0071 cost= 0.479577035
+Epoch: 0076 cost= 0.451327473
+Epoch: 0081 cost= 0.439664572
+Epoch: 0086 cost= 0.489739895
+Epoch: 0091 cost= 0.506215692
+Epoch: 0096 cost= 0.495169193
+Epoch: 0101 cost= 0.476923436
+Epoch: 0106 cost= 0.499860018
+Epoch: 0111 cost= 0.496228546
+Epoch: 0116 cost= 0.497018248
+Optimization Finished!
+Accuracy is 0.9778113968734241
+Reloading previous weights after core set training
+creating a new head
+[[0.99952719        nan        nan        nan        nan]
+ [0.99952719 0.97992165        nan        nan        nan]
+ [0.99952719 0.97306562 0.98452508        nan        nan]
+ [0.99905437 0.97208619 0.98986126 0.9959718         nan]
+ [0.99905437 0.95543585 0.98719317 0.99194361 0.9778114 ]]
