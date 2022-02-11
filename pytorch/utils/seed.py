@@ -1,7 +1,7 @@
 from sre_parse import FLAGS
 import torch
 import numpy as np
-import flags
+from . import flags
 import random
 
 def seed_everything():
