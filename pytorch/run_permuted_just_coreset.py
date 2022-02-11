@@ -10,7 +10,7 @@ single_head = True
 num_tasks = 10
 
 np.random.seed(0)
-for coreset_size in [400,1000,2500,5000]:
+for coreset_size in [200,400,1000,2500,5000]:
    data_gen = PermutedMnistGenerator(num_tasks)
    vcl_result = vcl.run_coreset_only(hidden_size, no_epochs, data_gen,
        coreset.rand_from_batch, coreset_size, batch_size, single_head)
