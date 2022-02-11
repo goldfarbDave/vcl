@@ -15,6 +15,7 @@ def run_vcl(hidden_size, no_epochs, data_gen, coreset_method, coreset_size=0, ba
     in_dim, out_dim = data_gen.get_dims()
     x_coresets, y_coresets = [], []
     x_testsets, y_testsets = [], []
+    x_trainsets, y_trainsets = [], []
     gans = []
     all_acc = np.array([])
 
@@ -23,6 +24,8 @@ def run_vcl(hidden_size, no_epochs, data_gen, coreset_method, coreset_size=0, ba
         x_train, y_train, x_test, y_test = data_gen.next_task()
         x_testsets.append(x_test)
         y_testsets.append(y_test)
+        x_trainsets.append(x_train)
+        y_trainsets.append(y_train)
 
         # Set the readout head to train
         head = 0 if single_head else task_id
@@ -59,7 +62,8 @@ def run_vcl(hidden_size, no_epochs, data_gen, coreset_method, coreset_size=0, ba
         # Save weights before test (and last-minute training on coreset
         mf_model.save_weights()
 
-        acc = test.get_scores(mf_model, x_testsets, y_testsets, no_epochs, single_head, x_coresets, y_coresets, batch_size, False,gans)
+        acc = test.get_scores(mf_model, x_trainsets, y_trainsets, x_testsets, y_testsets, no_epochs, single_head, x_coresets, y_coresets, batch_size, False,gans, is_toy=is_toy)
+        
         all_acc = test.concatenate_results(acc, all_acc)
 
         mf_model.load_weights()
@@ -75,12 +79,15 @@ def run_coreset_only(hidden_size, no_epochs, data_gen, coreset_method, coreset_s
     in_dim, out_dim = data_gen.get_dims()
     x_coresets, y_coresets = [], []
     x_testsets, y_testsets = [], []
+    x_trainsets, y_trainsets = [], []
     all_acc = np.array([])
 
     for task_id in range(data_gen.max_iter):
         x_train, y_train, x_test, y_test = data_gen.next_task()
         x_testsets.append(x_test)
         y_testsets.append(y_test)
+        x_trainsets.append(x_train)
+        y_trainsets.append(y_train)
 
         head = 0 if single_head else task_id
         bsize = x_train.shape[0] if (batch_size is None) else batch_size
@@ -94,7 +101,7 @@ def run_coreset_only(hidden_size, no_epochs, data_gen, coreset_method, coreset_s
 
         mf_model.save_weights()
 
-        acc = test.get_scores(mf_model, x_testsets, y_testsets, no_epochs, single_head, x_coresets, y_coresets, batch_size, just_vanilla =False)
+        acc = test.get_scores(mf_model, x_trainsets, y_trainsets, x_testsets, y_testsets, no_epochs, single_head, x_coresets, y_coresets, batch_size, just_vanilla =False)
 
         all_acc = test.concatenate_results(acc, all_acc)
 

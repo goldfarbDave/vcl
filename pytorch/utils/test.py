@@ -3,9 +3,11 @@ import matplotlib
 matplotlib.use('agg')
 from . import flags 
 import torch
-torch.manual_seed(flags.FLAGS['torch_seed'])
+# torch.manual_seed(FLAGS['torch_seed'])
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # device = "cpu"
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 
 def merge_coresets(x_coresets, y_coresets):
     merged_x, merged_y = x_coresets[0], y_coresets[0]
@@ -33,8 +35,9 @@ def get_coreset(x_coresets, y_coresets, single_head, coreset_size = 5000, gans =
             return x_coresets, y_coresets
 
 
-def get_scores(model, x_testsets, y_testsets, no_epochs, single_head,  x_coresets, y_coresets, batch_size=None, just_vanilla = False, gans = None):
+def get_scores(model, x_trainsets, y_trainsets, x_testsets, y_testsets, no_epochs, single_head,  x_coresets, y_coresets, batch_size=None, just_vanilla = False, gans = None, is_toy=False):
 
+    task_num = len(x_trainsets)
     acc = []
     if single_head:
         if len(x_coresets) > 0 or gans is not None:
@@ -44,6 +47,78 @@ def get_scores(model, x_testsets, y_testsets, no_epochs, single_head,  x_coreset
             x_train = torch.Tensor(x_train)
             y_train = torch.Tensor(y_train)
             model.train(x_train, y_train, 0, no_epochs, bsize)
+
+    # this is only for the toy dataset visualisation -- probability contour plots
+    if(is_toy):
+        for i in range(len(x_trainsets)):
+            head = 0 if single_head else i
+
+            x_train, y_train = x_trainsets[i], y_trainsets[i]
+
+            x_min, x_max = x_train[:, 0].min() - 1, x_train[:, 0].max() + 1
+            y_min, y_max = x_train[:, 1].min() - 1, x_train[:, 1].max() + 1
+            xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.02), np.arange(y_min, y_max, 0.02))
+
+            whole_space_data = np.stack((xx.ravel(),yy.ravel()), axis=-1)
+
+            N = whole_space_data.shape[0]
+            bsize = N if (batch_size is None) else batch_size
+            total_batch = int(np.ceil(N * 1.0 / bsize))
+            # Loop over all batches
+            for j in range(total_batch):
+                start_ind = j*bsize
+                end_ind = np.min([(j+1)*bsize, N])
+                batch_x_train = torch.Tensor(whole_space_data[start_ind:end_ind, :]).to(device = device)
+                # these are model probabilities over different samples of weights from the posterior distribution
+                pred = model.prediction_prob(batch_x_train, head)
+                # this simply takes the mean over all the different outputs with respect to the weight samples
+                if not just_vanilla:
+                    pred_mean = pred.mean(0)
+                else:
+                    pred_mean = pred
+
+                prob_ones = pred_mean[:, 0]
+
+                # half_curve = []
+                # for ind in range(len(prob_ones)):
+                #     if(prob_ones[ind]<=0.51 and prob_ones[ind]>=0.5):
+                #         half_curve.append(whole_space_data[ind])
+                # half_curve = np.asarray(half_curve)
+
+                # onethird_curve = []
+                # for ind in range(len(prob_ones)):
+                #     if(prob_ones[ind]<=0.34 and prob_ones[ind]>=0.3):
+                #         onethird_curve.append(whole_space_data[ind])
+                # onethird_curve = np.asarray(onethird_curve)
+
+                # ninety_curve = []
+                # for ind in range(len(prob_ones)):
+                #     if(prob_ones[ind]>=0.9):
+                #         ninety_curve.append(whole_space_data[ind])
+                # ninety_curve = np.asarray(ninety_curve)        
+
+                fig1, ax2 = plt.subplots(constrained_layout=True)                
+                cb = ax2.scatter(whole_space_data[:, 0], whole_space_data[:, 1], c=prob_ones.detach().cpu().numpy(), cmap='inferno')
+                ax2.scatter(x_train[:, 0], x_train[:, 1], c=y_train)
+                ax2.set_xlabel('x1')
+                ax2.set_ylabel('x2')
+
+                custom_lines = [Line2D([0], [0], color='indigo', lw=4), Line2D([0], [0], color='yellow', lw=4)]
+                ax2.legend(custom_lines, ['Class 0', 'Class 1'])
+                fig1.colorbar(cb)
+                plt.savefig('toy-vis-task-'+str(task_num)+str(i)+str(j)+'.png')
+
+                # plt.figure()
+                # plt.scatter(whole_space_data[:, 0], whole_space_data[:, 1], c=prob_ones.detach().cpu().numpy(), cmap='inferno')
+                # plt.scatter(x_train[:, 0], x_train[:, 1], c=y_train)
+                # if(half_curve.shape[0]!=0):
+                #     plt.plot(half_curve[:, 0], half_curve[:, 1])
+                # if(onethird_curve.shape[0]!=0):
+                #     plt.plot(onethird_curve[:, 0], onethird_curve[:, 1])
+                # if(ninety_curve.shape[0]!=0):
+                #     plt.plot(ninety_curve[:, 0], ninety_curve[:, 1])
+                # plt.colorbar()    
+                # plt.savefig('toy-vis-task-with-contours-'+str(task_num)+str(i)+str(j)+'.png')
 
     for i in range(len(x_testsets)):
         if not single_head:

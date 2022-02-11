@@ -3,7 +3,7 @@ import utils.vcl as vcl
 import utils.coreset as coreset
 from utils.DataGenerator import ToyDatasetGenerator
 
-hidden_size = [10]
+hidden_size = [2]
 batch_size = None
 no_epochs = 122
 single_head = False
