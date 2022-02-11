@@ -78,23 +78,23 @@ def get_scores(model, x_trainsets, y_trainsets, x_testsets, y_testsets, no_epoch
 
                 prob_ones = pred_mean[:, 0]
 
-                # half_curve = []
-                # for ind in range(len(prob_ones)):
-                #     if(prob_ones[ind]<=0.51 and prob_ones[ind]>=0.5):
-                #         half_curve.append(whole_space_data[ind])
-                # half_curve = np.asarray(half_curve)
+                half_curve = []
+                for ind in range(len(prob_ones)):
+                    if(prob_ones[ind]<=0.51 and prob_ones[ind]>=0.5):
+                        half_curve.append(whole_space_data[ind])
+                half_curve = np.asarray(half_curve)
 
-                # onethird_curve = []
-                # for ind in range(len(prob_ones)):
-                #     if(prob_ones[ind]<=0.34 and prob_ones[ind]>=0.3):
-                #         onethird_curve.append(whole_space_data[ind])
-                # onethird_curve = np.asarray(onethird_curve)
+                onethird_curve = []
+                for ind in range(len(prob_ones)):
+                    if(prob_ones[ind]<=0.34 and prob_ones[ind]>=0.3):
+                        onethird_curve.append(whole_space_data[ind])
+                onethird_curve = np.asarray(onethird_curve)
 
-                # ninety_curve = []
-                # for ind in range(len(prob_ones)):
-                #     if(prob_ones[ind]>=0.9):
-                #         ninety_curve.append(whole_space_data[ind])
-                # ninety_curve = np.asarray(ninety_curve)        
+                ninety_curve = []
+                for ind in range(len(prob_ones)):
+                    if(prob_ones[ind]>=0.9):
+                        ninety_curve.append(whole_space_data[ind])
+                ninety_curve = np.asarray(ninety_curve)        
 
                 fig1, ax2 = plt.subplots(constrained_layout=True)                
                 cb = ax2.scatter(whole_space_data[:, 0], whole_space_data[:, 1], c=prob_ones.detach().cpu().numpy(), cmap='inferno')
@@ -107,17 +107,17 @@ def get_scores(model, x_trainsets, y_trainsets, x_testsets, y_testsets, no_epoch
                 fig1.colorbar(cb)
                 plt.savefig('toy-vis-task-'+str(task_num)+str(i)+str(j)+'.png')
 
-                # plt.figure()
-                # plt.scatter(whole_space_data[:, 0], whole_space_data[:, 1], c=prob_ones.detach().cpu().numpy(), cmap='inferno')
-                # plt.scatter(x_train[:, 0], x_train[:, 1], c=y_train)
-                # if(half_curve.shape[0]!=0):
-                #     plt.plot(half_curve[:, 0], half_curve[:, 1])
-                # if(onethird_curve.shape[0]!=0):
-                #     plt.plot(onethird_curve[:, 0], onethird_curve[:, 1])
-                # if(ninety_curve.shape[0]!=0):
-                #     plt.plot(ninety_curve[:, 0], ninety_curve[:, 1])
-                # plt.colorbar()    
-                # plt.savefig('toy-vis-task-with-contours-'+str(task_num)+str(i)+str(j)+'.png')
+                plt.figure()
+                plt.scatter(whole_space_data[:, 0], whole_space_data[:, 1], c=prob_ones.detach().cpu().numpy(), cmap='inferno')
+                plt.scatter(x_train[:, 0], x_train[:, 1], c=y_train)
+                if(half_curve.shape[0]!=0):
+                    plt.plot(half_curve[:, 0], half_curve[:, 1])
+                if(onethird_curve.shape[0]!=0):
+                    plt.plot(onethird_curve[:, 0], onethird_curve[:, 1])
+                if(ninety_curve.shape[0]!=0):
+                    plt.plot(ninety_curve[:, 0], ninety_curve[:, 1])
+                plt.colorbar()    
+                plt.savefig('toy-vis-task-with-contours-'+str(task_num)+str(i)+str(j)+'.png')
 
     for i in range(len(x_testsets)):
         if not single_head:

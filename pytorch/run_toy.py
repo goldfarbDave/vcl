@@ -3,14 +3,17 @@ import utils.vcl as vcl
 import utils.coreset as coreset
 from utils.DataGenerator import ToyDatasetGenerator
 from utils.seed import seed_everything
+import torch
 
-seed_everything()
+# seed_everything()
 
-hidden_size = [2]
+hidden_size = [10]
 batch_size = None
 no_epochs = 122
 single_head = False
 run_coreset_only = False
+np.random.seed(0)
+torch.manual_seed(11)
 
 #Just VCL
 coreset_size = 0

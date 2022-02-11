@@ -186,6 +186,7 @@ class Vanilla_CNN(Cla_NN):
         for idx,(weights,bias) in enumerate(zip(self.kern_weights, self.kern_bias)):
             pre = F.conv2d(input=act, weight=weights, bias=bias, stride=idx+1)
             act = F.relu(pre)
+
         # import pdb; pdb.set_trace()
         act = act.view((-1, np.prod(act.shape[-2:])))
         for i in range(self.no_layers-1):
@@ -664,11 +665,10 @@ class MFVI_NN(Cla_NN):
         return
 
 
-
 """ Bayesian Neural Network with Mean field VI approximation """
 class MFVI_CNN(Cla_NN):
     def __init__(self, input_size, hidden_size, output_size, training_size,
-                 no_train_samples=10, no_pred_samples=100, single_head = False, prev_means=None, kern_size=3, learning_rate=0.001):
+                 no_train_samples=10, no_pred_samples=100, single_head = False, prev_means=None, kern_size=3, learning_rate=0.0023):
         ##TODO: handle single head
         super(MFVI_CNN, self).__init__(input_size, hidden_size, output_size, training_size)
 
@@ -737,6 +737,9 @@ class MFVI_CNN(Cla_NN):
 
     def get_loss(self, batch_x, batch_y, task_idx):
         # equation 4
+        # if(task_idx>0):
+        #     import ipdb; ipdb.set_trace()
+
         return torch.div(self._KL_term(), self.training_size) - self._logpred(batch_x, batch_y, task_idx)
 
     def _prediction(self, inputs, task_idx, no_samples):
@@ -748,16 +751,22 @@ class MFVI_CNN(Cla_NN):
 
         act = torch.unsqueeze(inputs, 0).repeat([K, 1, 1])
         act = act.view((K, -1, 1, d, d))
-        for i, (kw_m, kb_m, kw_v, kb_v) in enumerate(zip(self.kern_weights_m, self.kern_bias_m, self.kern_weights_v, self.kern_bias_v)):
-            get_eps = lambda ten: torch.normal(torch.zeros(tuple([K, *ten.shape]))).to(device=device)
-            eps_w = get_eps(kw_m)
-            eps_b = get_eps(kb_m)
-            weights = torch.add(eps_w *torch.exp(0.5*kw_v), kw_m)
-            bias = torch.add(eps_b *torch.exp(0.5*kb_v), kb_m)
-            import pdb; pdb.set_trace()
+        conv_out = torch.zeros((K, inputs.shape[0], 1, 12, 12)).to(device=device)
+        for samp_ind in range(K):     
+            pre = act[samp_ind]               
+            for i, (kw_m, kb_m, kw_v, kb_v) in enumerate(zip(self.kern_weights_m, self.kern_bias_m, self.kern_weights_v, self.kern_bias_v)):
+                get_eps = lambda ten: torch.normal(torch.zeros(ten.shape)).to(device=device)
+                eps_w = get_eps(kw_m)
+                eps_b = get_eps(kb_m)
+                weights = torch.add(eps_w *torch.exp(0.5*kw_v), kw_m)
+                bias = torch.add(eps_b *torch.exp(0.5*kb_v), kb_m)
+                pre = F.relu(F.conv2d(input=pre, weight=weights, bias=bias, stride=[i+1]))
+            conv_out[samp_ind, :] = pre
+
             #TODO
             # pre = F.conv2d(input=act, weight=weights.unsqueeze(1), bias=bias.unsqueeze, stride=[i+1])
             # act = F.relu(pre)
+        act = conv_out.view((K, inputs.shape[0], -1))
         for i in range(self.no_layers-1):
             din = self.size[i]
             dout = self.size[i+1]
@@ -795,9 +804,31 @@ class MFVI_CNN(Cla_NN):
         log_lik = log_liks.mean()
         return log_lik
 
-
     def _KL_term(self):
         kl = 0
+
+        # conv
+        for i, (kw_m, kb_m, kw_v, kb_v) in enumerate(zip(self.kern_weights_m, self.kern_bias_m, self.kern_weights_v, self.kern_bias_v)):
+            # weight from current posterior - q_t(theta)
+            m, v = kw_m, kw_v
+            # weight from prev posteriors - q_t-1(theta)
+            m0, v0 = self.prior_kern_weights_m[i], self.prior_kern_weights_v[i]
+
+            const_term = -0.5 * np.prod(m.shape)
+            log_std_diff = 0.5 * torch.sum(torch.log(v0) - v)
+            mu_diff_term = 0.5 * torch.sum((torch.exp(v) + (m0 - m)**2) / v0)
+            kl += const_term + log_std_diff + mu_diff_term
+
+            # weight from current posterior - q_t(theta)
+            m, v = kb_m, kb_v
+            # weight from prev posteriors - q_t-1(theta)
+            m0, v0 = self.prior_kern_bias_m[i], self.prior_kern_bias_v[i]
+
+            const_term = -0.5 * np.prod(m.shape)
+            log_std_diff = 0.5 * torch.sum(torch.log(v0) - v)
+            mu_diff_term = 0.5 * torch.sum((torch.exp(v) + (m0 - m)**2) / v0)
+            kl += const_term + log_std_diff + mu_diff_term
+
         # theta_S
         for i in range(self.no_layers-1):
             din = self.size[i]
@@ -854,6 +885,11 @@ class MFVI_CNN(Cla_NN):
         self.b_m_copy = [self.b_m[i].clone().detach().data for i in range(len(self.b_m))]
         self.b_v_copy = [self.b_v[i].clone().detach().data for i in range(len(self.b_v))]
 
+        self.kern_weights_m_copy = [self.kern_weights_m[i].clone().detach().data for i in range(len(self.kern_weights_m))]
+        self.kern_weights_v_copy = [self.kern_weights_v[i].clone().detach().data for i in range(len(self.kern_weights_v))]
+        self.kern_bias_m_copy = [self.kern_bias_m[i].clone().detach().data for i in range(len(self.kern_bias_m))]
+        self.kern_bias_v_copy = [self.kern_bias_v[i].clone().detach().data for i in range(len(self.kern_bias_v))]
+
         self.W_last_m_copy = [self.W_last_m[i].clone().detach().data for i in range(len(self.W_last_m))]
         self.W_last_v_copy = [self.W_last_v[i].clone().detach().data for i in range(len(self.W_last_v))]
         self.b_last_m_copy = [self.b_last_m[i].clone().detach().data for i in range(len(self.b_last_m))]
@@ -863,6 +899,11 @@ class MFVI_CNN(Cla_NN):
         self.prior_W_v_copy = [self.prior_W_v[i].data for i in range(len(self.prior_W_v))]
         self.prior_b_m_copy = [self.prior_b_m[i].data for i in range(len(self.prior_b_m))]
         self.prior_b_v_copy = [self.prior_b_v[i].data for i in range(len(self.prior_b_v))]
+
+        self.prior_kern_weights_m_copy = [self.prior_kern_weights_m[i].clone().detach().data for i in range(len(self.prior_kern_weights_m))]
+        self.prior_kern_weights_v_copy = [self.prior_kern_weights_v[i].clone().detach().data for i in range(len(self.prior_kern_weights_v))]
+        self.prior_kern_bias_m_copy = [self.prior_kern_bias_m[i].clone().detach().data for i in range(len(self.prior_kern_bias_m))]
+        self.prior_kern_bias_v_copy = [self.prior_kern_bias_v[i].clone().detach().data for i in range(len(self.prior_kern_bias_v))]
 
         self.prior_W_last_m_copy = [self.prior_W_last_m[i].data for i in range(len(self.prior_W_last_m))]
         self.prior_W_last_v_copy = [self.prior_W_last_v[i].data for i in range(len(self.prior_W_last_v))]
@@ -881,16 +922,28 @@ class MFVI_CNN(Cla_NN):
         self.b_m = [self.b_m_copy[i].clone().detach().data for i in range(len(self.b_m))]
         self.b_v = [self.b_v_copy[i].clone().detach().data for i in range(len(self.b_v))]
 
+        self.kern_weights_m = [self.kern_weights_m_copy[i].clone().detach().data for i in range(len(self.kern_weights_m))]
+        self.kern_weights_v = [self.kern_weights_v_copy[i].clone().detach().data for i in range(len(self.kern_weights_v))]
+        self.kern_bias_m = [self.kern_bias_m_copy[i].clone().detach().data for i in range(len(self.kern_bias_m))]
+        self.kern_bias_v = [self.kern_bias_v_copy[i].clone().detach().data for i in range(len(self.kern_bias_v))]
+
         for i in range(len(self.W_m)):
             self.W_m[i].requires_grad = True
             self.W_v[i].requires_grad = True
             self.b_m[i].requires_grad = True
             self.b_v[i].requires_grad = True
 
+        for i in range(len(self.kern_weights_m)):
+            self.kern_weights_m[i].requires_grad = True
+            self.kern_weights_v[i].requires_grad = True
+            self.kern_bias_m[i].requires_grad = True
+            self.kern_bias_v[i].requires_grad = True
+
         self.weights += self.W_m
         self.weights += self.W_v
         self.weights += self.b_m
         self.weights += self.b_v
+        self.weights += self.kern_weights_m + self.kern_weights_v + self.kern_bias_m + self.kern_bias_v
 
 
         self.W_last_m = [self.W_last_m_copy[i].clone().detach().data for i in range(len(self.W_last_m))]
@@ -915,6 +968,11 @@ class MFVI_CNN(Cla_NN):
         self.prior_b_m = [self.prior_b_m_copy[i].data for i in range(len(self.prior_b_m))]
         self.prior_b_v = [self.prior_b_v_copy[i].data for i in range(len(self.prior_b_v))]
 
+        self.prior_kern_weights_m = [self.prior_kern_weights_m_copy[i].data for i in range(len(self.prior_kern_weights_m))]
+        self.prior_kern_weights_v = [self.prior_kern_weights_v_copy[i].data for i in range(len(self.prior_kern_weights_v))]
+        self.prior_kern_bias_m = [self.prior_kern_bias_m_copy[i].data for i in range(len(self.prior_kern_bias_m))]
+        self.prior_kern_bias_v = [self.prior_kern_bias_v_copy[i].data for i in range(len(self.prior_kern_bias_v))]
+
         self.prior_W_last_m = [self.prior_W_last_m_copy[i].data for i in range(len(self.prior_W_last_m))]
         self.prior_W_last_v = [self.prior_W_last_v_copy[i].data for i in range(len(self.prior_W_last_v))]
         self.prior_b_last_m = [self.prior_b_last_m_copy[i].data for i in range(len(self.prior_b_last_m))]
@@ -927,6 +985,8 @@ class MFVI_CNN(Cla_NN):
         self.W_last_m_copy, self.W_last_v_copy, self.b_last_m_copy, self.b_last_v_copy = None, None, None, None
         self.prior_W_m_copy, self.prior_W_v_copy, self.prior_b_m_copy, self.prior_b_v_copy = None, None, None, None
         self.prior_W_last_m_copy, self.prior_W_last_v_copy, self.prior_b_last_m_copy, self.prior_b_last_v_copy = None, None, None, None
+        self.kern_weights_m_copy, self.kern_weights_v_copy, self.kern_bias_m_copy, self.kern_bias_v_copy = None, None, None, None
+        self.prior_kern_weights_m_copy, self.prior_kern_weights_v_copy, self.prior_kern_bias_m_copy, self.prior_kern_bias_v_copy = None, None, None, None
 
     def create_head(self):
         ''''Create new head when a new task is detected'''
@@ -964,6 +1024,10 @@ class MFVI_CNN(Cla_NN):
         self.weights += self.W_last_v
         self.weights += self.b_last_m
         self.weights += self.b_last_v
+        self.weights += self.kern_weights_m
+        self.weights += self.kern_weights_v
+        self.weights += self.kern_bias_m
+        self.weights += self.kern_bias_v        
         self.optimizer = optim.Adam(self.weights, lr=self.learning_rate)
 
         return
@@ -1072,8 +1136,6 @@ class MFVI_CNN(Cla_NN):
         return [W_m, b_m], [W_v, b_v], [kern_w_m, kern_b_m], [kern_w_v, kern_b_v]
 
 
-
-
     def update_prior(self):
         print("updating prior...")
         # update new prior to be old posterior weights and biases means and vars
@@ -1082,6 +1144,12 @@ class MFVI_CNN(Cla_NN):
             self.prior_b_m[i].data.copy_(self.b_m[i].clone().detach().data)
             self.prior_W_v[i].data.copy_(torch.exp(self.W_v[i].clone().detach().data))
             self.prior_b_v[i].data.copy_(torch.exp(self.b_v[i].clone().detach().data))
+
+        for i in range(len(self.kern_weights_m)):
+            self.prior_kern_weights_m[i].data.copy_(self.kern_weights_m[i].clone().detach().data)
+            self.prior_kern_weights_v[i].data.copy_(torch.exp(self.kern_weights_v[i].clone().detach().data))
+            self.prior_kern_bias_m[i].data.copy_(self.kern_bias_m[i].clone().detach().data)
+            self.prior_kern_bias_v[i].data.copy_(torch.exp(self.kern_bias_v[i].clone().detach().data))
 
         length = len(self.W_last_m)
 
