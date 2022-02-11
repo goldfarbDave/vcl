@@ -3,6 +3,7 @@ import utils.vcl as vcl
 import utils.coreset as coreset
 from utils.DataGenerator import PermutedMnistGenerator
 from utils.flags import FLAGS
+from utils.seed import seed_everything
 
 hidden_size = [100, 100]
 batch_size = 256
@@ -10,7 +11,8 @@ no_epochs = 100
 single_head = True
 num_tasks = 10
 
-np.random.seed(FLAGS['numpy_seed'])
+seed_everything()
+
 for coreset_size in [200,400,1000,2500,5000]:
    data_gen = PermutedMnistGenerator(num_tasks)
    vcl_result = vcl.run_coreset_only(hidden_size, no_epochs, data_gen,
@@ -18,7 +20,6 @@ for coreset_size in [200,400,1000,2500,5000]:
    np.save("./results/only-coreset-{}".format(coreset_size), vcl_result)
    print(vcl_result)
 
-np.random.seed(FLAGS['numpy_seed'])
 coreset_size = 200
 data_gen = PermutedMnistGenerator(num_tasks)
 kcen_vcl_result = vcl.run_coreset_only(hidden_size, no_epochs, data_gen,

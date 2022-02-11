@@ -2,13 +2,15 @@ import numpy as np
 import utils.vcl as vcl
 import utils.coreset as coreset
 from utils.DataGenerator import SplitMnistGenerator
+from utils.seed import seed_everything
+
+seed_everything()
 
 hidden_size = [256, 256]
 batch_size = None
 no_epochs = 120
 single_head = False
 run_coreset_only = False
-np.random.seed(0)
 
 #Just VCL
 coreset_size = 0
