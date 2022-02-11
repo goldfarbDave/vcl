@@ -297,1481 +297,1481 @@ Reloading previous weights after core set training
  [0.7934 0.7889 0.8042 0.8007 0.8164 0.822  0.8016 0.7974 0.764  0.7881]]
 creating a new head
 Saving weights before core set training
-Epoch: 0001 cost= 563.529785156
-Epoch: 0006 cost= 561.864624023
-Epoch: 0011 cost= 560.153198242
-Epoch: 0016 cost= 558.544067383
-Epoch: 0021 cost= 557.169799805
-Epoch: 0026 cost= 555.795654297
-Epoch: 0031 cost= 554.558654785
-Epoch: 0036 cost= 553.328491211
-Epoch: 0041 cost= 552.132812500
-Epoch: 0046 cost= 550.955078125
-Epoch: 0051 cost= 549.800903320
-Epoch: 0056 cost= 548.612548828
-Epoch: 0061 cost= 547.469116211
-Epoch: 0066 cost= 546.311157227
-Epoch: 0071 cost= 545.161010742
-Epoch: 0076 cost= 544.043823242
-Epoch: 0081 cost= 542.891967773
-Epoch: 0086 cost= 541.763793945
-Epoch: 0091 cost= 540.637695312
-Epoch: 0096 cost= 539.492553711
+Epoch: 0001 cost= 563.507141113
+Epoch: 0006 cost= 561.849487305
+Epoch: 0011 cost= 560.152404785
+Epoch: 0016 cost= 558.499877930
+Epoch: 0021 cost= 557.138793945
+Epoch: 0026 cost= 555.828979492
+Epoch: 0031 cost= 554.554077148
+Epoch: 0036 cost= 553.310546875
+Epoch: 0041 cost= 552.152709961
+Epoch: 0046 cost= 550.956420898
+Epoch: 0051 cost= 549.788085938
+Epoch: 0056 cost= 548.634887695
+Epoch: 0061 cost= 547.456604004
+Epoch: 0066 cost= 546.307739258
+Epoch: 0071 cost= 545.162475586
+Epoch: 0076 cost= 544.024169922
+Epoch: 0081 cost= 542.891784668
+Epoch: 0086 cost= 541.769653320
+Epoch: 0091 cost= 540.620239258
+Epoch: 0096 cost= 539.491333008
 Optimization Finished!
-Accuracy is 0.8593
+Accuracy is 0.8616
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 282.833282471
-Epoch: 0006 cost= 281.016357422
-Epoch: 0011 cost= 279.162475586
-Epoch: 0016 cost= 277.674102783
-Epoch: 0021 cost= 276.423156738
-Epoch: 0026 cost= 275.186798096
-Epoch: 0031 cost= 273.963287354
-Epoch: 0036 cost= 272.816101074
-Epoch: 0041 cost= 271.634063721
-Epoch: 0046 cost= 270.503997803
-Epoch: 0051 cost= 269.356658936
-Epoch: 0056 cost= 268.236602783
-Epoch: 0061 cost= 267.086151123
-Epoch: 0066 cost= 265.961151123
-Epoch: 0071 cost= 264.816314697
-Epoch: 0076 cost= 263.686035156
-Epoch: 0081 cost= 262.564819336
-Epoch: 0086 cost= 261.441162109
-Epoch: 0091 cost= 260.332824707
-Epoch: 0096 cost= 259.199340820
+Epoch: 0001 cost= 282.842407227
+Epoch: 0006 cost= 281.027709961
+Epoch: 0011 cost= 279.163757324
+Epoch: 0016 cost= 277.673767090
+Epoch: 0021 cost= 276.430847168
+Epoch: 0026 cost= 275.192413330
+Epoch: 0031 cost= 273.966705322
+Epoch: 0036 cost= 272.813415527
+Epoch: 0041 cost= 271.641571045
+Epoch: 0046 cost= 270.524566650
+Epoch: 0051 cost= 269.358978271
+Epoch: 0056 cost= 268.223297119
+Epoch: 0061 cost= 267.093200684
+Epoch: 0066 cost= 265.959289551
+Epoch: 0071 cost= 264.817352295
+Epoch: 0076 cost= 263.691986084
+Epoch: 0081 cost= 262.568908691
+Epoch: 0086 cost= 261.442810059
+Epoch: 0091 cost= 260.319854736
+Epoch: 0096 cost= 259.197387695
 Optimization Finished!
-Accuracy is 0.8581
-Accuracy is 0.8558
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 189.315765381
-Epoch: 0006 cost= 187.563095093
-Epoch: 0011 cost= 185.891525269
-Epoch: 0016 cost= 184.667968750
-Epoch: 0021 cost= 183.577301025
-Epoch: 0026 cost= 182.545562744
-Epoch: 0031 cost= 181.558792114
-Epoch: 0036 cost= 180.599044800
-Epoch: 0041 cost= 179.630004883
-Epoch: 0046 cost= 178.674942017
-Epoch: 0051 cost= 177.727066040
-Epoch: 0056 cost= 176.790832520
-Epoch: 0061 cost= 175.846450806
-Epoch: 0066 cost= 174.903762817
-Epoch: 0071 cost= 173.968978882
-Epoch: 0076 cost= 173.031661987
-Epoch: 0081 cost= 172.095886230
-Epoch: 0086 cost= 171.159225464
-Epoch: 0091 cost= 170.221496582
-Epoch: 0096 cost= 169.288879395
-Optimization Finished!
-Accuracy is 0.8574
-Accuracy is 0.8603
 Accuracy is 0.8586
+Accuracy is 0.8648
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 142.524902344
-Epoch: 0006 cost= 140.538681030
-Epoch: 0011 cost= 138.918502808
-Epoch: 0016 cost= 137.692779541
-Epoch: 0021 cost= 136.607421875
-Epoch: 0026 cost= 135.566085815
-Epoch: 0031 cost= 134.538208008
-Epoch: 0036 cost= 133.536697388
-Epoch: 0041 cost= 132.524765015
-Epoch: 0046 cost= 131.537277222
-Epoch: 0051 cost= 130.554153442
-Epoch: 0056 cost= 129.565948486
-Epoch: 0061 cost= 128.584381104
-Epoch: 0066 cost= 127.609214783
-Epoch: 0071 cost= 126.620216370
-Epoch: 0076 cost= 125.648078918
-Epoch: 0081 cost= 124.671493530
-Epoch: 0086 cost= 123.692512512
-Epoch: 0091 cost= 122.714004517
-Epoch: 0096 cost= 121.737258911
+Epoch: 0001 cost= 189.318817139
+Epoch: 0006 cost= 187.589599609
+Epoch: 0011 cost= 185.916381836
+Epoch: 0016 cost= 184.664947510
+Epoch: 0021 cost= 183.581756592
+Epoch: 0026 cost= 182.563140869
+Epoch: 0031 cost= 181.559173584
+Epoch: 0036 cost= 180.579132080
+Epoch: 0041 cost= 179.623306274
+Epoch: 0046 cost= 178.668090820
+Epoch: 0051 cost= 177.729553223
+Epoch: 0056 cost= 176.783782959
+Epoch: 0061 cost= 175.846908569
+Epoch: 0066 cost= 174.901504517
+Epoch: 0071 cost= 173.969390869
+Epoch: 0076 cost= 173.033203125
+Epoch: 0081 cost= 172.090042114
+Epoch: 0086 cost= 171.158187866
+Epoch: 0091 cost= 170.224670410
+Epoch: 0096 cost= 169.290573120
 Optimization Finished!
-Accuracy is 0.8491
-Accuracy is 0.8611
-Accuracy is 0.8637
-Accuracy is 0.8558
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 114.461967468
-Epoch: 0006 cost= 112.466247559
-Epoch: 0011 cost= 110.967781067
-Epoch: 0016 cost= 109.881019592
-Epoch: 0021 cost= 108.857330322
-Epoch: 0026 cost= 107.915817261
-Epoch: 0031 cost= 106.969261169
-Epoch: 0036 cost= 106.051010132
-Epoch: 0041 cost= 105.146926880
-Epoch: 0046 cost= 104.245552063
-Epoch: 0051 cost= 103.345100403
-Epoch: 0056 cost= 102.446159363
-Epoch: 0061 cost= 101.554786682
-Epoch: 0066 cost= 100.656951904
-Epoch: 0071 cost= 99.767593384
-Epoch: 0076 cost= 98.874504089
-Epoch: 0081 cost= 97.980514526
-Epoch: 0086 cost= 97.092475891
-Epoch: 0091 cost= 96.206520081
-Epoch: 0096 cost= 95.318099976
-Optimization Finished!
-Accuracy is 0.8488
-Accuracy is 0.8625
-Accuracy is 0.8619
-Accuracy is 0.8573
-Accuracy is 0.8672
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 95.744445801
-Epoch: 0006 cost= 93.616439819
-Epoch: 0011 cost= 92.154426575
-Epoch: 0016 cost= 91.024864197
-Epoch: 0021 cost= 90.011741638
-Epoch: 0026 cost= 89.020797729
-Epoch: 0031 cost= 88.059860229
-Epoch: 0036 cost= 87.114067078
-Epoch: 0041 cost= 86.167663574
-Epoch: 0046 cost= 85.234176636
-Epoch: 0051 cost= 84.308441162
-Epoch: 0056 cost= 83.375320435
-Epoch: 0061 cost= 82.450431824
-Epoch: 0066 cost= 81.526222229
-Epoch: 0071 cost= 80.598922729
-Epoch: 0076 cost= 79.681533813
-Epoch: 0081 cost= 78.752204895
-Epoch: 0086 cost= 77.835075378
-Epoch: 0091 cost= 76.907989502
-Epoch: 0096 cost= 75.993934631
-Optimization Finished!
-Accuracy is 0.8505
-Accuracy is 0.8531
-Accuracy is 0.8623
-Accuracy is 0.8546
-Accuracy is 0.8625
-Accuracy is 0.8558
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 82.389808655
-Epoch: 0006 cost= 80.295333862
-Epoch: 0011 cost= 78.897529602
-Epoch: 0016 cost= 77.848106384
-Epoch: 0021 cost= 76.877037048
-Epoch: 0026 cost= 75.944313049
-Epoch: 0031 cost= 75.042160034
-Epoch: 0036 cost= 74.146553040
-Epoch: 0041 cost= 73.261398315
-Epoch: 0046 cost= 72.382522583
-Epoch: 0051 cost= 71.508445740
-Epoch: 0056 cost= 70.633819580
-Epoch: 0061 cost= 69.763298035
-Epoch: 0066 cost= 68.894500732
-Epoch: 0071 cost= 68.021705627
-Epoch: 0076 cost= 67.153533936
-Epoch: 0081 cost= 66.288093567
-Epoch: 0086 cost= 65.424209595
-Epoch: 0091 cost= 64.559867859
-Epoch: 0096 cost= 63.695167542
-Optimization Finished!
-Accuracy is 0.8592
-Accuracy is 0.8635
-Accuracy is 0.8603
-Accuracy is 0.8531
-Accuracy is 0.8593
-Accuracy is 0.8625
-Accuracy is 0.8666
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 72.360038757
-Epoch: 0006 cost= 70.162384033
-Epoch: 0011 cost= 68.795288086
-Epoch: 0016 cost= 67.735610962
-Epoch: 0021 cost= 66.736557007
-Epoch: 0026 cost= 65.783828735
-Epoch: 0031 cost= 64.857307434
-Epoch: 0036 cost= 63.934711456
-Epoch: 0041 cost= 63.029590607
-Epoch: 0046 cost= 62.125938416
-Epoch: 0051 cost= 61.228523254
-Epoch: 0056 cost= 60.327308655
-Epoch: 0061 cost= 59.434612274
-Epoch: 0066 cost= 58.540832520
-Epoch: 0071 cost= 57.647842407
-Epoch: 0076 cost= 56.758960724
-Epoch: 0081 cost= 55.863872528
-Epoch: 0086 cost= 54.982162476
-Epoch: 0091 cost= 54.094860077
-Epoch: 0096 cost= 53.210800171
-Optimization Finished!
-Accuracy is 0.8547
 Accuracy is 0.8578
-Accuracy is 0.8543
-Accuracy is 0.8569
-Accuracy is 0.8551
-Accuracy is 0.8644
-Accuracy is 0.8725
-Accuracy is 0.8682
+Accuracy is 0.8587
+Accuracy is 0.8618
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 64.555549622
-Epoch: 0006 cost= 62.365207672
-Epoch: 0011 cost= 61.025440216
-Epoch: 0016 cost= 59.943923950
-Epoch: 0021 cost= 58.938316345
-Epoch: 0026 cost= 57.966327667
-Epoch: 0031 cost= 57.024925232
-Epoch: 0036 cost= 56.085803986
-Epoch: 0041 cost= 55.160011292
-Epoch: 0046 cost= 54.238376617
-Epoch: 0051 cost= 53.325931549
-Epoch: 0056 cost= 52.413177490
-Epoch: 0061 cost= 51.503582001
-Epoch: 0066 cost= 50.604385376
-Epoch: 0071 cost= 49.700096130
-Epoch: 0076 cost= 48.808223724
-Epoch: 0081 cost= 47.906757355
-Epoch: 0086 cost= 47.022369385
-Epoch: 0091 cost= 46.133899689
-Epoch: 0096 cost= 45.244026184
+Epoch: 0001 cost= 142.530776978
+Epoch: 0006 cost= 140.547729492
+Epoch: 0011 cost= 138.925613403
+Epoch: 0016 cost= 137.697387695
+Epoch: 0021 cost= 136.602737427
+Epoch: 0026 cost= 135.559829712
+Epoch: 0031 cost= 134.528533936
+Epoch: 0036 cost= 133.525222778
+Epoch: 0041 cost= 132.521865845
+Epoch: 0046 cost= 131.536163330
+Epoch: 0051 cost= 130.545227051
+Epoch: 0056 cost= 129.558364868
+Epoch: 0061 cost= 128.579147339
+Epoch: 0066 cost= 127.592636108
+Epoch: 0071 cost= 126.622001648
+Epoch: 0076 cost= 125.642318726
+Epoch: 0081 cost= 124.665275574
+Epoch: 0086 cost= 123.690956116
+Epoch: 0091 cost= 122.707321167
+Epoch: 0096 cost= 121.733413696
 Optimization Finished!
-Accuracy is 0.8473
-Accuracy is 0.8619
-Accuracy is 0.8526
-Accuracy is 0.8518
-Accuracy is 0.8552
-Accuracy is 0.8631
-Accuracy is 0.8677
-Accuracy is 0.8605
-Accuracy is 0.8482
+Accuracy is 0.85
+Accuracy is 0.8623
+Accuracy is 0.8618
+Accuracy is 0.8587
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 58.325061798
-Epoch: 0006 cost= 56.081043243
-Epoch: 0011 cost= 54.783733368
-Epoch: 0016 cost= 53.742027283
-Epoch: 0021 cost= 52.786247253
-Epoch: 0026 cost= 51.855346680
-Epoch: 0031 cost= 50.949771881
-Epoch: 0036 cost= 50.054821014
-Epoch: 0041 cost= 49.170730591
-Epoch: 0046 cost= 48.288433075
-Epoch: 0051 cost= 47.412487030
-Epoch: 0056 cost= 46.541591644
-Epoch: 0061 cost= 45.670272827
-Epoch: 0066 cost= 44.800510406
-Epoch: 0071 cost= 43.933212280
-Epoch: 0076 cost= 43.069309235
-Epoch: 0081 cost= 42.211666107
-Epoch: 0086 cost= 41.348899841
-Epoch: 0091 cost= 40.496597290
-Epoch: 0096 cost= 39.649097443
+Epoch: 0001 cost= 114.458641052
+Epoch: 0006 cost= 112.461936951
+Epoch: 0011 cost= 110.988891602
+Epoch: 0016 cost= 109.877426147
+Epoch: 0021 cost= 108.869506836
+Epoch: 0026 cost= 107.909332275
+Epoch: 0031 cost= 106.976280212
+Epoch: 0036 cost= 106.060829163
+Epoch: 0041 cost= 105.150169373
+Epoch: 0046 cost= 104.242126465
+Epoch: 0051 cost= 103.343421936
+Epoch: 0056 cost= 102.446678162
+Epoch: 0061 cost= 101.554367065
+Epoch: 0066 cost= 100.659156799
+Epoch: 0071 cost= 99.768356323
+Epoch: 0076 cost= 98.877388000
+Epoch: 0081 cost= 97.983985901
+Epoch: 0086 cost= 97.094383240
+Epoch: 0091 cost= 96.203857422
+Epoch: 0096 cost= 95.312934875
+Optimization Finished!
+Accuracy is 0.8501
+Accuracy is 0.8576
+Accuracy is 0.8625
+Accuracy is 0.8563
+Accuracy is 0.8686
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 95.738426208
+Epoch: 0006 cost= 93.603302002
+Epoch: 0011 cost= 92.153167725
+Epoch: 0016 cost= 91.028823853
+Epoch: 0021 cost= 90.011207581
+Epoch: 0026 cost= 89.026847839
+Epoch: 0031 cost= 88.058761597
+Epoch: 0036 cost= 87.108200073
+Epoch: 0041 cost= 86.168846130
+Epoch: 0046 cost= 85.238479614
+Epoch: 0051 cost= 84.312438965
+Epoch: 0056 cost= 83.381004333
+Epoch: 0061 cost= 82.453399658
+Epoch: 0066 cost= 81.522079468
+Epoch: 0071 cost= 80.600334167
+Epoch: 0076 cost= 79.672325134
+Epoch: 0081 cost= 78.750755310
+Epoch: 0086 cost= 77.831924438
+Epoch: 0091 cost= 76.916351318
+Epoch: 0096 cost= 75.990242004
 Optimization Finished!
 Accuracy is 0.8492
-Accuracy is 0.8618
+Accuracy is 0.8576
+Accuracy is 0.8603
+Accuracy is 0.8558
+Accuracy is 0.86
+Accuracy is 0.8625
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 82.395759583
+Epoch: 0006 cost= 80.282287598
+Epoch: 0011 cost= 78.887786865
+Epoch: 0016 cost= 77.842185974
+Epoch: 0021 cost= 76.865982056
+Epoch: 0026 cost= 75.930290222
+Epoch: 0031 cost= 75.030387878
+Epoch: 0036 cost= 74.138023376
+Epoch: 0041 cost= 73.254989624
+Epoch: 0046 cost= 72.373214722
+Epoch: 0051 cost= 71.501708984
+Epoch: 0056 cost= 70.631660461
+Epoch: 0061 cost= 69.757560730
+Epoch: 0066 cost= 68.884384155
+Epoch: 0071 cost= 68.021057129
+Epoch: 0076 cost= 67.148345947
+Epoch: 0081 cost= 66.285903931
+Epoch: 0086 cost= 65.416526794
+Epoch: 0091 cost= 64.554450989
+Epoch: 0096 cost= 63.686752319
+Optimization Finished!
+Accuracy is 0.8552
+Accuracy is 0.8654
+Accuracy is 0.8608
+Accuracy is 0.8565
+Accuracy is 0.8604
+Accuracy is 0.8664
+Accuracy is 0.8654
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 72.360733032
+Epoch: 0006 cost= 70.154884338
+Epoch: 0011 cost= 68.799873352
+Epoch: 0016 cost= 67.729774475
+Epoch: 0021 cost= 66.738243103
+Epoch: 0026 cost= 65.788825989
+Epoch: 0031 cost= 64.855888367
+Epoch: 0036 cost= 63.940513611
+Epoch: 0041 cost= 63.029884338
+Epoch: 0046 cost= 62.129058838
+Epoch: 0051 cost= 61.232311249
+Epoch: 0056 cost= 60.333137512
+Epoch: 0061 cost= 59.440074921
+Epoch: 0066 cost= 58.538757324
+Epoch: 0071 cost= 57.649349213
+Epoch: 0076 cost= 56.758468628
+Epoch: 0081 cost= 55.868480682
+Epoch: 0086 cost= 54.983676910
+Epoch: 0091 cost= 54.099830627
+Epoch: 0096 cost= 53.212009430
+Optimization Finished!
+Accuracy is 0.8546
+Accuracy is 0.8585
+Accuracy is 0.8559
+Accuracy is 0.8523
+Accuracy is 0.8596
+Accuracy is 0.8597
+Accuracy is 0.8644
+Accuracy is 0.8605
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 64.561477661
+Epoch: 0006 cost= 62.370216370
+Epoch: 0011 cost= 61.007114410
+Epoch: 0016 cost= 59.932418823
+Epoch: 0021 cost= 58.932815552
+Epoch: 0026 cost= 57.954925537
+Epoch: 0031 cost= 57.021713257
+Epoch: 0036 cost= 56.082553864
+Epoch: 0041 cost= 55.152816772
+Epoch: 0046 cost= 54.242321014
+Epoch: 0051 cost= 53.329074860
+Epoch: 0056 cost= 52.416179657
+Epoch: 0061 cost= 51.503738403
+Epoch: 0066 cost= 50.609458923
+Epoch: 0071 cost= 49.699928284
+Epoch: 0076 cost= 48.813907623
+Epoch: 0081 cost= 47.912757874
+Epoch: 0086 cost= 47.031234741
+Epoch: 0091 cost= 46.134510040
+Epoch: 0096 cost= 45.252895355
+Optimization Finished!
+Accuracy is 0.848
+Accuracy is 0.8687
+Accuracy is 0.8567
 Accuracy is 0.8498
-Accuracy is 0.8507
-Accuracy is 0.855
-Accuracy is 0.8622
-Accuracy is 0.866
-Accuracy is 0.8658
-Accuracy is 0.847
-Accuracy is 0.851
+Accuracy is 0.8567
+Accuracy is 0.8573
+Accuracy is 0.8664
+Accuracy is 0.8613
+Accuracy is 0.8559
 Reloading previous weights after core set training
-[[0.8593    nan    nan    nan    nan    nan    nan    nan    nan    nan]
- [0.8581 0.8558    nan    nan    nan    nan    nan    nan    nan    nan]
- [0.8574 0.8603 0.8586    nan    nan    nan    nan    nan    nan    nan]
- [0.8491 0.8611 0.8637 0.8558    nan    nan    nan    nan    nan    nan]
- [0.8488 0.8625 0.8619 0.8573 0.8672    nan    nan    nan    nan    nan]
- [0.8505 0.8531 0.8623 0.8546 0.8625 0.8558    nan    nan    nan    nan]
- [0.8592 0.8635 0.8603 0.8531 0.8593 0.8625 0.8666    nan    nan    nan]
- [0.8547 0.8578 0.8543 0.8569 0.8551 0.8644 0.8725 0.8682    nan    nan]
- [0.8473 0.8619 0.8526 0.8518 0.8552 0.8631 0.8677 0.8605 0.8482    nan]
- [0.8492 0.8618 0.8498 0.8507 0.855  0.8622 0.866  0.8658 0.847  0.851 ]]
+Saving weights before core set training
+Epoch: 0001 cost= 58.325420380
+Epoch: 0006 cost= 56.074432373
+Epoch: 0011 cost= 54.777561188
+Epoch: 0016 cost= 53.733562469
+Epoch: 0021 cost= 52.769039154
+Epoch: 0026 cost= 51.848075867
+Epoch: 0031 cost= 50.944557190
+Epoch: 0036 cost= 50.052444458
+Epoch: 0041 cost= 49.169879913
+Epoch: 0046 cost= 48.285484314
+Epoch: 0051 cost= 47.413990021
+Epoch: 0056 cost= 46.541698456
+Epoch: 0061 cost= 45.663005829
+Epoch: 0066 cost= 44.796150208
+Epoch: 0071 cost= 43.931751251
+Epoch: 0076 cost= 43.070495605
+Epoch: 0081 cost= 42.212539673
+Epoch: 0086 cost= 41.348705292
+Epoch: 0091 cost= 40.493789673
+Epoch: 0096 cost= 39.645172119
+Optimization Finished!
+Accuracy is 0.8497
+Accuracy is 0.8626
+Accuracy is 0.8553
+Accuracy is 0.849
+Accuracy is 0.8587
+Accuracy is 0.8605
+Accuracy is 0.8741
+Accuracy is 0.8656
+Accuracy is 0.8492
+Accuracy is 0.8499
+Reloading previous weights after core set training
+[[0.8616    nan    nan    nan    nan    nan    nan    nan    nan    nan]
+ [0.8586 0.8648    nan    nan    nan    nan    nan    nan    nan    nan]
+ [0.8578 0.8587 0.8618    nan    nan    nan    nan    nan    nan    nan]
+ [0.85   0.8623 0.8618 0.8587    nan    nan    nan    nan    nan    nan]
+ [0.8501 0.8576 0.8625 0.8563 0.8686    nan    nan    nan    nan    nan]
+ [0.8492 0.8576 0.8603 0.8558 0.86   0.8625    nan    nan    nan    nan]
+ [0.8552 0.8654 0.8608 0.8565 0.8604 0.8664 0.8654    nan    nan    nan]
+ [0.8546 0.8585 0.8559 0.8523 0.8596 0.8597 0.8644 0.8605    nan    nan]
+ [0.848  0.8687 0.8567 0.8498 0.8567 0.8573 0.8664 0.8613 0.8559    nan]
+ [0.8497 0.8626 0.8553 0.849  0.8587 0.8605 0.8741 0.8656 0.8492 0.8499]]
 creating a new head
 Saving weights before core set training
-Epoch: 0001 cost= 226.725189209
-Epoch: 0006 cost= 224.837005615
-Epoch: 0011 cost= 223.283447266
-Epoch: 0016 cost= 222.132247925
-Epoch: 0021 cost= 221.101593018
-Epoch: 0026 cost= 220.126251221
-Epoch: 0031 cost= 219.162277222
-Epoch: 0036 cost= 218.225814819
-Epoch: 0041 cost= 217.297058105
-Epoch: 0046 cost= 216.377899170
-Epoch: 0051 cost= 215.464019775
-Epoch: 0056 cost= 214.544769287
-Epoch: 0061 cost= 213.642089844
-Epoch: 0066 cost= 212.738372803
-Epoch: 0071 cost= 211.835479736
-Epoch: 0076 cost= 210.937728882
-Epoch: 0081 cost= 210.034744263
-Epoch: 0086 cost= 209.138122559
-Epoch: 0091 cost= 208.240264893
-Epoch: 0096 cost= 207.348831177
+Epoch: 0001 cost= 226.732849121
+Epoch: 0006 cost= 224.832214355
+Epoch: 0011 cost= 223.288986206
+Epoch: 0016 cost= 222.147369385
+Epoch: 0021 cost= 221.108871460
+Epoch: 0026 cost= 220.133895874
+Epoch: 0031 cost= 219.175659180
+Epoch: 0036 cost= 218.227569580
+Epoch: 0041 cost= 217.295303345
+Epoch: 0046 cost= 216.373153687
+Epoch: 0051 cost= 215.460815430
+Epoch: 0056 cost= 214.551940918
+Epoch: 0061 cost= 213.641921997
+Epoch: 0066 cost= 212.737121582
+Epoch: 0071 cost= 211.836624146
+Epoch: 0076 cost= 210.936538696
+Epoch: 0081 cost= 210.032806396
+Epoch: 0086 cost= 209.136184692
+Epoch: 0091 cost= 208.241180420
+Epoch: 0096 cost= 207.343154907
 Optimization Finished!
-Accuracy is 0.8984
+Accuracy is 0.8964
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 114.419975281
-Epoch: 0006 cost= 112.114097595
-Epoch: 0011 cost= 110.817749023
-Epoch: 0016 cost= 109.789932251
-Epoch: 0021 cost= 108.828681946
-Epoch: 0026 cost= 107.871208191
-Epoch: 0031 cost= 106.941406250
-Epoch: 0036 cost= 106.026298523
-Epoch: 0041 cost= 105.115966797
-Epoch: 0046 cost= 104.209732056
-Epoch: 0051 cost= 103.317329407
-Epoch: 0056 cost= 102.415328979
-Epoch: 0061 cost= 101.521652222
-Epoch: 0066 cost= 100.627182007
-Epoch: 0071 cost= 99.735008240
-Epoch: 0076 cost= 98.842910767
-Epoch: 0081 cost= 97.952064514
-Epoch: 0086 cost= 97.061225891
-Epoch: 0091 cost= 96.169822693
-Epoch: 0096 cost= 95.277893066
+Epoch: 0001 cost= 114.418899536
+Epoch: 0006 cost= 112.104354858
+Epoch: 0011 cost= 110.827995300
+Epoch: 0016 cost= 109.793525696
+Epoch: 0021 cost= 108.819908142
+Epoch: 0026 cost= 107.861595154
+Epoch: 0031 cost= 106.939476013
+Epoch: 0036 cost= 106.016319275
+Epoch: 0041 cost= 105.115844727
+Epoch: 0046 cost= 104.212890625
+Epoch: 0051 cost= 103.313087463
+Epoch: 0056 cost= 102.416847229
+Epoch: 0061 cost= 101.517127991
+Epoch: 0066 cost= 100.626609802
+Epoch: 0071 cost= 99.732780457
+Epoch: 0076 cost= 98.840255737
+Epoch: 0081 cost= 97.951347351
+Epoch: 0086 cost= 97.059837341
+Epoch: 0091 cost= 96.165725708
+Epoch: 0096 cost= 95.278373718
 Optimization Finished!
-Accuracy is 0.9004
-Accuracy is 0.9022
+Accuracy is 0.8976
+Accuracy is 0.9029
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 76.974548340
-Epoch: 0006 cost= 74.589591980
-Epoch: 0011 cost= 73.372612000
-Epoch: 0016 cost= 72.361770630
-Epoch: 0021 cost= 71.408386230
-Epoch: 0026 cost= 70.482315063
-Epoch: 0031 cost= 69.560394287
-Epoch: 0036 cost= 68.660247803
-Epoch: 0041 cost= 67.762153625
-Epoch: 0046 cost= 66.872535706
-Epoch: 0051 cost= 65.980270386
-Epoch: 0056 cost= 65.088943481
-Epoch: 0061 cost= 64.199974060
-Epoch: 0066 cost= 63.318634033
-Epoch: 0071 cost= 62.428760529
-Epoch: 0076 cost= 61.546752930
-Epoch: 0081 cost= 60.666992188
-Epoch: 0086 cost= 59.789302826
-Epoch: 0091 cost= 58.907718658
-Epoch: 0096 cost= 58.029090881
+Epoch: 0001 cost= 76.986053467
+Epoch: 0006 cost= 74.561981201
+Epoch: 0011 cost= 73.364151001
+Epoch: 0016 cost= 72.369880676
+Epoch: 0021 cost= 71.400588989
+Epoch: 0026 cost= 70.471832275
+Epoch: 0031 cost= 69.561187744
+Epoch: 0036 cost= 68.660369873
+Epoch: 0041 cost= 67.758583069
+Epoch: 0046 cost= 66.865226746
+Epoch: 0051 cost= 65.978019714
+Epoch: 0056 cost= 65.088897705
+Epoch: 0061 cost= 64.200584412
+Epoch: 0066 cost= 63.312404633
+Epoch: 0071 cost= 62.429306030
+Epoch: 0076 cost= 61.547870636
+Epoch: 0081 cost= 60.662120819
+Epoch: 0086 cost= 59.783187866
+Epoch: 0091 cost= 58.901916504
+Epoch: 0096 cost= 58.029491425
 Optimization Finished!
-Accuracy is 0.9018
-Accuracy is 0.9022
-Accuracy is 0.9028
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 58.263156891
-Epoch: 0006 cost= 55.763870239
-Epoch: 0011 cost= 54.640777588
-Epoch: 0016 cost= 53.655078888
-Epoch: 0021 cost= 52.714702606
-Epoch: 0026 cost= 51.797153473
-Epoch: 0031 cost= 50.899028778
-Epoch: 0036 cost= 50.003402710
-Epoch: 0041 cost= 49.115009308
-Epoch: 0046 cost= 48.232425690
-Epoch: 0051 cost= 47.348312378
-Epoch: 0056 cost= 46.470211029
-Epoch: 0061 cost= 45.597831726
-Epoch: 0066 cost= 44.724002838
-Epoch: 0071 cost= 43.849361420
-Epoch: 0076 cost= 42.979995728
-Epoch: 0081 cost= 42.108993530
-Epoch: 0086 cost= 41.243942261
-Epoch: 0091 cost= 40.382316589
-Epoch: 0096 cost= 39.519786835
-Optimization Finished!
-Accuracy is 0.9025
-Accuracy is 0.903
-Accuracy is 0.9061
-Accuracy is 0.9161
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 47.012512207
-Epoch: 0006 cost= 44.517784119
-Epoch: 0011 cost= 43.419044495
-Epoch: 0016 cost= 42.453876495
-Epoch: 0021 cost= 41.519386292
-Epoch: 0026 cost= 40.614688873
-Epoch: 0031 cost= 39.724597931
-Epoch: 0036 cost= 38.841434479
-Epoch: 0041 cost= 37.967308044
-Epoch: 0046 cost= 37.093082428
-Epoch: 0051 cost= 36.227035522
-Epoch: 0056 cost= 35.362487793
-Epoch: 0061 cost= 34.502090454
-Epoch: 0066 cost= 33.640434265
-Epoch: 0071 cost= 32.791625977
-Epoch: 0076 cost= 31.939815521
-Epoch: 0081 cost= 31.102903366
-Epoch: 0086 cost= 30.259967804
-Epoch: 0091 cost= 29.424774170
-Epoch: 0096 cost= 28.598485947
-Optimization Finished!
-Accuracy is 0.898
-Accuracy is 0.9023
-Accuracy is 0.906
-Accuracy is 0.9082
-Accuracy is 0.9034
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 39.520042419
-Epoch: 0006 cost= 37.029151917
-Epoch: 0011 cost= 35.953308105
-Epoch: 0016 cost= 34.992710114
-Epoch: 0021 cost= 34.074127197
-Epoch: 0026 cost= 33.187484741
-Epoch: 0031 cost= 32.309803009
-Epoch: 0036 cost= 31.442604065
-Epoch: 0041 cost= 30.584461212
-Epoch: 0046 cost= 29.726724625
-Epoch: 0051 cost= 28.874250412
-Epoch: 0056 cost= 28.033880234
-Epoch: 0061 cost= 27.201231003
-Epoch: 0066 cost= 26.363552094
-Epoch: 0071 cost= 25.539615631
-Epoch: 0076 cost= 24.724309921
-Epoch: 0081 cost= 23.916885376
-Epoch: 0086 cost= 23.114641190
-Epoch: 0091 cost= 22.328365326
-Epoch: 0096 cost= 21.551551819
-Optimization Finished!
-Accuracy is 0.8988
-Accuracy is 0.9062
-Accuracy is 0.9058
-Accuracy is 0.9137
-Accuracy is 0.9051
-Accuracy is 0.9119
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 34.158897400
-Epoch: 0006 cost= 31.675767899
-Epoch: 0011 cost= 30.623561859
-Epoch: 0016 cost= 29.673488617
-Epoch: 0021 cost= 28.771039963
-Epoch: 0026 cost= 27.899747849
-Epoch: 0031 cost= 27.037376404
-Epoch: 0036 cost= 26.189985275
-Epoch: 0041 cost= 25.341165543
-Epoch: 0046 cost= 24.507944107
-Epoch: 0051 cost= 23.680545807
-Epoch: 0056 cost= 22.859676361
-Epoch: 0061 cost= 22.058937073
-Epoch: 0066 cost= 21.255195618
-Epoch: 0071 cost= 20.472103119
-Epoch: 0076 cost= 19.700162888
-Epoch: 0081 cost= 18.945938110
-Epoch: 0086 cost= 18.194644928
-Epoch: 0091 cost= 17.459415436
-Epoch: 0096 cost= 16.749277115
-Optimization Finished!
-Accuracy is 0.9016
-Accuracy is 0.9119
-Accuracy is 0.9046
-Accuracy is 0.9092
-Accuracy is 0.9068
-Accuracy is 0.9138
-Accuracy is 0.912
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 30.132966995
-Epoch: 0006 cost= 27.678937912
-Epoch: 0011 cost= 26.648225784
-Epoch: 0016 cost= 25.714757919
-Epoch: 0021 cost= 24.830348969
-Epoch: 0026 cost= 23.971181870
-Epoch: 0031 cost= 23.125986099
-Epoch: 0036 cost= 22.299491882
-Epoch: 0041 cost= 21.484601974
-Epoch: 0046 cost= 20.675401688
-Epoch: 0051 cost= 19.879201889
-Epoch: 0056 cost= 19.099948883
-Epoch: 0061 cost= 18.325948715
-Epoch: 0066 cost= 17.581880569
-Epoch: 0071 cost= 16.837972641
-Epoch: 0076 cost= 16.120239258
-Epoch: 0081 cost= 15.421131134
-Epoch: 0086 cost= 14.733724594
-Epoch: 0091 cost= 14.070512772
-Epoch: 0096 cost= 13.414499283
-Optimization Finished!
-Accuracy is 0.9046
-Accuracy is 0.9102
-Accuracy is 0.9047
-Accuracy is 0.9074
-Accuracy is 0.9028
-Accuracy is 0.9113
-Accuracy is 0.9129
-Accuracy is 0.9087
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 27.015554428
-Epoch: 0006 cost= 24.560108185
-Epoch: 0011 cost= 23.545288086
-Epoch: 0016 cost= 22.636079788
-Epoch: 0021 cost= 21.767183304
-Epoch: 0026 cost= 20.924673080
-Epoch: 0031 cost= 20.107643127
-Epoch: 0036 cost= 19.300519943
-Epoch: 0041 cost= 18.511583328
-Epoch: 0046 cost= 17.744884491
-Epoch: 0051 cost= 16.979478836
-Epoch: 0056 cost= 16.241367340
-Epoch: 0061 cost= 15.521752357
-Epoch: 0066 cost= 14.817753792
-Epoch: 0071 cost= 14.146712303
-Epoch: 0076 cost= 13.475436211
-Epoch: 0081 cost= 12.836692810
-Epoch: 0086 cost= 12.222628593
-Epoch: 0091 cost= 11.622983932
-Epoch: 0096 cost= 11.046490669
-Optimization Finished!
-Accuracy is 0.8988
-Accuracy is 0.9073
-Accuracy is 0.9011
-Accuracy is 0.905
-Accuracy is 0.9042
-Accuracy is 0.9134
-Accuracy is 0.9113
-Accuracy is 0.9055
-Accuracy is 0.9083
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 24.519914627
-Epoch: 0006 cost= 22.111921310
-Epoch: 0011 cost= 21.127626419
-Epoch: 0016 cost= 20.224647522
-Epoch: 0021 cost= 19.393348694
-Epoch: 0026 cost= 18.589418411
-Epoch: 0031 cost= 17.794746399
-Epoch: 0036 cost= 17.040050507
-Epoch: 0041 cost= 16.296319962
-Epoch: 0046 cost= 15.564480782
-Epoch: 0051 cost= 14.854386330
-Epoch: 0056 cost= 14.175796509
-Epoch: 0061 cost= 13.513832092
-Epoch: 0066 cost= 12.876751900
-Epoch: 0071 cost= 12.252058983
-Epoch: 0076 cost= 11.662792206
-Epoch: 0081 cost= 11.094193459
-Epoch: 0086 cost= 10.544572830
-Epoch: 0091 cost= 10.032546997
-Epoch: 0096 cost= 9.522231102
-Optimization Finished!
-Accuracy is 0.8965
-Accuracy is 0.9006
-Accuracy is 0.9
-Accuracy is 0.9014
-Accuracy is 0.9009
-Accuracy is 0.9087
-Accuracy is 0.9072
 Accuracy is 0.9037
+Accuracy is 0.9025
+Accuracy is 0.9038
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 58.254955292
+Epoch: 0006 cost= 55.774459839
+Epoch: 0011 cost= 54.648262024
+Epoch: 0016 cost= 53.661350250
+Epoch: 0021 cost= 52.722084045
+Epoch: 0026 cost= 51.805477142
+Epoch: 0031 cost= 50.896862030
+Epoch: 0036 cost= 50.003295898
+Epoch: 0041 cost= 49.113128662
+Epoch: 0046 cost= 48.232501984
+Epoch: 0051 cost= 47.353916168
+Epoch: 0056 cost= 46.474128723
+Epoch: 0061 cost= 45.596401215
+Epoch: 0066 cost= 44.722160339
+Epoch: 0071 cost= 43.849800110
+Epoch: 0076 cost= 42.978260040
+Epoch: 0081 cost= 42.113449097
+Epoch: 0086 cost= 41.245468140
+Epoch: 0091 cost= 40.382572174
+Epoch: 0096 cost= 39.527877808
+Optimization Finished!
+Accuracy is 0.9027
+Accuracy is 0.9024
+Accuracy is 0.904
+Accuracy is 0.9144
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 47.014984131
+Epoch: 0006 cost= 44.522994995
+Epoch: 0011 cost= 43.415027618
+Epoch: 0016 cost= 42.448554993
+Epoch: 0021 cost= 41.513774872
+Epoch: 0026 cost= 40.615226746
+Epoch: 0031 cost= 39.718498230
+Epoch: 0036 cost= 38.838031769
+Epoch: 0041 cost= 37.960235596
+Epoch: 0046 cost= 37.096240997
+Epoch: 0051 cost= 36.222385406
+Epoch: 0056 cost= 35.360378265
+Epoch: 0061 cost= 34.496097565
+Epoch: 0066 cost= 33.636142731
+Epoch: 0071 cost= 32.785354614
+Epoch: 0076 cost= 31.935022354
+Epoch: 0081 cost= 31.090513229
+Epoch: 0086 cost= 30.258852005
+Epoch: 0091 cost= 29.422418594
+Epoch: 0096 cost= 28.595277786
+Optimization Finished!
+Accuracy is 0.8997
+Accuracy is 0.9077
 Accuracy is 0.9062
-Accuracy is 0.9008
+Accuracy is 0.9109
+Accuracy is 0.9063
 Reloading previous weights after core set training
-[[0.8984    nan    nan    nan    nan    nan    nan    nan    nan    nan]
- [0.9004 0.9022    nan    nan    nan    nan    nan    nan    nan    nan]
- [0.9018 0.9022 0.9028    nan    nan    nan    nan    nan    nan    nan]
- [0.9025 0.903  0.9061 0.9161    nan    nan    nan    nan    nan    nan]
- [0.898  0.9023 0.906  0.9082 0.9034    nan    nan    nan    nan    nan]
- [0.8988 0.9062 0.9058 0.9137 0.9051 0.9119    nan    nan    nan    nan]
- [0.9016 0.9119 0.9046 0.9092 0.9068 0.9138 0.912     nan    nan    nan]
- [0.9046 0.9102 0.9047 0.9074 0.9028 0.9113 0.9129 0.9087    nan    nan]
- [0.8988 0.9073 0.9011 0.905  0.9042 0.9134 0.9113 0.9055 0.9083    nan]
- [0.8965 0.9006 0.9    0.9014 0.9009 0.9087 0.9072 0.9037 0.9062 0.9008]]
+Saving weights before core set training
+Epoch: 0001 cost= 39.514297485
+Epoch: 0006 cost= 37.025772095
+Epoch: 0011 cost= 35.950813293
+Epoch: 0016 cost= 34.993675232
+Epoch: 0021 cost= 34.075939178
+Epoch: 0026 cost= 33.187992096
+Epoch: 0031 cost= 32.315326691
+Epoch: 0036 cost= 31.443731308
+Epoch: 0041 cost= 30.585168839
+Epoch: 0046 cost= 29.727230072
+Epoch: 0051 cost= 28.878170013
+Epoch: 0056 cost= 28.036643982
+Epoch: 0061 cost= 27.197772980
+Epoch: 0066 cost= 26.366975784
+Epoch: 0071 cost= 25.543218613
+Epoch: 0076 cost= 24.728857040
+Epoch: 0081 cost= 23.921522141
+Epoch: 0086 cost= 23.123941422
+Epoch: 0091 cost= 22.333911896
+Epoch: 0096 cost= 21.557228088
+Optimization Finished!
+Accuracy is 0.9005
+Accuracy is 0.907
+Accuracy is 0.9076
+Accuracy is 0.9097
+Accuracy is 0.905
+Accuracy is 0.9119
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 34.166961670
+Epoch: 0006 cost= 31.672807693
+Epoch: 0011 cost= 30.619785309
+Epoch: 0016 cost= 29.673589706
+Epoch: 0021 cost= 28.773433685
+Epoch: 0026 cost= 27.894969940
+Epoch: 0031 cost= 27.035451889
+Epoch: 0036 cost= 26.179473877
+Epoch: 0041 cost= 25.337150574
+Epoch: 0046 cost= 24.503423691
+Epoch: 0051 cost= 23.673658371
+Epoch: 0056 cost= 22.859249115
+Epoch: 0061 cost= 22.051946640
+Epoch: 0066 cost= 21.257612228
+Epoch: 0071 cost= 20.465538025
+Epoch: 0076 cost= 19.690063477
+Epoch: 0081 cost= 18.927103043
+Epoch: 0086 cost= 18.180715561
+Epoch: 0091 cost= 17.449935913
+Epoch: 0096 cost= 16.729883194
+Optimization Finished!
+Accuracy is 0.9039
+Accuracy is 0.9066
+Accuracy is 0.9044
+Accuracy is 0.9089
+Accuracy is 0.9062
+Accuracy is 0.9115
+Accuracy is 0.9068
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 30.142612457
+Epoch: 0006 cost= 27.680231094
+Epoch: 0011 cost= 26.640562057
+Epoch: 0016 cost= 25.709197998
+Epoch: 0021 cost= 24.822132111
+Epoch: 0026 cost= 23.963582993
+Epoch: 0031 cost= 23.120285034
+Epoch: 0036 cost= 22.295524597
+Epoch: 0041 cost= 21.479139328
+Epoch: 0046 cost= 20.670259476
+Epoch: 0051 cost= 19.872312546
+Epoch: 0056 cost= 19.095756531
+Epoch: 0061 cost= 18.328958511
+Epoch: 0066 cost= 17.574407578
+Epoch: 0071 cost= 16.838262558
+Epoch: 0076 cost= 16.117700577
+Epoch: 0081 cost= 15.419744492
+Epoch: 0086 cost= 14.736863136
+Epoch: 0091 cost= 14.073715210
+Epoch: 0096 cost= 13.419226646
+Optimization Finished!
+Accuracy is 0.9028
+Accuracy is 0.9104
+Accuracy is 0.9067
+Accuracy is 0.9064
+Accuracy is 0.9037
+Accuracy is 0.911
+Accuracy is 0.9109
+Accuracy is 0.9071
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 27.005228043
+Epoch: 0006 cost= 24.564901352
+Epoch: 0011 cost= 23.550079346
+Epoch: 0016 cost= 22.639118195
+Epoch: 0021 cost= 21.772716522
+Epoch: 0026 cost= 20.929727554
+Epoch: 0031 cost= 20.110185623
+Epoch: 0036 cost= 19.306871414
+Epoch: 0041 cost= 18.522724152
+Epoch: 0046 cost= 17.747283936
+Epoch: 0051 cost= 16.985795975
+Epoch: 0056 cost= 16.246450424
+Epoch: 0061 cost= 15.531854630
+Epoch: 0066 cost= 14.824667931
+Epoch: 0071 cost= 14.136053085
+Epoch: 0076 cost= 13.470643997
+Epoch: 0081 cost= 12.847875595
+Epoch: 0086 cost= 12.220566750
+Epoch: 0091 cost= 11.622098923
+Epoch: 0096 cost= 11.044281960
+Optimization Finished!
+Accuracy is 0.8998
+Accuracy is 0.9048
+Accuracy is 0.9046
+Accuracy is 0.906
+Accuracy is 0.9052
+Accuracy is 0.9095
+Accuracy is 0.9109
+Accuracy is 0.9063
+Accuracy is 0.9097
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 24.519432068
+Epoch: 0006 cost= 22.111570358
+Epoch: 0011 cost= 21.113306046
+Epoch: 0016 cost= 20.225315094
+Epoch: 0021 cost= 19.388530731
+Epoch: 0026 cost= 18.581655502
+Epoch: 0031 cost= 17.788709641
+Epoch: 0036 cost= 17.028327942
+Epoch: 0041 cost= 16.275457382
+Epoch: 0046 cost= 15.548525810
+Epoch: 0051 cost= 14.840846062
+Epoch: 0056 cost= 14.151036263
+Epoch: 0061 cost= 13.488325119
+Epoch: 0066 cost= 12.843449593
+Epoch: 0071 cost= 12.238853455
+Epoch: 0076 cost= 11.636090279
+Epoch: 0081 cost= 11.060614586
+Epoch: 0086 cost= 10.512707710
+Epoch: 0091 cost= 9.998744011
+Epoch: 0096 cost= 9.486977577
+Optimization Finished!
+Accuracy is 0.8951
+Accuracy is 0.9046
+Accuracy is 0.8984
+Accuracy is 0.8991
+Accuracy is 0.9
+Accuracy is 0.9092
+Accuracy is 0.9091
+Accuracy is 0.9039
+Accuracy is 0.903
+Accuracy is 0.8978
+Reloading previous weights after core set training
+[[0.8964    nan    nan    nan    nan    nan    nan    nan    nan    nan]
+ [0.8976 0.9029    nan    nan    nan    nan    nan    nan    nan    nan]
+ [0.9037 0.9025 0.9038    nan    nan    nan    nan    nan    nan    nan]
+ [0.9027 0.9024 0.904  0.9144    nan    nan    nan    nan    nan    nan]
+ [0.8997 0.9077 0.9062 0.9109 0.9063    nan    nan    nan    nan    nan]
+ [0.9005 0.907  0.9076 0.9097 0.905  0.9119    nan    nan    nan    nan]
+ [0.9039 0.9066 0.9044 0.9089 0.9062 0.9115 0.9068    nan    nan    nan]
+ [0.9028 0.9104 0.9067 0.9064 0.9037 0.911  0.9109 0.9071    nan    nan]
+ [0.8998 0.9048 0.9046 0.906  0.9052 0.9095 0.9109 0.9063 0.9097    nan]
+ [0.8951 0.9046 0.8984 0.8991 0.9    0.9092 0.9091 0.9039 0.903  0.8978]]
 creating a new head
 Saving weights before core set training
-Epoch: 0001 cost= 91.890434265
-Epoch: 0006 cost= 89.407073975
-Epoch: 0011 cost= 88.281715393
-Epoch: 0016 cost= 87.292312622
-Epoch: 0021 cost= 86.342216492
-Epoch: 0026 cost= 85.413078308
-Epoch: 0031 cost= 84.492523193
-Epoch: 0036 cost= 83.583702087
-Epoch: 0041 cost= 82.678817749
-Epoch: 0046 cost= 81.781211853
-Epoch: 0051 cost= 80.888610840
-Epoch: 0056 cost= 79.990318298
-Epoch: 0061 cost= 79.098480225
-Epoch: 0066 cost= 78.205932617
-Epoch: 0071 cost= 77.315979004
-Epoch: 0076 cost= 76.431838989
-Epoch: 0081 cost= 75.538475037
-Epoch: 0086 cost= 74.657806396
-Epoch: 0091 cost= 73.772018433
-Epoch: 0096 cost= 72.884963989
+Epoch: 0001 cost= 91.900787354
+Epoch: 0006 cost= 89.412071228
+Epoch: 0011 cost= 88.285919189
+Epoch: 0016 cost= 87.296852112
+Epoch: 0021 cost= 86.344825745
+Epoch: 0026 cost= 85.417266846
+Epoch: 0031 cost= 84.504089355
+Epoch: 0036 cost= 83.587882996
+Epoch: 0041 cost= 82.683074951
+Epoch: 0046 cost= 81.781181335
+Epoch: 0051 cost= 80.893112183
+Epoch: 0056 cost= 79.995231628
+Epoch: 0061 cost= 79.100708008
+Epoch: 0066 cost= 78.209945679
+Epoch: 0071 cost= 77.322021484
+Epoch: 0076 cost= 76.435256958
+Epoch: 0081 cost= 75.548171997
+Epoch: 0086 cost= 74.658531189
+Epoch: 0091 cost= 73.776260376
+Epoch: 0096 cost= 72.893043518
 Optimization Finished!
-Accuracy is 0.9394
+Accuracy is 0.9389
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 46.886119843
-Epoch: 0006 cost= 44.392570496
-Epoch: 0011 cost= 43.354438782
-Epoch: 0016 cost= 42.401576996
-Epoch: 0021 cost= 41.481426239
-Epoch: 0026 cost= 40.584678650
-Epoch: 0031 cost= 39.686584473
-Epoch: 0036 cost= 38.805168152
-Epoch: 0041 cost= 37.917316437
-Epoch: 0046 cost= 37.046363831
-Epoch: 0051 cost= 36.176033020
-Epoch: 0056 cost= 35.305709839
-Epoch: 0061 cost= 34.435352325
-Epoch: 0066 cost= 33.570213318
-Epoch: 0071 cost= 32.711761475
-Epoch: 0076 cost= 31.851636887
-Epoch: 0081 cost= 31.002475739
-Epoch: 0086 cost= 30.154270172
-Epoch: 0091 cost= 29.305572510
-Epoch: 0096 cost= 28.470056534
+Epoch: 0001 cost= 46.881889343
+Epoch: 0006 cost= 44.401676178
+Epoch: 0011 cost= 43.359645844
+Epoch: 0016 cost= 42.405849457
+Epoch: 0021 cost= 41.486911774
+Epoch: 0026 cost= 40.583061218
+Epoch: 0031 cost= 39.693058014
+Epoch: 0036 cost= 38.804306030
+Epoch: 0041 cost= 37.923606873
+Epoch: 0046 cost= 37.050712585
+Epoch: 0051 cost= 36.180080414
+Epoch: 0056 cost= 35.310581207
+Epoch: 0061 cost= 34.442111969
+Epoch: 0066 cost= 33.579608917
+Epoch: 0071 cost= 32.716423035
+Epoch: 0076 cost= 31.859014511
+Epoch: 0081 cost= 31.004714966
+Epoch: 0086 cost= 30.161569595
+Epoch: 0091 cost= 29.312442780
+Epoch: 0096 cost= 28.474760056
 Optimization Finished!
-Accuracy is 0.9407
-Accuracy is 0.9375
+Accuracy is 0.9396
+Accuracy is 0.939
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 31.822160721
-Epoch: 0006 cost= 29.407852173
-Epoch: 0011 cost= 28.411567688
-Epoch: 0016 cost= 27.481489182
-Epoch: 0021 cost= 26.589561462
-Epoch: 0026 cost= 25.717344284
-Epoch: 0031 cost= 24.850185394
-Epoch: 0036 cost= 23.990713120
-Epoch: 0041 cost= 23.147634506
-Epoch: 0046 cost= 22.309310913
-Epoch: 0051 cost= 21.472856522
-Epoch: 0056 cost= 20.652509689
-Epoch: 0061 cost= 19.831716537
-Epoch: 0066 cost= 19.030282974
-Epoch: 0071 cost= 18.236743927
-Epoch: 0076 cost= 17.456090927
-Epoch: 0081 cost= 16.692148209
-Epoch: 0086 cost= 15.943140030
-Epoch: 0091 cost= 15.216726303
-Epoch: 0096 cost= 14.495772362
+Epoch: 0001 cost= 31.832542419
+Epoch: 0006 cost= 29.407913208
+Epoch: 0011 cost= 28.409200668
+Epoch: 0016 cost= 27.487195969
+Epoch: 0021 cost= 26.591421127
+Epoch: 0026 cost= 25.716026306
+Epoch: 0031 cost= 24.851367950
+Epoch: 0036 cost= 23.994110107
+Epoch: 0041 cost= 23.148702621
+Epoch: 0046 cost= 22.308282852
+Epoch: 0051 cost= 21.471179962
+Epoch: 0056 cost= 20.648668289
+Epoch: 0061 cost= 19.829078674
+Epoch: 0066 cost= 19.028881073
+Epoch: 0071 cost= 18.236808777
+Epoch: 0076 cost= 17.457654953
+Epoch: 0081 cost= 16.693618774
+Epoch: 0086 cost= 15.942070961
+Epoch: 0091 cost= 15.210004807
+Epoch: 0096 cost= 14.493756294
 Optimization Finished!
-Accuracy is 0.9442
-Accuracy is 0.9381
-Accuracy is 0.9382
+Accuracy is 0.9433
+Accuracy is 0.9385
+Accuracy is 0.9388
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 24.267555237
-Epoch: 0006 cost= 21.956821442
-Epoch: 0011 cost= 20.991460800
-Epoch: 0016 cost= 20.107734680
-Epoch: 0021 cost= 19.250839233
-Epoch: 0026 cost= 18.426471710
-Epoch: 0031 cost= 17.602293015
-Epoch: 0036 cost= 16.800470352
-Epoch: 0041 cost= 16.014881134
-Epoch: 0046 cost= 15.238792419
-Epoch: 0051 cost= 14.489287376
-Epoch: 0056 cost= 13.757767677
-Epoch: 0061 cost= 13.042938232
-Epoch: 0066 cost= 12.362968445
-Epoch: 0071 cost= 11.689094543
-Epoch: 0076 cost= 11.051565170
-Epoch: 0081 cost= 10.435548782
-Epoch: 0086 cost= 9.845674515
-Epoch: 0091 cost= 9.283501625
-Epoch: 0096 cost= 8.732171059
+Epoch: 0001 cost= 24.267814636
+Epoch: 0006 cost= 21.956602097
+Epoch: 0011 cost= 20.990379333
+Epoch: 0016 cost= 20.101190567
+Epoch: 0021 cost= 19.251785278
+Epoch: 0026 cost= 18.415901184
+Epoch: 0031 cost= 17.601095200
+Epoch: 0036 cost= 16.794042587
+Epoch: 0041 cost= 16.004690170
+Epoch: 0046 cost= 15.228763580
+Epoch: 0051 cost= 14.478965759
+Epoch: 0056 cost= 13.750387192
+Epoch: 0061 cost= 13.035770416
+Epoch: 0066 cost= 12.353092194
+Epoch: 0071 cost= 11.679581642
+Epoch: 0076 cost= 11.043947220
+Epoch: 0081 cost= 10.426115990
+Epoch: 0086 cost= 9.829039574
+Epoch: 0091 cost= 9.263807297
+Epoch: 0096 cost= 8.720536232
 Optimization Finished!
-Accuracy is 0.9419
-Accuracy is 0.9351
-Accuracy is 0.9363
-Accuracy is 0.9422
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 19.717170715
-Epoch: 0006 cost= 17.472938538
-Epoch: 0011 cost= 16.555015564
-Epoch: 0016 cost= 15.709458351
-Epoch: 0021 cost= 14.896552086
-Epoch: 0026 cost= 14.110257149
-Epoch: 0031 cost= 13.347878456
-Epoch: 0036 cost= 12.605761528
-Epoch: 0041 cost= 11.880650520
-Epoch: 0046 cost= 11.187743187
-Epoch: 0051 cost= 10.512372971
-Epoch: 0056 cost= 9.869609833
-Epoch: 0061 cost= 9.250961304
-Epoch: 0066 cost= 8.666444778
-Epoch: 0071 cost= 8.106171608
-Epoch: 0076 cost= 7.569678307
-Epoch: 0081 cost= 7.065844536
-Epoch: 0086 cost= 6.587843895
-Epoch: 0091 cost= 6.140280724
-Epoch: 0096 cost= 5.717629433
-Optimization Finished!
-Accuracy is 0.9376
-Accuracy is 0.9333
-Accuracy is 0.9344
-Accuracy is 0.9386
-Accuracy is 0.9353
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 16.668655396
-Epoch: 0006 cost= 14.498622894
-Epoch: 0011 cost= 13.615329742
-Epoch: 0016 cost= 12.806399345
-Epoch: 0021 cost= 12.036055565
-Epoch: 0026 cost= 11.301644325
-Epoch: 0031 cost= 10.591872215
-Epoch: 0036 cost= 9.917620659
-Epoch: 0041 cost= 9.269468307
-Epoch: 0046 cost= 8.652285576
-Epoch: 0051 cost= 8.070153236
-Epoch: 0056 cost= 7.520935535
-Epoch: 0061 cost= 7.000895500
-Epoch: 0066 cost= 6.512383938
-Epoch: 0071 cost= 6.054655552
-Epoch: 0076 cost= 5.625309467
-Epoch: 0081 cost= 5.222381115
-Epoch: 0086 cost= 4.848725796
-Epoch: 0091 cost= 4.505107403
-Epoch: 0096 cost= 4.178380966
-Optimization Finished!
-Accuracy is 0.9337
-Accuracy is 0.9298
-Accuracy is 0.9327
-Accuracy is 0.9381
-Accuracy is 0.9273
-Accuracy is 0.9398
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 14.512729645
-Epoch: 0006 cost= 12.390686035
-Epoch: 0011 cost= 11.542358398
-Epoch: 0016 cost= 10.769846916
-Epoch: 0021 cost= 10.048902512
-Epoch: 0026 cost= 9.357257843
-Epoch: 0031 cost= 8.710888863
-Epoch: 0036 cost= 8.098292351
-Epoch: 0041 cost= 7.526789665
-Epoch: 0046 cost= 6.988715649
-Epoch: 0051 cost= 6.484961510
-Epoch: 0056 cost= 6.018168926
-Epoch: 0061 cost= 5.583196163
-Epoch: 0066 cost= 5.172246456
-Epoch: 0071 cost= 4.793914318
-Epoch: 0076 cost= 4.439107418
-Epoch: 0081 cost= 4.118002892
-Epoch: 0086 cost= 3.812520742
-Epoch: 0091 cost= 3.539115667
-Epoch: 0096 cost= 3.279590130
-Optimization Finished!
-Accuracy is 0.9338
-Accuracy is 0.928
-Accuracy is 0.9297
-Accuracy is 0.9314
-Accuracy is 0.9286
-Accuracy is 0.9353
-Accuracy is 0.9302
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 12.855459213
-Epoch: 0006 cost= 10.822376251
-Epoch: 0011 cost= 10.012946129
-Epoch: 0016 cost= 9.288774490
-Epoch: 0021 cost= 8.623681068
-Epoch: 0026 cost= 7.996669769
-Epoch: 0031 cost= 7.416182995
-Epoch: 0036 cost= 6.879206657
-Epoch: 0041 cost= 6.379674911
-Epoch: 0046 cost= 5.916511059
-Epoch: 0051 cost= 5.486176491
-Epoch: 0056 cost= 5.093979359
-Epoch: 0061 cost= 4.722097874
-Epoch: 0066 cost= 4.384305954
-Epoch: 0071 cost= 4.072428226
-Epoch: 0076 cost= 3.781314850
-Epoch: 0081 cost= 3.511957407
-Epoch: 0086 cost= 3.263333559
-Epoch: 0091 cost= 3.034785032
-Epoch: 0096 cost= 2.821259975
-Optimization Finished!
-Accuracy is 0.9353
-Accuracy is 0.9266
-Accuracy is 0.9274
-Accuracy is 0.9271
-Accuracy is 0.9292
-Accuracy is 0.9356
-Accuracy is 0.9302
-Accuracy is 0.931
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 11.594090462
-Epoch: 0006 cost= 9.607933044
-Epoch: 0011 cost= 8.833656311
-Epoch: 0016 cost= 8.156293869
-Epoch: 0021 cost= 7.532989025
-Epoch: 0026 cost= 6.956582546
-Epoch: 0031 cost= 6.433284283
-Epoch: 0036 cost= 5.947315693
-Epoch: 0041 cost= 5.501392841
-Epoch: 0046 cost= 5.091317177
-Epoch: 0051 cost= 4.711258411
-Epoch: 0056 cost= 4.364025116
-Epoch: 0061 cost= 4.038446426
-Epoch: 0066 cost= 3.745103359
-Epoch: 0071 cost= 3.465062857
-Epoch: 0076 cost= 3.211726904
-Epoch: 0081 cost= 2.977765083
-Epoch: 0086 cost= 2.760324240
-Epoch: 0091 cost= 2.562441587
-Epoch: 0096 cost= 2.375741959
-Optimization Finished!
-Accuracy is 0.9327
-Accuracy is 0.9245
-Accuracy is 0.9256
-Accuracy is 0.924
-Accuracy is 0.9277
-Accuracy is 0.9327
-Accuracy is 0.9286
-Accuracy is 0.9274
-Accuracy is 0.9305
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 10.582084656
-Epoch: 0006 cost= 8.642649651
-Epoch: 0011 cost= 7.906146049
-Epoch: 0016 cost= 7.271335125
-Epoch: 0021 cost= 6.694347382
-Epoch: 0026 cost= 6.174045563
-Epoch: 0031 cost= 5.696608543
-Epoch: 0036 cost= 5.265480995
-Epoch: 0041 cost= 4.867932320
-Epoch: 0046 cost= 4.506600380
-Epoch: 0051 cost= 4.169111252
-Epoch: 0056 cost= 3.866897345
-Epoch: 0061 cost= 3.582770586
-Epoch: 0066 cost= 3.321820974
-Epoch: 0071 cost= 3.083631992
-Epoch: 0076 cost= 2.856554031
-Epoch: 0081 cost= 2.652133465
-Epoch: 0086 cost= 2.458747387
-Epoch: 0091 cost= 2.284976959
-Epoch: 0096 cost= 2.128202677
-Optimization Finished!
-Accuracy is 0.9285
-Accuracy is 0.9227
-Accuracy is 0.9231
-Accuracy is 0.9243
-Accuracy is 0.9267
-Accuracy is 0.9297
-Accuracy is 0.9259
-Accuracy is 0.925
-Accuracy is 0.9286
-Accuracy is 0.9263
-Reloading previous weights after core set training
-[[0.9394    nan    nan    nan    nan    nan    nan    nan    nan    nan]
- [0.9407 0.9375    nan    nan    nan    nan    nan    nan    nan    nan]
- [0.9442 0.9381 0.9382    nan    nan    nan    nan    nan    nan    nan]
- [0.9419 0.9351 0.9363 0.9422    nan    nan    nan    nan    nan    nan]
- [0.9376 0.9333 0.9344 0.9386 0.9353    nan    nan    nan    nan    nan]
- [0.9337 0.9298 0.9327 0.9381 0.9273 0.9398    nan    nan    nan    nan]
- [0.9338 0.928  0.9297 0.9314 0.9286 0.9353 0.9302    nan    nan    nan]
- [0.9353 0.9266 0.9274 0.9271 0.9292 0.9356 0.9302 0.931     nan    nan]
- [0.9327 0.9245 0.9256 0.924  0.9277 0.9327 0.9286 0.9274 0.9305    nan]
- [0.9285 0.9227 0.9231 0.9243 0.9267 0.9297 0.9259 0.925  0.9286 0.9263]]
-creating a new head
-Saving weights before core set training
-Epoch: 0001 cost= 46.760437012
-Epoch: 0006 cost= 44.331615448
-Epoch: 0011 cost= 43.324798584
-Epoch: 0016 cost= 42.380455017
-Epoch: 0021 cost= 41.466480255
-Epoch: 0026 cost= 40.566726685
-Epoch: 0031 cost= 39.673492432
-Epoch: 0036 cost= 38.793785095
-Epoch: 0041 cost= 37.907897949
-Epoch: 0046 cost= 37.031082153
-Epoch: 0051 cost= 36.151725769
-Epoch: 0056 cost= 35.281356812
-Epoch: 0061 cost= 34.409717560
-Epoch: 0066 cost= 33.548980713
-Epoch: 0071 cost= 32.680328369
-Epoch: 0076 cost= 31.819047928
-Epoch: 0081 cost= 30.964385986
-Epoch: 0086 cost= 30.115194321
-Epoch: 0091 cost= 29.265977859
-Epoch: 0096 cost= 28.417898178
-Optimization Finished!
-Accuracy is 0.9534
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 24.093090057
-Epoch: 0006 cost= 21.875160217
-Epoch: 0011 cost= 20.943544388
-Epoch: 0016 cost= 20.060281754
-Epoch: 0021 cost= 19.202901840
-Epoch: 0026 cost= 18.360374451
-Epoch: 0031 cost= 17.529502869
-Epoch: 0036 cost= 16.709047318
-Epoch: 0041 cost= 15.904850006
-Epoch: 0046 cost= 15.098822594
-Epoch: 0051 cost= 14.322252274
-Epoch: 0056 cost= 13.558727264
-Epoch: 0061 cost= 12.814646721
-Epoch: 0066 cost= 12.090904236
-Epoch: 0071 cost= 11.380130768
-Epoch: 0076 cost= 10.694551468
-Epoch: 0081 cost= 10.040549278
-Epoch: 0086 cost= 9.396625519
-Epoch: 0091 cost= 8.781891823
-Epoch: 0096 cost= 8.204916954
-Optimization Finished!
-Accuracy is 0.9536
-Accuracy is 0.9534
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 16.448595047
-Epoch: 0006 cost= 14.409759521
-Epoch: 0011 cost= 13.528357506
-Epoch: 0016 cost= 12.704967499
-Epoch: 0021 cost= 11.915402412
-Epoch: 0026 cost= 11.147557259
-Epoch: 0031 cost= 10.403974533
-Epoch: 0036 cost= 9.685617447
-Epoch: 0041 cost= 8.994632721
-Epoch: 0046 cost= 8.337320328
-Epoch: 0051 cost= 7.707700253
-Epoch: 0056 cost= 7.112295151
-Epoch: 0061 cost= 6.552129269
-Epoch: 0066 cost= 6.024456024
-Epoch: 0071 cost= 5.525974751
-Epoch: 0076 cost= 5.068386078
-Epoch: 0081 cost= 4.649003506
-Epoch: 0086 cost= 4.256849766
-Epoch: 0091 cost= 3.904025793
-Epoch: 0096 cost= 3.581783056
-Optimization Finished!
-Accuracy is 0.9512
-Accuracy is 0.948
-Accuracy is 0.95
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 12.586149216
-Epoch: 0006 cost= 10.721204758
-Epoch: 0011 cost= 9.899992943
-Epoch: 0016 cost= 9.146409988
-Epoch: 0021 cost= 8.431778908
-Epoch: 0026 cost= 7.759524822
-Epoch: 0031 cost= 7.123642921
-Epoch: 0036 cost= 6.531525612
-Epoch: 0041 cost= 5.976840973
-Epoch: 0046 cost= 5.465209484
-Epoch: 0051 cost= 4.993185520
-Epoch: 0056 cost= 4.562481880
-Epoch: 0061 cost= 4.170993805
-Epoch: 0066 cost= 3.811875582
-Epoch: 0071 cost= 3.489545345
-Epoch: 0076 cost= 3.194611311
-Epoch: 0081 cost= 2.941285610
-Epoch: 0086 cost= 2.708296061
-Epoch: 0091 cost= 2.500746727
-Epoch: 0096 cost= 2.313532591
-Optimization Finished!
-Accuracy is 0.9483
-Accuracy is 0.9479
-Accuracy is 0.9496
-Accuracy is 0.9507
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 10.281247139
-Epoch: 0006 cost= 8.523694038
-Epoch: 0011 cost= 7.770863056
-Epoch: 0016 cost= 7.089205265
-Epoch: 0021 cost= 6.463757038
-Epoch: 0026 cost= 5.885397434
-Epoch: 0031 cost= 5.356887341
-Epoch: 0036 cost= 4.878196239
-Epoch: 0041 cost= 4.438433170
-Epoch: 0046 cost= 4.042217731
-Epoch: 0051 cost= 3.684267282
-Epoch: 0056 cost= 3.365543604
-Epoch: 0061 cost= 3.077779293
-Epoch: 0066 cost= 2.820783615
-Epoch: 0071 cost= 2.587483168
-Epoch: 0076 cost= 2.382688046
-Epoch: 0081 cost= 2.193115711
-Epoch: 0086 cost= 2.026982307
-Epoch: 0091 cost= 1.876359224
-Epoch: 0096 cost= 1.740313053
-Optimization Finished!
-Accuracy is 0.9474
-Accuracy is 0.9465
-Accuracy is 0.9498
-Accuracy is 0.9517
-Accuracy is 0.9447
-Reloading previous weights after core set training
-Saving weights before core set training
-Epoch: 0001 cost= 8.745862007
-Epoch: 0006 cost= 7.080231190
-Epoch: 0011 cost= 6.388266563
-Epoch: 0016 cost= 5.780487061
-Epoch: 0021 cost= 5.234134197
-Epoch: 0026 cost= 4.745272160
-Epoch: 0031 cost= 4.311398983
-Epoch: 0036 cost= 3.921916246
-Epoch: 0041 cost= 3.570620060
-Epoch: 0046 cost= 3.259461403
-Epoch: 0051 cost= 2.978463888
-Epoch: 0056 cost= 2.729656219
-Epoch: 0061 cost= 2.499499321
-Epoch: 0066 cost= 2.297514677
-Epoch: 0071 cost= 2.110662937
-Epoch: 0076 cost= 1.944231391
-Epoch: 0081 cost= 1.793021083
-Epoch: 0086 cost= 1.656829596
-Epoch: 0091 cost= 1.534466743
-Epoch: 0096 cost= 1.433119893
-Optimization Finished!
-Accuracy is 0.9429
 Accuracy is 0.9427
-Accuracy is 0.9457
-Accuracy is 0.9467
-Accuracy is 0.9432
-Accuracy is 0.9501
+Accuracy is 0.9367
+Accuracy is 0.9387
+Accuracy is 0.9417
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 7.657441139
-Epoch: 0006 cost= 6.068048000
-Epoch: 0011 cost= 5.437375069
-Epoch: 0016 cost= 4.895454884
-Epoch: 0021 cost= 4.419471264
-Epoch: 0026 cost= 4.002047539
-Epoch: 0031 cost= 3.633000135
-Epoch: 0036 cost= 3.306624174
-Epoch: 0041 cost= 3.017735004
-Epoch: 0046 cost= 2.759694815
-Epoch: 0051 cost= 2.528438091
-Epoch: 0056 cost= 2.319458961
-Epoch: 0061 cost= 2.129917860
-Epoch: 0066 cost= 1.959728241
-Epoch: 0071 cost= 1.802466750
-Epoch: 0076 cost= 1.665162444
-Epoch: 0081 cost= 1.540522456
-Epoch: 0086 cost= 1.426673293
-Epoch: 0091 cost= 1.329224467
-Epoch: 0096 cost= 1.241801977
+Epoch: 0001 cost= 19.720048904
+Epoch: 0006 cost= 17.467870712
+Epoch: 0011 cost= 16.552658081
+Epoch: 0016 cost= 15.707262039
+Epoch: 0021 cost= 14.895160675
+Epoch: 0026 cost= 14.111023903
+Epoch: 0031 cost= 13.350397110
+Epoch: 0036 cost= 12.605281830
+Epoch: 0041 cost= 11.880628586
+Epoch: 0046 cost= 11.191017151
+Epoch: 0051 cost= 10.519421577
+Epoch: 0056 cost= 9.876414299
+Epoch: 0061 cost= 9.259491920
+Epoch: 0066 cost= 8.672325134
+Epoch: 0071 cost= 8.110601425
+Epoch: 0076 cost= 7.573911190
+Epoch: 0081 cost= 7.076440811
+Epoch: 0086 cost= 6.593686104
+Epoch: 0091 cost= 6.144020557
+Epoch: 0096 cost= 5.717361927
 Optimization Finished!
-Accuracy is 0.9449
-Accuracy is 0.9429
-Accuracy is 0.9421
-Accuracy is 0.9453
-Accuracy is 0.9449
-Accuracy is 0.9485
-Accuracy is 0.9448
+Accuracy is 0.937
+Accuracy is 0.9323
+Accuracy is 0.9356
+Accuracy is 0.9372
+Accuracy is 0.935
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 6.817491531
-Epoch: 0006 cost= 5.316157818
-Epoch: 0011 cost= 4.738505840
-Epoch: 0016 cost= 4.252478600
-Epoch: 0021 cost= 3.839347124
-Epoch: 0026 cost= 3.480477571
-Epoch: 0031 cost= 3.167509317
-Epoch: 0036 cost= 2.893594265
-Epoch: 0041 cost= 2.649575472
-Epoch: 0046 cost= 2.430741310
-Epoch: 0051 cost= 2.232672691
-Epoch: 0056 cost= 2.055989265
-Epoch: 0061 cost= 1.893593073
-Epoch: 0066 cost= 1.744636774
-Epoch: 0071 cost= 1.610843301
-Epoch: 0076 cost= 1.493450284
-Epoch: 0081 cost= 1.386488080
-Epoch: 0086 cost= 1.290431857
-Epoch: 0091 cost= 1.210519791
-Epoch: 0096 cost= 1.141736984
+Epoch: 0001 cost= 16.666707993
+Epoch: 0006 cost= 14.503012657
+Epoch: 0011 cost= 13.621759415
+Epoch: 0016 cost= 12.806632042
+Epoch: 0021 cost= 12.039677620
+Epoch: 0026 cost= 11.306610107
+Epoch: 0031 cost= 10.596152306
+Epoch: 0036 cost= 9.921092033
+Epoch: 0041 cost= 9.271033287
+Epoch: 0046 cost= 8.654985428
+Epoch: 0051 cost= 8.067573547
+Epoch: 0056 cost= 7.517537117
+Epoch: 0061 cost= 6.995021820
+Epoch: 0066 cost= 6.508129120
+Epoch: 0071 cost= 6.054507256
+Epoch: 0076 cost= 5.625560760
+Epoch: 0081 cost= 5.217538357
+Epoch: 0086 cost= 4.845695496
+Epoch: 0091 cost= 4.494499683
+Epoch: 0096 cost= 4.171796322
 Optimization Finished!
-Accuracy is 0.9432
-Accuracy is 0.9421
-Accuracy is 0.9451
-Accuracy is 0.9418
-Accuracy is 0.9418
-Accuracy is 0.9491
-Accuracy is 0.9454
-Accuracy is 0.9436
+Accuracy is 0.9326
+Accuracy is 0.9302
+Accuracy is 0.9329
+Accuracy is 0.9365
+Accuracy is 0.9279
+Accuracy is 0.9367
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 6.161905289
-Epoch: 0006 cost= 4.735350609
-Epoch: 0011 cost= 4.211742401
-Epoch: 0016 cost= 3.783065557
-Epoch: 0021 cost= 3.416954279
-Epoch: 0026 cost= 3.103496313
-Epoch: 0031 cost= 2.831101418
-Epoch: 0036 cost= 2.590261936
-Epoch: 0041 cost= 2.376916409
-Epoch: 0046 cost= 2.181051493
-Epoch: 0051 cost= 2.002537727
-Epoch: 0056 cost= 1.841772437
-Epoch: 0061 cost= 1.695261955
-Epoch: 0066 cost= 1.565660954
-Epoch: 0071 cost= 1.447700143
-Epoch: 0076 cost= 1.343555093
-Epoch: 0081 cost= 1.251141548
-Epoch: 0086 cost= 1.173315525
-Epoch: 0091 cost= 1.105309725
-Epoch: 0096 cost= 1.047835112
+Epoch: 0001 cost= 14.516359329
+Epoch: 0006 cost= 12.390210152
+Epoch: 0011 cost= 11.537471771
+Epoch: 0016 cost= 10.768939018
+Epoch: 0021 cost= 10.046228409
+Epoch: 0026 cost= 9.363354683
+Epoch: 0031 cost= 8.713481903
+Epoch: 0036 cost= 8.104286194
+Epoch: 0041 cost= 7.533298016
+Epoch: 0046 cost= 6.992323399
+Epoch: 0051 cost= 6.494561195
+Epoch: 0056 cost= 6.026024818
+Epoch: 0061 cost= 5.590439796
+Epoch: 0066 cost= 5.184614182
+Epoch: 0071 cost= 4.807385921
+Epoch: 0076 cost= 4.457730770
+Epoch: 0081 cost= 4.135804176
+Epoch: 0086 cost= 3.835467100
+Epoch: 0091 cost= 3.558737040
+Epoch: 0096 cost= 3.301462650
 Optimization Finished!
-Accuracy is 0.941
-Accuracy is 0.941
-Accuracy is 0.9418
-Accuracy is 0.9403
-Accuracy is 0.9415
-Accuracy is 0.9453
-Accuracy is 0.9421
-Accuracy is 0.9419
-Accuracy is 0.9455
+Accuracy is 0.9316
+Accuracy is 0.9262
+Accuracy is 0.9306
+Accuracy is 0.9314
+Accuracy is 0.9292
+Accuracy is 0.9366
+Accuracy is 0.9303
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 5.653346062
-Epoch: 0006 cost= 4.286121845
-Epoch: 0011 cost= 3.806052685
-Epoch: 0016 cost= 3.420920372
-Epoch: 0021 cost= 3.096451998
-Epoch: 0026 cost= 2.820369005
-Epoch: 0031 cost= 2.579112291
-Epoch: 0036 cost= 2.365418196
-Epoch: 0041 cost= 2.174458981
-Epoch: 0046 cost= 1.997062564
-Epoch: 0051 cost= 1.840767264
-Epoch: 0056 cost= 1.696095705
-Epoch: 0061 cost= 1.564745545
-Epoch: 0066 cost= 1.447710752
-Epoch: 0071 cost= 1.341805220
-Epoch: 0076 cost= 1.249176979
-Epoch: 0081 cost= 1.169772267
-Epoch: 0086 cost= 1.101492167
-Epoch: 0091 cost= 1.043827534
-Epoch: 0096 cost= 0.993798077
+Epoch: 0001 cost= 12.849788666
+Epoch: 0006 cost= 10.827446938
+Epoch: 0011 cost= 10.016487122
+Epoch: 0016 cost= 9.291772842
+Epoch: 0021 cost= 8.625107765
+Epoch: 0026 cost= 7.998737335
+Epoch: 0031 cost= 7.415119171
+Epoch: 0036 cost= 6.875319958
+Epoch: 0041 cost= 6.376688957
+Epoch: 0046 cost= 5.915503025
+Epoch: 0051 cost= 5.485294342
+Epoch: 0056 cost= 5.090243340
+Epoch: 0061 cost= 4.720683098
+Epoch: 0066 cost= 4.381737232
+Epoch: 0071 cost= 4.070691109
+Epoch: 0076 cost= 3.776604414
+Epoch: 0081 cost= 3.512554884
+Epoch: 0086 cost= 3.260238409
+Epoch: 0091 cost= 3.028433323
+Epoch: 0096 cost= 2.819823265
 Optimization Finished!
-Accuracy is 0.9407
-Accuracy is 0.9384
-Accuracy is 0.9431
-Accuracy is 0.941
-Accuracy is 0.9423
-Accuracy is 0.9467
-Accuracy is 0.941
-Accuracy is 0.9444
-Accuracy is 0.9441
-Accuracy is 0.9416
+Accuracy is 0.9327
+Accuracy is 0.9288
+Accuracy is 0.9279
+Accuracy is 0.9265
+Accuracy is 0.9279
+Accuracy is 0.9374
+Accuracy is 0.9291
+Accuracy is 0.9309
 Reloading previous weights after core set training
-[[0.9534    nan    nan    nan    nan    nan    nan    nan    nan    nan]
- [0.9536 0.9534    nan    nan    nan    nan    nan    nan    nan    nan]
- [0.9512 0.948  0.95      nan    nan    nan    nan    nan    nan    nan]
- [0.9483 0.9479 0.9496 0.9507    nan    nan    nan    nan    nan    nan]
- [0.9474 0.9465 0.9498 0.9517 0.9447    nan    nan    nan    nan    nan]
- [0.9429 0.9427 0.9457 0.9467 0.9432 0.9501    nan    nan    nan    nan]
- [0.9449 0.9429 0.9421 0.9453 0.9449 0.9485 0.9448    nan    nan    nan]
- [0.9432 0.9421 0.9451 0.9418 0.9418 0.9491 0.9454 0.9436    nan    nan]
- [0.941  0.941  0.9418 0.9403 0.9415 0.9453 0.9421 0.9419 0.9455    nan]
- [0.9407 0.9384 0.9431 0.941  0.9423 0.9467 0.941  0.9444 0.9441 0.9416]]
+Saving weights before core set training
+Epoch: 0001 cost= 11.591803551
+Epoch: 0006 cost= 9.603848457
+Epoch: 0011 cost= 8.832058907
+Epoch: 0016 cost= 8.155014992
+Epoch: 0021 cost= 7.530396461
+Epoch: 0026 cost= 6.960322857
+Epoch: 0031 cost= 6.433668137
+Epoch: 0036 cost= 5.949251652
+Epoch: 0041 cost= 5.503496170
+Epoch: 0046 cost= 5.097375393
+Epoch: 0051 cost= 4.717818260
+Epoch: 0056 cost= 4.370544910
+Epoch: 0061 cost= 4.046530247
+Epoch: 0066 cost= 3.748832703
+Epoch: 0071 cost= 3.478749275
+Epoch: 0076 cost= 3.228381634
+Epoch: 0081 cost= 2.997448444
+Epoch: 0086 cost= 2.780303240
+Epoch: 0091 cost= 2.581827164
+Epoch: 0096 cost= 2.399689436
+Optimization Finished!
+Accuracy is 0.931
+Accuracy is 0.9246
+Accuracy is 0.9271
+Accuracy is 0.9265
+Accuracy is 0.9268
+Accuracy is 0.9327
+Accuracy is 0.9285
+Accuracy is 0.9286
+Accuracy is 0.9286
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 10.576910973
+Epoch: 0006 cost= 8.642305374
+Epoch: 0011 cost= 7.910950661
+Epoch: 0016 cost= 7.275109291
+Epoch: 0021 cost= 6.697149277
+Epoch: 0026 cost= 6.177361488
+Epoch: 0031 cost= 5.699698448
+Epoch: 0036 cost= 5.266959667
+Epoch: 0041 cost= 4.871873379
+Epoch: 0046 cost= 4.510435581
+Epoch: 0051 cost= 4.182372570
+Epoch: 0056 cost= 3.877323389
+Epoch: 0061 cost= 3.595468998
+Epoch: 0066 cost= 3.339081287
+Epoch: 0071 cost= 3.099101782
+Epoch: 0076 cost= 2.878416300
+Epoch: 0081 cost= 2.671064615
+Epoch: 0086 cost= 2.483807564
+Epoch: 0091 cost= 2.315524101
+Epoch: 0096 cost= 2.156951666
+Optimization Finished!
+Accuracy is 0.9274
+Accuracy is 0.9242
+Accuracy is 0.9242
+Accuracy is 0.9251
+Accuracy is 0.9273
+Accuracy is 0.931
+Accuracy is 0.9265
+Accuracy is 0.9279
+Accuracy is 0.9283
+Accuracy is 0.9279
+Reloading previous weights after core set training
+[[0.9389    nan    nan    nan    nan    nan    nan    nan    nan    nan]
+ [0.9396 0.939     nan    nan    nan    nan    nan    nan    nan    nan]
+ [0.9433 0.9385 0.9388    nan    nan    nan    nan    nan    nan    nan]
+ [0.9427 0.9367 0.9387 0.9417    nan    nan    nan    nan    nan    nan]
+ [0.937  0.9323 0.9356 0.9372 0.935     nan    nan    nan    nan    nan]
+ [0.9326 0.9302 0.9329 0.9365 0.9279 0.9367    nan    nan    nan    nan]
+ [0.9316 0.9262 0.9306 0.9314 0.9292 0.9366 0.9303    nan    nan    nan]
+ [0.9327 0.9288 0.9279 0.9265 0.9279 0.9374 0.9291 0.9309    nan    nan]
+ [0.931  0.9246 0.9271 0.9265 0.9268 0.9327 0.9285 0.9286 0.9286    nan]
+ [0.9274 0.9242 0.9242 0.9251 0.9273 0.931  0.9265 0.9279 0.9283 0.9279]]
 creating a new head
 Saving weights before core set training
-Epoch: 0001 cost= 1124.778320312
-Epoch: 0006 cost= 1123.252319336
-Epoch: 0011 cost= 1121.856079102
-Epoch: 0016 cost= 1120.455200195
-Epoch: 0021 cost= 1119.052124023
-Epoch: 0026 cost= 1117.713012695
-Epoch: 0031 cost= 1116.304077148
-Epoch: 0036 cost= 1115.018676758
-Epoch: 0041 cost= 1113.739135742
-Epoch: 0046 cost= 1112.415527344
-Epoch: 0051 cost= 1111.181640625
-Epoch: 0056 cost= 1109.928222656
-Epoch: 0061 cost= 1108.721679688
-Epoch: 0066 cost= 1107.495361328
-Epoch: 0071 cost= 1106.314697266
-Epoch: 0076 cost= 1105.130981445
-Epoch: 0081 cost= 1103.965698242
-Epoch: 0086 cost= 1102.790527344
-Epoch: 0091 cost= 1101.610473633
-Epoch: 0096 cost= 1100.473144531
+Epoch: 0001 cost= 46.759811401
+Epoch: 0006 cost= 44.325504303
+Epoch: 0011 cost= 43.327957153
+Epoch: 0016 cost= 42.386810303
+Epoch: 0021 cost= 41.471138000
+Epoch: 0026 cost= 40.568576813
+Epoch: 0031 cost= 39.678245544
+Epoch: 0036 cost= 38.793968201
+Epoch: 0041 cost= 37.911071777
+Epoch: 0046 cost= 37.033439636
+Epoch: 0051 cost= 36.157505035
+Epoch: 0056 cost= 35.282634735
+Epoch: 0061 cost= 34.414974213
+Epoch: 0066 cost= 33.547508240
+Epoch: 0071 cost= 32.685115814
+Epoch: 0076 cost= 31.825578690
+Epoch: 0081 cost= 30.968692780
+Epoch: 0086 cost= 30.118124008
+Epoch: 0091 cost= 29.269016266
+Epoch: 0096 cost= 28.426845551
 Optimization Finished!
-Accuracy is 0.6419
+Accuracy is 0.9553
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 563.466552734
-Epoch: 0006 cost= 561.945434570
-Epoch: 0011 cost= 560.515991211
-Epoch: 0016 cost= 559.030578613
-Epoch: 0021 cost= 557.607360840
-Epoch: 0026 cost= 556.226684570
-Epoch: 0031 cost= 554.930419922
-Epoch: 0036 cost= 553.692626953
-Epoch: 0041 cost= 552.408203125
-Epoch: 0046 cost= 551.197082520
-Epoch: 0051 cost= 550.012634277
-Epoch: 0056 cost= 548.832641602
-Epoch: 0061 cost= 547.679504395
-Epoch: 0066 cost= 546.517639160
-Epoch: 0071 cost= 545.374084473
-Epoch: 0076 cost= 544.212280273
-Epoch: 0081 cost= 543.066284180
-Epoch: 0086 cost= 541.943908691
-Epoch: 0091 cost= 540.792602539
-Epoch: 0096 cost= 539.671081543
+Epoch: 0001 cost= 24.086662292
+Epoch: 0006 cost= 21.878797531
+Epoch: 0011 cost= 20.945398331
+Epoch: 0016 cost= 20.067846298
+Epoch: 0021 cost= 19.208759308
+Epoch: 0026 cost= 18.362382889
+Epoch: 0031 cost= 17.533370972
+Epoch: 0036 cost= 16.708564758
+Epoch: 0041 cost= 15.901334763
+Epoch: 0046 cost= 15.099804878
+Epoch: 0051 cost= 14.323639870
+Epoch: 0056 cost= 13.558759689
+Epoch: 0061 cost= 12.810708046
+Epoch: 0066 cost= 12.085543633
+Epoch: 0071 cost= 11.382637024
+Epoch: 0076 cost= 10.702990532
+Epoch: 0081 cost= 10.038663864
+Epoch: 0086 cost= 9.405268669
+Epoch: 0091 cost= 8.792055130
+Epoch: 0096 cost= 8.217561722
 Optimization Finished!
-Accuracy is 0.6301
-Accuracy is 0.6262
+Accuracy is 0.9533
+Accuracy is 0.9542
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 376.389984131
-Epoch: 0006 cost= 374.866760254
-Epoch: 0011 cost= 373.393798828
-Epoch: 0016 cost= 371.873596191
-Epoch: 0021 cost= 370.437347412
-Epoch: 0026 cost= 369.114929199
-Epoch: 0031 cost= 367.819519043
-Epoch: 0036 cost= 366.590179443
-Epoch: 0041 cost= 365.370452881
-Epoch: 0046 cost= 364.174682617
-Epoch: 0051 cost= 363.004760742
-Epoch: 0056 cost= 361.846038818
-Epoch: 0061 cost= 360.708068848
-Epoch: 0066 cost= 359.545776367
-Epoch: 0071 cost= 358.417053223
-Epoch: 0076 cost= 357.289093018
-Epoch: 0081 cost= 356.160522461
-Epoch: 0086 cost= 355.023406982
-Epoch: 0091 cost= 353.885833740
-Epoch: 0096 cost= 352.770904541
+Epoch: 0001 cost= 16.446973801
+Epoch: 0006 cost= 14.409603119
+Epoch: 0011 cost= 13.529323578
+Epoch: 0016 cost= 12.706375122
+Epoch: 0021 cost= 11.916982651
+Epoch: 0026 cost= 11.150300980
+Epoch: 0031 cost= 10.402865410
+Epoch: 0036 cost= 9.685660362
+Epoch: 0041 cost= 8.993738174
+Epoch: 0046 cost= 8.335768700
+Epoch: 0051 cost= 7.702737808
+Epoch: 0056 cost= 7.107973576
+Epoch: 0061 cost= 6.543097496
+Epoch: 0066 cost= 6.013205528
+Epoch: 0071 cost= 5.521032810
+Epoch: 0076 cost= 5.057878494
+Epoch: 0081 cost= 4.631450176
+Epoch: 0086 cost= 4.239619255
+Epoch: 0091 cost= 3.887367964
+Epoch: 0096 cost= 3.569471836
 Optimization Finished!
-Accuracy is 0.6172
-Accuracy is 0.6156
-Accuracy is 0.6485
+Accuracy is 0.9513
+Accuracy is 0.9503
+Accuracy is 0.9508
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 282.837646484
-Epoch: 0006 cost= 281.340911865
-Epoch: 0011 cost= 279.900024414
-Epoch: 0016 cost= 278.409759521
-Epoch: 0021 cost= 276.994873047
-Epoch: 0026 cost= 275.666992188
-Epoch: 0031 cost= 274.382202148
-Epoch: 0036 cost= 273.157348633
-Epoch: 0041 cost= 271.950622559
-Epoch: 0046 cost= 270.788696289
-Epoch: 0051 cost= 269.644439697
-Epoch: 0056 cost= 268.449645996
-Epoch: 0061 cost= 267.310058594
-Epoch: 0066 cost= 266.157226562
-Epoch: 0071 cost= 265.034484863
-Epoch: 0076 cost= 263.906402588
-Epoch: 0081 cost= 262.760681152
-Epoch: 0086 cost= 261.631103516
-Epoch: 0091 cost= 260.517669678
-Epoch: 0096 cost= 259.386962891
+Epoch: 0001 cost= 12.582172394
+Epoch: 0006 cost= 10.718194008
+Epoch: 0011 cost= 9.900744438
+Epoch: 0016 cost= 9.147381783
+Epoch: 0021 cost= 8.432567596
+Epoch: 0026 cost= 7.758226395
+Epoch: 0031 cost= 7.124560356
+Epoch: 0036 cost= 6.531474113
+Epoch: 0041 cost= 5.977412224
+Epoch: 0046 cost= 5.467910290
+Epoch: 0051 cost= 4.997246265
+Epoch: 0056 cost= 4.563023090
+Epoch: 0061 cost= 4.172027111
+Epoch: 0066 cost= 3.815129280
+Epoch: 0071 cost= 3.488248825
+Epoch: 0076 cost= 3.200410128
+Epoch: 0081 cost= 2.944442987
+Epoch: 0086 cost= 2.707410812
+Epoch: 0091 cost= 2.509182692
+Epoch: 0096 cost= 2.325153828
 Optimization Finished!
-Accuracy is 0.6007
-Accuracy is 0.6086
-Accuracy is 0.6421
-Accuracy is 0.6508
+Accuracy is 0.9498
+Accuracy is 0.9463
+Accuracy is 0.9473
+Accuracy is 0.9516
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 226.723526001
-Epoch: 0006 cost= 225.436981201
-Epoch: 0011 cost= 224.135208130
-Epoch: 0016 cost= 222.827056885
-Epoch: 0021 cost= 221.663604736
-Epoch: 0026 cost= 220.557739258
-Epoch: 0031 cost= 219.505996704
-Epoch: 0036 cost= 218.526153564
-Epoch: 0041 cost= 217.544311523
-Epoch: 0046 cost= 216.615692139
-Epoch: 0051 cost= 215.660766602
-Epoch: 0056 cost= 214.747558594
-Epoch: 0061 cost= 213.826004028
-Epoch: 0066 cost= 212.924133301
-Epoch: 0071 cost= 212.022903442
-Epoch: 0076 cost= 211.116638184
-Epoch: 0081 cost= 210.208648682
-Epoch: 0086 cost= 209.310958862
-Epoch: 0091 cost= 208.408843994
-Epoch: 0096 cost= 207.523223877
+Epoch: 0001 cost= 10.286946297
+Epoch: 0006 cost= 8.519723892
+Epoch: 0011 cost= 7.766793251
+Epoch: 0016 cost= 7.083383560
+Epoch: 0021 cost= 6.452915668
+Epoch: 0026 cost= 5.871942997
+Epoch: 0031 cost= 5.341783047
+Epoch: 0036 cost= 4.858349800
+Epoch: 0041 cost= 4.416677952
+Epoch: 0046 cost= 4.022231579
+Epoch: 0051 cost= 3.663005352
+Epoch: 0056 cost= 3.343409777
+Epoch: 0061 cost= 3.051848650
+Epoch: 0066 cost= 2.796973228
+Epoch: 0071 cost= 2.563914776
+Epoch: 0076 cost= 2.356989622
+Epoch: 0081 cost= 2.171817303
+Epoch: 0086 cost= 2.002166033
+Epoch: 0091 cost= 1.856261373
+Epoch: 0096 cost= 1.719233513
 Optimization Finished!
-Accuracy is 0.58
-Accuracy is 0.5945
-Accuracy is 0.6287
-Accuracy is 0.6487
-Accuracy is 0.6166
+Accuracy is 0.9461
+Accuracy is 0.9475
+Accuracy is 0.9466
+Accuracy is 0.9505
+Accuracy is 0.942
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 189.287643433
-Epoch: 0006 cost= 187.967391968
-Epoch: 0011 cost= 186.573730469
-Epoch: 0016 cost= 185.225204468
-Epoch: 0021 cost= 184.018951416
-Epoch: 0026 cost= 182.916992188
-Epoch: 0031 cost= 181.869567871
-Epoch: 0036 cost= 180.815734863
-Epoch: 0041 cost= 179.826339722
-Epoch: 0046 cost= 178.881774902
-Epoch: 0051 cost= 177.897323608
-Epoch: 0056 cost= 176.945693970
-Epoch: 0061 cost= 176.003479004
-Epoch: 0066 cost= 175.062576294
-Epoch: 0071 cost= 174.136672974
-Epoch: 0076 cost= 173.179519653
-Epoch: 0081 cost= 172.248504639
-Epoch: 0086 cost= 171.315490723
-Epoch: 0091 cost= 170.384063721
-Epoch: 0096 cost= 169.453063965
+Epoch: 0001 cost= 8.747092247
+Epoch: 0006 cost= 7.077082157
+Epoch: 0011 cost= 6.385174274
+Epoch: 0016 cost= 5.779028416
+Epoch: 0021 cost= 5.231841564
+Epoch: 0026 cost= 4.744504929
+Epoch: 0031 cost= 4.308357716
+Epoch: 0036 cost= 3.915853262
+Epoch: 0041 cost= 3.567788601
+Epoch: 0046 cost= 3.254230261
+Epoch: 0051 cost= 2.973762989
+Epoch: 0056 cost= 2.722320557
+Epoch: 0061 cost= 2.493498325
+Epoch: 0066 cost= 2.292519808
+Epoch: 0071 cost= 2.106456757
+Epoch: 0076 cost= 1.932922363
+Epoch: 0081 cost= 1.787708521
+Epoch: 0086 cost= 1.655784726
+Epoch: 0091 cost= 1.536376953
+Epoch: 0096 cost= 1.431168199
 Optimization Finished!
-Accuracy is 0.5981
-Accuracy is 0.6076
-Accuracy is 0.6425
-Accuracy is 0.6592
-Accuracy is 0.6447
-Accuracy is 0.6415
+Accuracy is 0.9439
+Accuracy is 0.9443
+Accuracy is 0.9462
+Accuracy is 0.9459
+Accuracy is 0.9413
+Accuracy is 0.9494
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 162.551620483
-Epoch: 0006 cost= 161.206588745
-Epoch: 0011 cost= 159.764831543
-Epoch: 0016 cost= 158.385406494
-Epoch: 0021 cost= 157.192138672
-Epoch: 0026 cost= 156.040939331
-Epoch: 0031 cost= 154.965530396
-Epoch: 0036 cost= 153.929504395
-Epoch: 0041 cost= 152.902755737
-Epoch: 0046 cost= 151.903213501
-Epoch: 0051 cost= 150.923187256
-Epoch: 0056 cost= 149.957427979
-Epoch: 0061 cost= 148.974029541
-Epoch: 0066 cost= 148.016967773
-Epoch: 0071 cost= 147.050247192
-Epoch: 0076 cost= 146.096405029
-Epoch: 0081 cost= 145.138992310
-Epoch: 0086 cost= 144.192047119
-Epoch: 0091 cost= 143.224548340
-Epoch: 0096 cost= 142.274108887
+Epoch: 0001 cost= 7.648363113
+Epoch: 0006 cost= 6.068141937
+Epoch: 0011 cost= 5.435882568
+Epoch: 0016 cost= 4.894882202
+Epoch: 0021 cost= 4.420800209
+Epoch: 0026 cost= 4.005070686
+Epoch: 0031 cost= 3.637252808
+Epoch: 0036 cost= 3.312673092
+Epoch: 0041 cost= 3.026056528
+Epoch: 0046 cost= 2.767182112
+Epoch: 0051 cost= 2.537540197
+Epoch: 0056 cost= 2.330126047
+Epoch: 0061 cost= 2.143333435
+Epoch: 0066 cost= 1.970571756
+Epoch: 0071 cost= 1.816809177
+Epoch: 0076 cost= 1.677566409
+Epoch: 0081 cost= 1.554592848
+Epoch: 0086 cost= 1.443181157
+Epoch: 0091 cost= 1.345804095
+Epoch: 0096 cost= 1.262281060
 Optimization Finished!
-Accuracy is 0.5948
-Accuracy is 0.6
-Accuracy is 0.6508
-Accuracy is 0.6404
-Accuracy is 0.6467
-Accuracy is 0.6425
-Accuracy is 0.6356
+Accuracy is 0.9429
+Accuracy is 0.9408
+Accuracy is 0.9433
+Accuracy is 0.9468
+Accuracy is 0.9457
+Accuracy is 0.9476
+Accuracy is 0.9419
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 142.490020752
-Epoch: 0006 cost= 141.111160278
-Epoch: 0011 cost= 139.659271240
-Epoch: 0016 cost= 138.293380737
-Epoch: 0021 cost= 137.085266113
-Epoch: 0026 cost= 135.929031372
-Epoch: 0031 cost= 134.808227539
-Epoch: 0036 cost= 133.761810303
-Epoch: 0041 cost= 132.740371704
-Epoch: 0046 cost= 131.734497070
-Epoch: 0051 cost= 130.724533081
-Epoch: 0056 cost= 129.736694336
-Epoch: 0061 cost= 128.744186401
-Epoch: 0066 cost= 127.760581970
-Epoch: 0071 cost= 126.787506104
-Epoch: 0076 cost= 125.820434570
-Epoch: 0081 cost= 124.848190308
-Epoch: 0086 cost= 123.875625610
-Epoch: 0091 cost= 122.900352478
-Epoch: 0096 cost= 121.924324036
+Epoch: 0001 cost= 6.816814423
+Epoch: 0006 cost= 5.317971230
+Epoch: 0011 cost= 4.741558552
+Epoch: 0016 cost= 4.258372784
+Epoch: 0021 cost= 3.843985558
+Epoch: 0026 cost= 3.483691692
+Epoch: 0031 cost= 3.172740221
+Epoch: 0036 cost= 2.896005392
+Epoch: 0041 cost= 2.651699066
+Epoch: 0046 cost= 2.435606956
+Epoch: 0051 cost= 2.236945868
+Epoch: 0056 cost= 2.054830790
+Epoch: 0061 cost= 1.892402411
+Epoch: 0066 cost= 1.741532683
+Epoch: 0071 cost= 1.609618306
+Epoch: 0076 cost= 1.490615010
+Epoch: 0081 cost= 1.384299755
+Epoch: 0086 cost= 1.291930795
+Epoch: 0091 cost= 1.209910631
+Epoch: 0096 cost= 1.140530467
 Optimization Finished!
-Accuracy is 0.602
-Accuracy is 0.5819
-Accuracy is 0.6473
-Accuracy is 0.635
-Accuracy is 0.6223
-Accuracy is 0.6338
-Accuracy is 0.6289
-Accuracy is 0.6082
+Accuracy is 0.9431
+Accuracy is 0.9413
+Accuracy is 0.9448
+Accuracy is 0.9416
+Accuracy is 0.9422
+Accuracy is 0.948
+Accuracy is 0.9441
+Accuracy is 0.9432
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 126.879142761
-Epoch: 0006 cost= 125.605064392
-Epoch: 0011 cost= 124.277252197
-Epoch: 0016 cost= 123.064880371
-Epoch: 0021 cost= 121.757141113
-Epoch: 0026 cost= 120.646980286
-Epoch: 0031 cost= 119.481765747
-Epoch: 0036 cost= 118.446525574
-Epoch: 0041 cost= 117.419601440
-Epoch: 0046 cost= 116.373229980
-Epoch: 0051 cost= 115.334083557
-Epoch: 0056 cost= 114.303970337
-Epoch: 0061 cost= 113.298934937
-Epoch: 0066 cost= 112.345382690
-Epoch: 0071 cost= 111.288162231
-Epoch: 0076 cost= 110.317611694
-Epoch: 0081 cost= 109.345825195
-Epoch: 0086 cost= 108.365547180
-Epoch: 0091 cost= 107.385681152
-Epoch: 0096 cost= 106.413955688
+Epoch: 0001 cost= 6.168749809
+Epoch: 0006 cost= 4.738105297
+Epoch: 0011 cost= 4.211486340
+Epoch: 0016 cost= 3.780995131
+Epoch: 0021 cost= 3.415134430
+Epoch: 0026 cost= 3.098865032
+Epoch: 0031 cost= 2.827890635
+Epoch: 0036 cost= 2.586864710
+Epoch: 0041 cost= 2.370086908
+Epoch: 0046 cost= 2.176975727
+Epoch: 0051 cost= 2.001317739
+Epoch: 0056 cost= 1.842106342
+Epoch: 0061 cost= 1.695660472
+Epoch: 0066 cost= 1.564338088
+Epoch: 0071 cost= 1.447891831
+Epoch: 0076 cost= 1.342236400
+Epoch: 0081 cost= 1.253033280
+Epoch: 0086 cost= 1.174579144
+Epoch: 0091 cost= 1.105035424
+Epoch: 0096 cost= 1.046846867
 Optimization Finished!
-Accuracy is 0.5533
-Accuracy is 0.5608
-Accuracy is 0.6064
-Accuracy is 0.6285
-Accuracy is 0.6238
-Accuracy is 0.6352
-Accuracy is 0.6019
-Accuracy is 0.5935
-Accuracy is 0.6052
+Accuracy is 0.9418
+Accuracy is 0.941
+Accuracy is 0.943
+Accuracy is 0.9408
+Accuracy is 0.9406
+Accuracy is 0.9446
+Accuracy is 0.9418
+Accuracy is 0.941
+Accuracy is 0.9453
 Reloading previous weights after core set training
 Saving weights before core set training
-Epoch: 0001 cost= 114.431602478
-Epoch: 0006 cost= 113.161361694
-Epoch: 0011 cost= 111.761909485
-Epoch: 0016 cost= 110.458854675
-Epoch: 0021 cost= 109.331359863
-Epoch: 0026 cost= 108.256072998
-Epoch: 0031 cost= 107.255187988
-Epoch: 0036 cost= 106.288993835
-Epoch: 0041 cost= 105.342582703
-Epoch: 0046 cost= 104.440711975
-Epoch: 0051 cost= 103.524879456
-Epoch: 0056 cost= 102.619186401
-Epoch: 0061 cost= 101.733428955
-Epoch: 0066 cost= 100.833610535
-Epoch: 0071 cost= 99.947158813
-Epoch: 0076 cost= 99.061203003
-Epoch: 0081 cost= 98.182922363
-Epoch: 0086 cost= 97.290328979
-Epoch: 0091 cost= 96.400329590
-Epoch: 0096 cost= 95.523345947
+Epoch: 0001 cost= 5.651857853
+Epoch: 0006 cost= 4.285649776
+Epoch: 0011 cost= 3.806074858
+Epoch: 0016 cost= 3.421399593
+Epoch: 0021 cost= 3.097781420
+Epoch: 0026 cost= 2.820706367
+Epoch: 0031 cost= 2.581651449
+Epoch: 0036 cost= 2.367925882
+Epoch: 0041 cost= 2.176326036
+Epoch: 0046 cost= 2.004534245
+Epoch: 0051 cost= 1.849298954
+Epoch: 0056 cost= 1.703989625
+Epoch: 0061 cost= 1.576459289
+Epoch: 0066 cost= 1.461178660
+Epoch: 0071 cost= 1.357543111
+Epoch: 0076 cost= 1.265065908
+Epoch: 0081 cost= 1.185932279
+Epoch: 0086 cost= 1.119621754
+Epoch: 0091 cost= 1.055795193
+Epoch: 0096 cost= 1.005488515
 Optimization Finished!
-Accuracy is 0.6017
-Accuracy is 0.6061
-Accuracy is 0.6368
-Accuracy is 0.6554
-Accuracy is 0.5953
-Accuracy is 0.6421
-Accuracy is 0.617
-Accuracy is 0.6253
-Accuracy is 0.6236
+Accuracy is 0.9405
+Accuracy is 0.9398
+Accuracy is 0.9438
+Accuracy is 0.9414
+Accuracy is 0.942
+Accuracy is 0.9455
+Accuracy is 0.9424
+Accuracy is 0.9427
+Accuracy is 0.9454
+Accuracy is 0.9424
+Reloading previous weights after core set training
+[[0.9553    nan    nan    nan    nan    nan    nan    nan    nan    nan]
+ [0.9533 0.9542    nan    nan    nan    nan    nan    nan    nan    nan]
+ [0.9513 0.9503 0.9508    nan    nan    nan    nan    nan    nan    nan]
+ [0.9498 0.9463 0.9473 0.9516    nan    nan    nan    nan    nan    nan]
+ [0.9461 0.9475 0.9466 0.9505 0.942     nan    nan    nan    nan    nan]
+ [0.9439 0.9443 0.9462 0.9459 0.9413 0.9494    nan    nan    nan    nan]
+ [0.9429 0.9408 0.9433 0.9468 0.9457 0.9476 0.9419    nan    nan    nan]
+ [0.9431 0.9413 0.9448 0.9416 0.9422 0.948  0.9441 0.9432    nan    nan]
+ [0.9418 0.941  0.943  0.9408 0.9406 0.9446 0.9418 0.941  0.9453    nan]
+ [0.9405 0.9398 0.9438 0.9414 0.942  0.9455 0.9424 0.9427 0.9454 0.9424]]
+creating a new head
+Saving weights before core set training
+Epoch: 0001 cost= 1124.772460938
+Epoch: 0006 cost= 1123.266113281
+Epoch: 0011 cost= 1121.847656250
+Epoch: 0016 cost= 1120.472778320
+Epoch: 0021 cost= 1119.040039062
+Epoch: 0026 cost= 1117.674194336
+Epoch: 0031 cost= 1116.297485352
+Epoch: 0036 cost= 1114.967651367
+Epoch: 0041 cost= 1113.678833008
+Epoch: 0046 cost= 1112.462890625
+Epoch: 0051 cost= 1111.235107422
+Epoch: 0056 cost= 1109.920410156
+Epoch: 0061 cost= 1108.769531250
+Epoch: 0066 cost= 1107.522949219
+Epoch: 0071 cost= 1106.335937500
+Epoch: 0076 cost= 1105.136108398
+Epoch: 0081 cost= 1103.927368164
+Epoch: 0086 cost= 1102.783691406
+Epoch: 0091 cost= 1101.639404297
+Epoch: 0096 cost= 1100.449340820
+Optimization Finished!
+Accuracy is 0.6325
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 563.467285156
+Epoch: 0006 cost= 561.961364746
+Epoch: 0011 cost= 560.503051758
+Epoch: 0016 cost= 559.052062988
+Epoch: 0021 cost= 557.617187500
+Epoch: 0026 cost= 556.231201172
+Epoch: 0031 cost= 554.914306641
+Epoch: 0036 cost= 553.664184570
+Epoch: 0041 cost= 552.450439453
+Epoch: 0046 cost= 551.203552246
+Epoch: 0051 cost= 550.011596680
+Epoch: 0056 cost= 548.823364258
+Epoch: 0061 cost= 547.672607422
+Epoch: 0066 cost= 546.499389648
+Epoch: 0071 cost= 545.361572266
+Epoch: 0076 cost= 544.216674805
+Epoch: 0081 cost= 543.065856934
+Epoch: 0086 cost= 541.930480957
+Epoch: 0091 cost= 540.783996582
+Epoch: 0096 cost= 539.650268555
+Optimization Finished!
+Accuracy is 0.616
+Accuracy is 0.6202
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 376.381072998
+Epoch: 0006 cost= 374.858581543
+Epoch: 0011 cost= 373.381103516
+Epoch: 0016 cost= 371.900512695
+Epoch: 0021 cost= 370.465362549
+Epoch: 0026 cost= 369.144500732
+Epoch: 0031 cost= 367.842437744
+Epoch: 0036 cost= 366.590850830
+Epoch: 0041 cost= 365.377990723
+Epoch: 0046 cost= 364.176391602
+Epoch: 0051 cost= 363.014617920
+Epoch: 0056 cost= 361.854187012
+Epoch: 0061 cost= 360.704589844
+Epoch: 0066 cost= 359.562255859
+Epoch: 0071 cost= 358.421569824
+Epoch: 0076 cost= 357.283233643
+Epoch: 0081 cost= 356.147277832
+Epoch: 0086 cost= 355.015991211
+Epoch: 0091 cost= 353.892944336
+Epoch: 0096 cost= 352.771301270
+Optimization Finished!
 Accuracy is 0.6204
+Accuracy is 0.6246
+Accuracy is 0.6553
 Reloading previous weights after core set training
-[[0.6419    nan    nan    nan    nan    nan    nan    nan    nan    nan]
- [0.6301 0.6262    nan    nan    nan    nan    nan    nan    nan    nan]
- [0.6172 0.6156 0.6485    nan    nan    nan    nan    nan    nan    nan]
- [0.6007 0.6086 0.6421 0.6508    nan    nan    nan    nan    nan    nan]
- [0.58   0.5945 0.6287 0.6487 0.6166    nan    nan    nan    nan    nan]
- [0.5981 0.6076 0.6425 0.6592 0.6447 0.6415    nan    nan    nan    nan]
- [0.5948 0.6    0.6508 0.6404 0.6467 0.6425 0.6356    nan    nan    nan]
- [0.602  0.5819 0.6473 0.635  0.6223 0.6338 0.6289 0.6082    nan    nan]
- [0.5533 0.5608 0.6064 0.6285 0.6238 0.6352 0.6019 0.5935 0.6052    nan]
- [0.6017 0.6061 0.6368 0.6554 0.5953 0.6421 0.617  0.6253 0.6236 0.6204]]
+Saving weights before core set training
+Epoch: 0001 cost= 282.823852539
+Epoch: 0006 cost= 281.345214844
+Epoch: 0011 cost= 279.884307861
+Epoch: 0016 cost= 278.378295898
+Epoch: 0021 cost= 277.015197754
+Epoch: 0026 cost= 275.684997559
+Epoch: 0031 cost= 274.376403809
+Epoch: 0036 cost= 273.162353516
+Epoch: 0041 cost= 271.931182861
+Epoch: 0046 cost= 270.796691895
+Epoch: 0051 cost= 269.608917236
+Epoch: 0056 cost= 268.444427490
+Epoch: 0061 cost= 267.322540283
+Epoch: 0066 cost= 266.154968262
+Epoch: 0071 cost= 265.023498535
+Epoch: 0076 cost= 263.882049561
+Epoch: 0081 cost= 262.752075195
+Epoch: 0086 cost= 261.643920898
+Epoch: 0091 cost= 260.526062012
+Epoch: 0096 cost= 259.390747070
+Optimization Finished!
+Accuracy is 0.6033
+Accuracy is 0.5982
+Accuracy is 0.6382
+Accuracy is 0.6601
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 226.720703125
+Epoch: 0006 cost= 225.437622070
+Epoch: 0011 cost= 224.123977661
+Epoch: 0016 cost= 222.793182373
+Epoch: 0021 cost= 221.651351929
+Epoch: 0026 cost= 220.535064697
+Epoch: 0031 cost= 219.520904541
+Epoch: 0036 cost= 218.517822266
+Epoch: 0041 cost= 217.538574219
+Epoch: 0046 cost= 216.584472656
+Epoch: 0051 cost= 215.661346436
+Epoch: 0056 cost= 214.746963501
+Epoch: 0061 cost= 213.825897217
+Epoch: 0066 cost= 212.915588379
+Epoch: 0071 cost= 212.001220703
+Epoch: 0076 cost= 211.107040405
+Epoch: 0081 cost= 210.215301514
+Epoch: 0086 cost= 209.312301636
+Epoch: 0091 cost= 208.414550781
+Epoch: 0096 cost= 207.515197754
+Optimization Finished!
+Accuracy is 0.5671
+Accuracy is 0.5908
+Accuracy is 0.6266
+Accuracy is 0.6352
+Accuracy is 0.614
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 189.291351318
+Epoch: 0006 cost= 187.967514038
+Epoch: 0011 cost= 186.567199707
+Epoch: 0016 cost= 185.234252930
+Epoch: 0021 cost= 184.027145386
+Epoch: 0026 cost= 182.917129517
+Epoch: 0031 cost= 181.850784302
+Epoch: 0036 cost= 180.831634521
+Epoch: 0041 cost= 179.836044312
+Epoch: 0046 cost= 178.851119995
+Epoch: 0051 cost= 177.904861450
+Epoch: 0056 cost= 176.944198608
+Epoch: 0061 cost= 175.999649048
+Epoch: 0066 cost= 175.055999756
+Epoch: 0071 cost= 174.110336304
+Epoch: 0076 cost= 173.180191040
+Epoch: 0081 cost= 172.251037598
+Epoch: 0086 cost= 171.315185547
+Epoch: 0091 cost= 170.377380371
+Epoch: 0096 cost= 169.449966431
+Optimization Finished!
+Accuracy is 0.5874
+Accuracy is 0.5937
+Accuracy is 0.6456
+Accuracy is 0.6581
+Accuracy is 0.6403
+Accuracy is 0.6331
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 162.554489136
+Epoch: 0006 cost= 161.200546265
+Epoch: 0011 cost= 159.770034790
+Epoch: 0016 cost= 158.396469116
+Epoch: 0021 cost= 157.187667847
+Epoch: 0026 cost= 156.049942017
+Epoch: 0031 cost= 154.958328247
+Epoch: 0036 cost= 153.915985107
+Epoch: 0041 cost= 152.899841309
+Epoch: 0046 cost= 151.915725708
+Epoch: 0051 cost= 150.918426514
+Epoch: 0056 cost= 149.953201294
+Epoch: 0061 cost= 148.980743408
+Epoch: 0066 cost= 148.019973755
+Epoch: 0071 cost= 147.054046631
+Epoch: 0076 cost= 146.097885132
+Epoch: 0081 cost= 145.147125244
+Epoch: 0086 cost= 144.186203003
+Epoch: 0091 cost= 143.230392456
+Epoch: 0096 cost= 142.284332275
+Optimization Finished!
+Accuracy is 0.5923
+Accuracy is 0.5954
+Accuracy is 0.6351
+Accuracy is 0.6488
+Accuracy is 0.6322
+Accuracy is 0.6485
+Accuracy is 0.6209
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 142.487609863
+Epoch: 0006 cost= 141.113510132
+Epoch: 0011 cost= 139.651794434
+Epoch: 0016 cost= 138.271026611
+Epoch: 0021 cost= 137.083908081
+Epoch: 0026 cost= 135.909942627
+Epoch: 0031 cost= 134.817047119
+Epoch: 0036 cost= 133.770538330
+Epoch: 0041 cost= 132.739746094
+Epoch: 0046 cost= 131.722167969
+Epoch: 0051 cost= 130.734924316
+Epoch: 0056 cost= 129.737289429
+Epoch: 0061 cost= 128.756240845
+Epoch: 0066 cost= 127.770278931
+Epoch: 0071 cost= 126.795974731
+Epoch: 0076 cost= 125.823791504
+Epoch: 0081 cost= 124.846717834
+Epoch: 0086 cost= 123.870277405
+Epoch: 0091 cost= 122.905197144
+Epoch: 0096 cost= 121.930229187
+Optimization Finished!
+Accuracy is 0.5951
+Accuracy is 0.5919
+Accuracy is 0.654
+Accuracy is 0.6331
+Accuracy is 0.629
+Accuracy is 0.6391
+Accuracy is 0.6244
+Accuracy is 0.6045
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 126.882484436
+Epoch: 0006 cost= 125.590759277
+Epoch: 0011 cost= 124.286621094
+Epoch: 0016 cost= 123.045883179
+Epoch: 0021 cost= 121.747261047
+Epoch: 0026 cost= 120.627182007
+Epoch: 0031 cost= 119.499160767
+Epoch: 0036 cost= 118.416595459
+Epoch: 0041 cost= 117.393600464
+Epoch: 0046 cost= 116.361701965
+Epoch: 0051 cost= 115.312751770
+Epoch: 0056 cost= 114.294792175
+Epoch: 0061 cost= 113.278053284
+Epoch: 0066 cost= 112.324539185
+Epoch: 0071 cost= 111.274063110
+Epoch: 0076 cost= 110.320510864
+Epoch: 0081 cost= 109.326995850
+Epoch: 0086 cost= 108.340774536
+Epoch: 0091 cost= 107.364860535
+Epoch: 0096 cost= 106.431526184
+Optimization Finished!
+Accuracy is 0.5635
+Accuracy is 0.5778
+Accuracy is 0.617
+Accuracy is 0.6402
+Accuracy is 0.6225
+Accuracy is 0.6399
+Accuracy is 0.6083
+Accuracy is 0.5888
+Accuracy is 0.6226
+Reloading previous weights after core set training
+Saving weights before core set training
+Epoch: 0001 cost= 114.429199219
+Epoch: 0006 cost= 113.152359009
+Epoch: 0011 cost= 111.729011536
+Epoch: 0016 cost= 110.448547363
+Epoch: 0021 cost= 109.318489075
+Epoch: 0026 cost= 108.263839722
+Epoch: 0031 cost= 107.246116638
+Epoch: 0036 cost= 106.289810181
+Epoch: 0041 cost= 105.351264954
+Epoch: 0046 cost= 104.429298401
+Epoch: 0051 cost= 103.526687622
+Epoch: 0056 cost= 102.620468140
+Epoch: 0061 cost= 101.722564697
+Epoch: 0066 cost= 100.832351685
+Epoch: 0071 cost= 99.943862915
+Epoch: 0076 cost= 99.061996460
+Epoch: 0081 cost= 98.173881531
+Epoch: 0086 cost= 97.285118103
+Epoch: 0091 cost= 96.411254883
+Epoch: 0096 cost= 95.527839661
+Optimization Finished!
+Accuracy is 0.6119
+Accuracy is 0.5967
+Accuracy is 0.6335
+Accuracy is 0.6549
+Accuracy is 0.6101
+Accuracy is 0.6368
+Accuracy is 0.6157
+Accuracy is 0.6249
+Accuracy is 0.62
+Accuracy is 0.6172
+Reloading previous weights after core set training
+[[0.6325    nan    nan    nan    nan    nan    nan    nan    nan    nan]
+ [0.616  0.6202    nan    nan    nan    nan    nan    nan    nan    nan]
+ [0.6204 0.6246 0.6553    nan    nan    nan    nan    nan    nan    nan]
+ [0.6033 0.5982 0.6382 0.6601    nan    nan    nan    nan    nan    nan]
+ [0.5671 0.5908 0.6266 0.6352 0.614     nan    nan    nan    nan    nan]
+ [0.5874 0.5937 0.6456 0.6581 0.6403 0.6331    nan    nan    nan    nan]
+ [0.5923 0.5954 0.6351 0.6488 0.6322 0.6485 0.6209    nan    nan    nan]
+ [0.5951 0.5919 0.654  0.6331 0.629  0.6391 0.6244 0.6045    nan    nan]
+ [0.5635 0.5778 0.617  0.6402 0.6225 0.6399 0.6083 0.5888 0.6226    nan]
+ [0.6119 0.5967 0.6335 0.6549 0.6101 0.6368 0.6157 0.6249 0.62   0.6172]]
