@@ -3,7 +3,6 @@ import matplotlib
 matplotlib.use('agg')
 from . import flags 
 import torch
-# torch.manual_seed(FLAGS['torch_seed'])
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # device = "cpu"
 import matplotlib.pyplot as plt

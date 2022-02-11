@@ -9,7 +9,6 @@ from torchvision import datasets
 from torch.autograd import Variable
 import torch.nn as nn
 import torch
-torch.manual_seed(flags.FLAGS['torch_seed'])
 
 n_epochs = 50
 batch_size = 64

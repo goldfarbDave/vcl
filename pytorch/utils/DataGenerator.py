@@ -32,8 +32,9 @@ class ToyDatasetGenerator():
         return np.asarray(self.train_data[0]).shape[1], 2
 
     def generate_data(self):
+        # FIX: updated global seed to fixed value from flags
         # fix seed to generate same dataset everytime
-        np.random.seed(1)
+        # np.random.seed(1)
 
         # first task first class data = second task first class data
         # mean = [0, 0]

@@ -1,2 +1,2 @@
 FLAGS = {}
-FLAGS['torch_seed'] = 11
+FLAGS['seed'] = 11
