@@ -158,11 +158,11 @@ class SplitMnistGenerator():
             self.cur_iter += 1
 
             return next_x_train, next_y_train, next_x_test, next_y_test
+
 class SplitCifarGenerator():
     def __init__(self):
         with open("data/cifar-10.pkl", 'rb') as f:
             dat = pickle.load(f)
-        import pdb; pdb.set_trace()
         split = lambda ar, idx: (ar[:idx], ar[idx:])
         tt_split = lambda ar: split(ar, 50000)
         self.data = dat['data']
@@ -172,14 +172,18 @@ class SplitCifarGenerator():
         self.tasks = list(zip(range(0,10,2), range(1,10,2)))
         self.cur_iter = 0
         self.max_iter = len(self.tasks)
+
     def get_dims(self):
         return self.data.shape[1], 2
+
     def next_task(self):
         if self.cur_iter >= self.max_iter:
             raise Exception("Number of tasks exceeded!")
         task = self.tasks[self.cur_iter]
         get_task_idxs = lambda ref: [ref == t for t in task]
-        get_labels = lambda label_ar: np.hstack([np.ones(int(label_ar.shape[0]/self.max_iter/2))*t for t in task])
+        #get_labels = lambda label_ar: np.hstack([np.ones(int(label_ar.shape[0]/self.max_iter/2))*t for t in task])
+        label_len = lambda ar: int(ar.shape[0]/self.max_iter/2)
+        get_labels = lambda ar: np.hstack(([0]*label_len(ar), [1]*label_len(ar)))
         get_data = lambda data_ar, label_ar: np.vstack([data_ar[t] for t in get_task_idxs(label_ar)])
         get_data_labels = lambda data_ar, label_ar: (get_data(data_ar, label_ar), get_labels(label_ar))
         x_train, y_train = get_data_labels(self.train_data, self.train_labels)
