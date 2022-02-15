@@ -1,9 +1,9 @@
 import numpy as np
 import gzip
 import pickle as cp
+import pickle
 from copy import deepcopy
 import matplotlib.pyplot as plt
-
 '''
 This class replicates the dataset on page 17 of VCL paper. It has two tasks and each task has 2 classes.
 '''
@@ -158,6 +158,39 @@ class SplitMnistGenerator():
             self.cur_iter += 1
 
             return next_x_train, next_y_train, next_x_test, next_y_test
+class SplitCifarGenerator():
+    def __init__(self):
+        with open("data/cifar-10.pkl", 'rb') as f:
+            dat = pickle.load(f)
+        import pdb; pdb.set_trace()
+        split = lambda ar, idx: (ar[:idx], ar[idx:])
+        tt_split = lambda ar: split(ar, 50000)
+        self.data = dat['data']
+        self.labels = dat['labels']
+        self.train_data, self.test_data = tt_split(self.data)
+        self.train_labels, self.test_labels = tt_split(self.labels)
+        self.tasks = list(zip(range(0,10,2), range(1,10,2)))
+        self.cur_iter = 0
+        self.max_iter = len(self.tasks)
+    def get_dims(self):
+        return self.data.shape[1], 2
+    def next_task(self):
+        if self.cur_iter >= self.max_iter:
+            raise Exception("Number of tasks exceeded!")
+        task = self.tasks[self.cur_iter]
+        get_task_idxs = lambda ref: [ref == t for t in task]
+        get_labels = lambda label_ar: np.hstack([np.ones(int(label_ar.shape[0]/self.max_iter/2))*t for t in task])
+        get_data = lambda data_ar, label_ar: np.vstack([data_ar[t] for t in get_task_idxs(label_ar)])
+        get_data_labels = lambda data_ar, label_ar: (get_data(data_ar, label_ar), get_labels(label_ar))
+        x_train, y_train = get_data_labels(self.train_data, self.train_labels)
+        x_test, y_test = get_data_labels(self.test_data, self.test_labels)
+        self.cur_iter += 1
+        return x_train, y_train, x_test, y_test
+
+def cifar_format_to_rgb(cifar_ar):
+    # Cifar format is flattened(Channel,Row,column). We want Row, Column, Channel
+    return cifar_ar.reshape(3,32,32).transpose(1,2,0)
+
 
 if __name__ == '__main__':
     data_gen = ToyDatasetGenerator(100)
