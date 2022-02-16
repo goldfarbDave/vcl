@@ -1,3 +1,4 @@
+from select import select
 import torch
 from . import flags 
 import numpy as np
@@ -187,7 +188,6 @@ class Vanilla_CNN(Cla_NN):
             pre = F.conv2d(input=act, weight=weights, bias=bias, stride=idx+1)
             act = F.relu(pre)
 
-        # import pdb; pdb.set_trace()
         act = act.view((-1, np.prod(act.shape[-2:])))
         for i in range(self.no_layers-1):
              pre = torch.add(torch.matmul(act, self.W[i]), self.b[i])
@@ -265,7 +265,7 @@ class Vanilla_CNN(Cla_NN):
 """ Bayesian Neural Network with Mean field VI approximation """
 class MFVI_NN(Cla_NN):
     def __init__(self, input_size, hidden_size, output_size, training_size,
-        no_train_samples=10, no_pred_samples=100, single_head = False, prev_means=None, learning_rate=0.001):
+        no_train_samples=10, no_pred_samples=100, single_head = False, prev_means=None, learning_rate=0.001, LRT=False):
         ##TODO: handle single head
         super(MFVI_NN, self).__init__(input_size, hidden_size, output_size, training_size)
 
@@ -276,6 +276,8 @@ class MFVI_NN(Cla_NN):
         self.out_size = output_size
         self.size = hidden_size
         self.single_head = single_head
+
+        self.LRT = LRT
 
         # hidden layer weight and bias means and variances - shared across tasks
         self.W_m, self.b_m = m1[0], m1[1]
@@ -302,8 +304,6 @@ class MFVI_NN(Cla_NN):
         self.prior_W_m_copy, self.prior_W_v_copy, self.prior_b_m_copy, self.prior_b_v_copy = None, None, None, None
         self.prior_W_last_m_copy, self.prior_W_last_v_copy, self.prior_b_last_m_copy, self.prior_b_last_v_copy = None, None, None, None
 
-
-
         self.no_layers = len(self.size) - 1
         self.no_train_samples = no_train_samples
         self.no_pred_samples = no_pred_samples
@@ -317,7 +317,6 @@ class MFVI_NN(Cla_NN):
             # create new task head -- involves new prior and posterior weights and biases for the new task
             self.create_head()
 
-
         m1.append(self.W_last_m)
         m1.append(self.b_last_m)
         v1.append(self.W_last_v)
@@ -325,7 +324,6 @@ class MFVI_NN(Cla_NN):
 
         r1 = m1 + v1
         self.weights = [item for sublist in r1 for item in sublist]
-
 
         self.optimizer = optim.Adam(self.weights, lr=learning_rate)
 
@@ -340,31 +338,67 @@ class MFVI_NN(Cla_NN):
         for i in range(self.no_layers-1):
             din = self.size[i]
             dout = self.size[i+1]
-            eps_w = torch.normal(torch.zeros((K, din, dout)), torch.ones((K, din, dout))).to(device = device)
-            eps_b = torch.normal(torch.zeros((K, 1, dout)), torch.ones((K, 1, dout))).to(device = device)
-            #eps_k_w = torch.normal(torch.zeros((K, ))
-            # random sample weight from distribution -- reparameterisation trick
-            weights = torch.add(eps_w * torch.exp(0.5*self.W_v[i]), self.W_m[i])
-            biases = torch.add(eps_b * torch.exp(0.5*self.b_v[i]), self.b_m[i])
-            pre = torch.add(torch.einsum('mni,mio->mno', act, weights), biases)
-            act = F.relu(pre)
+
+            if(self.LRT):
+                #local reparameterisation -- compute act_mu and act_sigma and then do act_mu+eps*act_sigma
+                # repeat the individual weight mean and biases K times for performing the activation sampling
+                repeated_weight_mean = self.W_m[i].repeat([K, 1, 1]).view(-1, *self.W_m[i].shape)
+                repeated_weight_logsigma = self.W_v[i].repeat([K, 1, 1]).view(-1, *self.W_v[i].shape)
+                repeated_bias_mean = self.b_m[i].repeat([K, 1, 1]).view(-1, *self.b_m[i].shape).unsqueeze(1)
+                repeated_bias_logsigma = self.b_v[i].repeat([K, 1, 1]).view(-1, *self.b_v[i].shape).unsqueeze(1)
+
+                # compute activation mu and sigma
+                act_mu = torch.add(torch.einsum('mni,mio->mno', act, repeated_weight_mean), repeated_bias_mean)
+                act_sigma = torch.sqrt(1e-9 + torch.add(torch.einsum('mni,mio->mno', act**2, torch.exp(0.5*repeated_weight_logsigma)**2), torch.exp(0.5*repeated_bias_logsigma)**2))
+                # sample activation from act_mu and act_sigma
+                eps_sample = torch.normal(torch.zeros_like(act_mu), torch.ones_like(act_mu)).to(device = device)
+                # perform LRT
+                pre = torch.add(eps_sample * act_sigma, act_mu)
+                act = F.relu(pre)
+            else:
+                # normal reparameterisation -- sample eps and compute mu+eps*sigma
+                eps_w = torch.normal(torch.zeros((K, din, dout)), torch.ones((K, din, dout))).to(device = device)
+                eps_b = torch.normal(torch.zeros((K, 1, dout)), torch.ones((K, 1, dout))).to(device = device)
+                # random sample weight from distribution -- reparameterisation trick
+                weights = torch.add(eps_w * torch.exp(0.5*self.W_v[i]), self.W_m[i])
+                biases = torch.add(eps_b * torch.exp(0.5*self.b_v[i]), self.b_m[i])
+                pre = torch.add(torch.einsum('mni,mio->mno', act, weights), biases)
+                act = F.relu(pre)
 
         din = self.size[-2]
         dout = self.size[-1]
 
-        eps_w = torch.normal(torch.zeros((K, din, dout)), torch.ones((K, din, dout))).to(device = device)
-        eps_b = torch.normal(torch.zeros((K, 1, dout)), torch.ones((K, 1, dout))).to(device = device)
         Wtask_m = self.W_last_m[task_idx]
         Wtask_v = self.W_last_v[task_idx]
         btask_m = self.b_last_m[task_idx]
         btask_v = self.b_last_v[task_idx]
 
-        # random sample weight from distribution -- reparameterisation trick
-        weights = torch.add(eps_w * torch.exp(0.5*Wtask_v),Wtask_m)
-        biases = torch.add(eps_b * torch.exp(0.5*btask_v), btask_m)
-        act = torch.unsqueeze(act, 3)
-        weights = torch.unsqueeze(weights, 1)
-        pre = torch.add(torch.sum(act * weights, dim = 2), biases)
+        if(self.LRT):
+            #local reparameterisation -- compute act_mu and act_sigma and then do act_mu+eps*act_sigma
+            # repeat the individual weight mean and biases K times for performing the activation sampling
+            repeated_last_weight_mean = Wtask_m.repeat([K, 1, 1]).view(-1, *Wtask_m.shape).unsqueeze(1)
+            repeated_last_weight_logsigma = Wtask_v.repeat([K, 1, 1]).view(-1, *Wtask_v.shape).unsqueeze(1)
+            repeated_last_bias_mean = btask_m.repeat([K, 1, 1]).view(-1, *btask_m.shape).unsqueeze(1)
+            repeated_last_bias_logsigma = btask_v.repeat([K, 1, 1]).view(-1, *btask_v.shape).unsqueeze(1)
+            act = torch.unsqueeze(act, 3)
+
+            # compute activation mu and sigma
+            pre_last_mu = torch.add(torch.sum(act * repeated_last_weight_mean, dim = 2), repeated_last_bias_mean)
+            pre_last_sigma = torch.sqrt(1e-9 + torch.add(torch.sum(act**2 * torch.exp(0.5*repeated_last_weight_logsigma)**2, dim = 2), torch.exp(0.5*repeated_last_bias_logsigma)**2))
+            # sample activation from act_mu and act_sigma
+            eps_last_sample = torch.normal(torch.zeros_like(pre_last_mu), torch.ones_like(pre_last_mu)).to(device = device)
+            # perform LRT
+            pre = torch.add(eps_last_sample * pre_last_sigma, pre_last_mu)
+        else:
+            eps_w = torch.normal(torch.zeros((K, din, dout)), torch.ones((K, din, dout))).to(device = device)
+            eps_b = torch.normal(torch.zeros((K, 1, dout)), torch.ones((K, 1, dout))).to(device = device)
+
+            # random sample weight from distribution -- reparameterisation trick
+            weights = torch.add(eps_w * torch.exp(0.5*Wtask_v),Wtask_m)
+            biases = torch.add(eps_b * torch.exp(0.5*btask_v), btask_m)
+            act = torch.unsqueeze(act, 3)
+            weights = torch.unsqueeze(weights, 1)
+            pre = torch.add(torch.sum(act * weights, dim = 2), biases)
         return pre
 
     def _logpred(self, inputs, targets, task_idx):
@@ -374,7 +408,6 @@ class MFVI_NN(Cla_NN):
         log_liks = -loss(pred, targets.type(torch.long))
         log_lik = log_liks.mean()
         return log_lik
-
 
     def _KL_term(self):
         kl = 0
@@ -668,7 +701,7 @@ class MFVI_NN(Cla_NN):
 """ Bayesian Neural Network with Mean field VI approximation """
 class MFVI_CNN(Cla_NN):
     def __init__(self, input_size, hidden_size, output_size, training_size,
-                 no_train_samples=10, no_pred_samples=100, single_head = False, prev_means=None, kern_size=3, learning_rate=0.0023):
+                 no_train_samples=10, no_pred_samples=100, single_head = False, prev_means=None, kern_size=3, learning_rate=0.0023, LRT=False):
         ##TODO: handle single head
         super(MFVI_CNN, self).__init__(input_size, hidden_size, output_size, training_size)
 
@@ -679,6 +712,8 @@ class MFVI_CNN(Cla_NN):
         self.out_size = output_size
         self.size = hidden_size
         self.single_head = single_head
+
+        self.LRT = LRT
 
         # hidden layer weight and bias means and variances - shared across tasks
         self.W_m, self.b_m = m1[0], m1[1]
@@ -755,45 +790,100 @@ class MFVI_CNN(Cla_NN):
         for samp_ind in range(K):     
             pre = act[samp_ind]               
             for i, (kw_m, kb_m, kw_v, kb_v) in enumerate(zip(self.kern_weights_m, self.kern_bias_m, self.kern_weights_v, self.kern_bias_v)):
+                
+                # TODO: discuss and verify if LRT for convolutions is poor due to filter sampling
+                # being more efficient as compared to activation sampling due to shapes. For now,
+                # defaulting to using normal reparameterisation for conv layers and using LRT if 
+                # required for FC layers
+
+                # if(self.LRT):
+                #     # perform local reparameterisation of kernel weights and biases
+                #     # compute activation using only kernel weight means
+                #     act_mu = F.conv2d(input=pre, weight=kw_m, bias=kb_m, stride=[i+1])
+                #     # compute activation using only kernel weight variances
+                #     act_sigma = torch.sqrt(1e-9 + F.conv2d(input=pre, weight=torch.exp(0.5*kw_v)**2, bias=torch.exp(0.5*kb_v)**2, stride=[i+1]))
+                #     # sample activation from std normal
+                #     eps_sample = torch.normal(torch.zeros_like(act_mu), torch.ones_like(act_mu)).to(device=device)
+                #     # perform LRT
+                #     pre = F.relu(torch.add(eps_sample * act_sigma, act_mu))
+                # else:
+
                 get_eps = lambda ten: torch.normal(torch.zeros(ten.shape)).to(device=device)
                 eps_w = get_eps(kw_m)
                 eps_b = get_eps(kb_m)
                 weights = torch.add(eps_w *torch.exp(0.5*kw_v), kw_m)
                 bias = torch.add(eps_b *torch.exp(0.5*kb_v), kb_m)
                 pre = F.relu(F.conv2d(input=pre, weight=weights, bias=bias, stride=[i+1]))
+
             conv_out[samp_ind, :] = pre
 
             #TODO
             # pre = F.conv2d(input=act, weight=weights.unsqueeze(1), bias=bias.unsqueeze, stride=[i+1])
             # act = F.relu(pre)
         act = conv_out.view((K, inputs.shape[0], -1))
+
         for i in range(self.no_layers-1):
             din = self.size[i]
             dout = self.size[i+1]
-            eps_w = torch.normal(torch.zeros((K, din, dout)), torch.ones((K, din, dout))).to(device = device)
-            eps_b = torch.normal(torch.zeros((K, 1, dout)), torch.ones((K, 1, dout))).to(device = device)
-            # random sample weight from distribution -- reparameterisation trick
-            weights = torch.add(eps_w * torch.exp(0.5*self.W_v[i]), self.W_m[i])
-            biases = torch.add(eps_b * torch.exp(0.5*self.b_v[i]), self.b_m[i])
-            pre = torch.add(torch.einsum('mni,mio->mno', act, weights), biases)
-            act = F.relu(pre)
+            if(self.LRT):
+                #local reparameterisation -- compute act_mu and act_sigma and then do act_mu+eps*act_sigma
+                # repeat the individual weight mean and biases K times for performing the activation sampling
+                repeated_weight_mean = self.W_m[i].repeat([K, 1, 1]).view(-1, *self.W_m[i].shape)
+                repeated_weight_logsigma = self.W_v[i].repeat([K, 1, 1]).view(-1, *self.W_v[i].shape)
+                repeated_bias_mean = self.b_m[i].repeat([K, 1, 1]).view(-1, *self.b_m[i].shape).unsqueeze(1)
+                repeated_bias_logsigma = self.b_v[i].repeat([K, 1, 1]).view(-1, *self.b_v[i].shape).unsqueeze(1)
+
+                # compute activation mu and sigma
+                act_mu = torch.add(torch.einsum('mni,mio->mno', act, repeated_weight_mean), repeated_bias_mean)
+                act_sigma = torch.sqrt(1e-9 + torch.add(torch.einsum('mni,mio->mno', act**2, torch.exp(0.5*repeated_weight_logsigma)**2), torch.exp(0.5*repeated_bias_logsigma)**2))
+                # sample activation from act_mu and act_sigma
+                eps_sample = torch.normal(torch.zeros_like(act_mu), torch.ones_like(act_mu)).to(device = device)
+                # perform LRT
+                pre = torch.add(eps_sample * act_sigma, act_mu)
+                act = F.relu(pre)                
+            else:
+                eps_w = torch.normal(torch.zeros((K, din, dout)), torch.ones((K, din, dout))).to(device = device)
+                eps_b = torch.normal(torch.zeros((K, 1, dout)), torch.ones((K, 1, dout))).to(device = device)
+                # random sample weight from distribution -- reparameterisation trick
+                weights = torch.add(eps_w * torch.exp(0.5*self.W_v[i]), self.W_m[i])
+                biases = torch.add(eps_b * torch.exp(0.5*self.b_v[i]), self.b_m[i])
+                pre = torch.add(torch.einsum('mni,mio->mno', act, weights), biases)
+                act = F.relu(pre)
 
         din = self.size[-2]
         dout = self.size[-1]
 
-        eps_w = torch.normal(torch.zeros((K, din, dout)), torch.ones((K, din, dout))).to(device = device)
-        eps_b = torch.normal(torch.zeros((K, 1, dout)), torch.ones((K, 1, dout))).to(device = device)
         Wtask_m = self.W_last_m[task_idx]
         Wtask_v = self.W_last_v[task_idx]
         btask_m = self.b_last_m[task_idx]
         btask_v = self.b_last_v[task_idx]
 
-        # random sample weight from distribution -- reparameterisation trick
-        weights = torch.add(eps_w * torch.exp(0.5*Wtask_v),Wtask_m)
-        biases = torch.add(eps_b * torch.exp(0.5*btask_v), btask_m)
-        act = torch.unsqueeze(act, 3)
-        weights = torch.unsqueeze(weights, 1)
-        pre = torch.add(torch.sum(act * weights, dim = 2), biases)
+        if(self.LRT):
+            #local reparameterisation -- compute act_mu and act_sigma and then do act_mu+eps*act_sigma
+            # repeat the individual weight mean and biases K times for performing the activation sampling
+            repeated_last_weight_mean = Wtask_m.repeat([K, 1, 1]).view(-1, *Wtask_m.shape).unsqueeze(1)
+            repeated_last_weight_logsigma = Wtask_v.repeat([K, 1, 1]).view(-1, *Wtask_v.shape).unsqueeze(1)
+            repeated_last_bias_mean = btask_m.repeat([K, 1, 1]).view(-1, *btask_m.shape).unsqueeze(1)
+            repeated_last_bias_logsigma = btask_v.repeat([K, 1, 1]).view(-1, *btask_v.shape).unsqueeze(1)
+            act = torch.unsqueeze(act, 3)
+
+            # compute activation mu and sigma
+            pre_last_mu = torch.add(torch.sum(act * repeated_last_weight_mean, dim = 2), repeated_last_bias_mean)
+            pre_last_sigma = torch.sqrt(1e-9 + torch.add(torch.sum(act**2 * torch.exp(0.5*repeated_last_weight_logsigma)**2, dim = 2), torch.exp(0.5*repeated_last_bias_logsigma)**2))
+            # sample activation from act_mu and act_sigma
+            eps_last_sample = torch.normal(torch.zeros_like(pre_last_mu), torch.ones_like(pre_last_mu)).to(device = device)
+            # perform LRT
+            pre = torch.add(eps_last_sample * pre_last_sigma, pre_last_mu)
+        else:
+            eps_w = torch.normal(torch.zeros((K, din, dout)), torch.ones((K, din, dout))).to(device = device)
+            eps_b = torch.normal(torch.zeros((K, 1, dout)), torch.ones((K, 1, dout))).to(device = device)
+
+            # random sample weight from distribution -- reparameterisation trick
+            weights = torch.add(eps_w * torch.exp(0.5*Wtask_v),Wtask_m)
+            biases = torch.add(eps_b * torch.exp(0.5*btask_v), btask_m)
+            act = torch.unsqueeze(act, 3)
+            weights = torch.unsqueeze(weights, 1)
+            pre = torch.add(torch.sum(act * weights, dim = 2), biases)
         return pre
 
     def _logpred(self, inputs, targets, task_idx):

@@ -10,7 +10,7 @@ try:
 except ImportError:
     print("Torchviz was not found.")
 
-def run_vcl(hidden_size, no_epochs, data_gen, coreset_method, coreset_size=0, batch_size=None, single_head=True, gan_bol = False, is_toy=False):
+def run_vcl(hidden_size, no_epochs, data_gen, coreset_method, coreset_size=0, batch_size=None, single_head=True, gan_bol = False, is_toy=False, use_lrt=False):
     in_dim, out_dim = data_gen.get_dims()
     x_coresets, y_coresets = [], []
     x_testsets, y_testsets = [], []
@@ -42,7 +42,7 @@ def run_vcl(hidden_size, no_epochs, data_gen, coreset_method, coreset_size=0, ba
             # updated weights of network after SGD on task 1 -- these are means of posterior distribution of weights after task 1 ==> new prior for task 2
             mf_weights = ml_model.get_weights()
             # use these weights to initialise weights of new task model
-            mf_model = MFVI_NN(in_dim, hidden_size, out_dim, x_train.shape[0], single_head = single_head, prev_means=mf_weights)
+            mf_model = MFVI_NN(in_dim, hidden_size, out_dim, x_train.shape[0], single_head = single_head, prev_means=mf_weights, LRT=use_lrt)
 
         if not gan_bol:
             if coreset_size > 0:
@@ -77,7 +77,7 @@ def run_vcl(hidden_size, no_epochs, data_gen, coreset_method, coreset_size=0, ba
 
     return all_acc
 
-def run_vcl_cnn(input_dims, hidden_size, output_dims, no_epochs, data_gen, coreset_method, coreset_size=0, batch_size=None, single_head=True, gan_bol = False, is_toy=False):
+def run_vcl_cnn(input_dims, hidden_size, output_dims, no_epochs, data_gen, coreset_method, coreset_size=0, batch_size=None, single_head=True, gan_bol = False, is_toy=False, use_lrt=False):
     in_dim, out_dim = data_gen.get_dims()
     x_coresets, y_coresets = [], []
     x_testsets, y_testsets = [], []
@@ -109,7 +109,7 @@ def run_vcl_cnn(input_dims, hidden_size, output_dims, no_epochs, data_gen, cores
             # updated weights of network after SGD on task 1 -- these are means of posterior distribution of weights after task 1 ==> new prior for task 2
             mf_weights = ml_model.get_weights()
             # use these weights to initialise weights of new task model
-            mf_model = MFVI_CNN(input_dims, hidden_size, output_dims, x_train.shape[0], single_head = single_head, prev_means=mf_weights)
+            mf_model = MFVI_CNN(input_dims, hidden_size, output_dims, x_train.shape[0], single_head = single_head, prev_means=mf_weights, LRT=use_lrt)
 
         if not gan_bol:
             if coreset_size > 0:

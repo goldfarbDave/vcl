@@ -49,11 +49,11 @@ hidden_size_fc = [256, 256]
 # model_cnn.save_weights()
 
 kcen_vcl_result = run_vcl_cnn(in_dim_cnn, hidden_size_cnn, out_dim_cnn, 50, data_gen,
-    coreset.k_center, 0, None, False)
+    coreset.k_center, 0, None, False, use_lrt=True)
 print(kcen_vcl_result)
 
 # kcen_vcl_result = run_vcl(hidden_size_fc, 10, data_gen,
-#     coreset.k_center, 0, None, False)
+#     coreset.k_center, 0, None, False, use_lrt=True)
 # print(kcen_vcl_result)
 
 # import pdb; pdb.set_trace()
