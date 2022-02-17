@@ -53,7 +53,7 @@ class Cla_NN(object):
             # randomly shuffle datapoints in batch for each epoch
             cur_x_train = x_train[perm_inds]
             cur_y_train = y_train[perm_inds]
-
+            #import ipdb; ipdb.set_trace()
             avg_cost = 0.
             # number of batches
             total_batch = int(np.ceil(N * 1.0 / batch_size))
@@ -74,8 +74,8 @@ class Cla_NN(object):
                 # Compute average loss
                 avg_cost += cost / total_batch
             # Display logs per epoch step
-            if epoch % display_epoch == 0:
-                print("Epoch:", '%04d' % (epoch+1), "cost=", \
+            #if epoch % display_epoch == 0:
+            print("Epoch:", '%04d' % (epoch+1), "cost=", \
                     "{:.9f}".format(avg_cost))
             costs.append(avg_cost.item())
         print("Optimization Finished!")
@@ -165,8 +165,9 @@ class Vanilla_NN(Cla_NN):
         return weights
 """ Neural Network Model """
 class Vanilla_CNN(Cla_NN):
-    def __init__(self, input_size, hidden_size, output_size, training_size, learning_rate=0.005, kern_size=3):
+    def __init__(self, input_size, hidden_size, output_size, training_size, learning_rate=0.0001, kern_size=3, is_cifar=False):
         super(Vanilla_CNN, self).__init__(input_size, hidden_size, output_size, training_size)
+        self.is_cifar = is_cifar
         # # init weights and biases
         self.W, self.b, self.kern_weights, self.kern_bias, self.W_last, self.b_last, self.size = self.create_weights(
                  input_size, hidden_size, output_size, kern_size)
@@ -180,18 +181,18 @@ class Vanilla_CNN(Cla_NN):
     def _prediction(self, inputs, task_idx):
         act = inputs
         # forward pass through network
-        image_edge_size = np.sqrt(inputs.shape[-1])
-        assert image_edge_size == int(image_edge_size)
-        d = int(image_edge_size)
-        act = act.view((-1, 1, d, d))
+        d = 32 if self.is_cifar else 28
+        in_chan = 3 if self.is_cifar else 1
+        act = act.view((-1, in_chan, d, d))
         for idx,(weights,bias) in enumerate(zip(self.kern_weights, self.kern_bias)):
-            pre = F.conv2d(input=act, weight=weights, bias=bias, stride=idx+1)
-            act = F.relu(pre)
+            stride = idx//4+1 if self.is_cifar else idx+1
+            act = F.relu(F.conv2d(input=act, weight=weights, bias=bias, stride=stride))
+        #import ipdb; ipdb.set_trace()
+        shape_idx = 3 if self.is_cifar else 2
+        act = act.view((-1, np.prod(act.shape[-shape_idx:])))
 
-        act = act.view((-1, np.prod(act.shape[-2:])))
         for i in range(self.no_layers-1):
-             pre = torch.add(torch.matmul(act, self.W[i]), self.b[i])
-             act = F.relu(pre)
+            act = F.relu(torch.add(torch.matmul(act, self.W[i]), self.b[i]))
         pre = torch.add(torch.matmul(act, self.W_last[task_idx]), self.b_last[task_idx])
         return pre
 
@@ -241,15 +242,26 @@ class Vanilla_CNN(Cla_NN):
         W_last.append(Wi)
         b_last.append(bi)
 
-        # 4->2 channels
-        kern_weights = [truncated_normal([4,1,kern_size, kern_size], stddev=0.1, variable=True),
-                        truncated_normal([1,4,kern_size, kern_size], stddev=0.1, variable=True)]
-        kern_bias = [truncated_normal([4], stddev=0.1, variable=True),
-                     truncated_normal([1], stddev=0.1, variable=True)]
 
-
-        # kern_weights = [truncated_normal([1,1,kern_size, kern_size], stddev=0.1, variable=True) for _ in range(2)]
-        # kern_bias = [truncated_normal([1], stddev=0.1, variable=True) for _ in range(2)]
+        if self.is_cifar:
+            chanseq = [3,128,64,32,16,8]#[3,32,32,64,64,128,128]
+            kern_weights = []
+            kern_bias = []
+            for in_chan, out_chan in zip(chanseq, chanseq[1:]):
+                kern_weights.append(
+                    truncated_normal([out_chan, in_chan, kern_size,kern_size],
+                                     stddev=0.1,
+                                     variable=True)
+                )
+                kern_bias.append(
+                    truncated_normal([out_chan], stddev=0.1, variable=True)
+                )
+        else:
+            # 4->1 channels
+            kern_weights = [truncated_normal([4,1,kern_size, kern_size], stddev=0.1, variable=True),
+                            truncated_normal([1,4,kern_size, kern_size], stddev=0.1, variable=True)]
+            kern_bias = [truncated_normal([4], stddev=0.1, variable=True),
+                         truncated_normal([1], stddev=0.1, variable=True)]
 
         return W, b, kern_weights, kern_bias, W_last, b_last, hidden_size
 
@@ -698,10 +710,10 @@ class MFVI_NN(Cla_NN):
 """ Bayesian Neural Network with Mean field VI approximation """
 class MFVI_CNN(Cla_NN):
     def __init__(self, input_size, hidden_size, output_size, training_size,
-                 no_train_samples=10, no_pred_samples=100, single_head = False, prev_means=None, kern_size=3, learning_rate=0.0023, LRT=False):
+                 no_train_samples=10, no_pred_samples=100, single_head = False, prev_means=None, kern_size=3, learning_rate=0.0023, LRT=False,is_cifar=False):
         ##TODO: handle single head
         super(MFVI_CNN, self).__init__(input_size, hidden_size, output_size, training_size)
-
+        self.is_cifar=is_cifar
         m1, v1, kern_m, kern_v, hidden_size = self.create_weights(
              input_size, hidden_size, output_size, prev_means)
 
@@ -777,13 +789,14 @@ class MFVI_CNN(Cla_NN):
     def _prediction(self, inputs, task_idx, no_samples):
         K = no_samples
         size = self.size
-        image_edge_size = np.sqrt(inputs.shape[-1])
-        assert image_edge_size == int(image_edge_size)
-        d = int(image_edge_size)
-
+        d = 32 if self.is_cifar else 28
+        in_chan = 3 if self.is_cifar else 1
+        out_chan = 8 if self.is_cifar else 1
         act = torch.unsqueeze(inputs, 0).repeat([K, 1, 1])
-        act = act.view((K, -1, 1, d, d))
-        conv_out = torch.zeros((K, inputs.shape[0], 1, 12, 12)).to(device=device)
+        act = act.view((K, -1, in_chan, d, d))
+        #final_conv_shape
+        fcs = 11 if self.is_cifar else 12
+        conv_out = torch.zeros((K, inputs.shape[0], out_chan, fcs, fcs)).to(device=device)
         for samp_ind in range(K):     
             pre = act[samp_ind]               
             for i, (kw_m, kb_m, kw_v, kb_v) in enumerate(zip(self.kern_weights_m, self.kern_bias_m, self.kern_weights_v, self.kern_bias_v)):
@@ -810,7 +823,8 @@ class MFVI_CNN(Cla_NN):
                 eps_b = get_eps(kb_m)
                 weights = torch.add(eps_w *torch.exp(0.5*kw_v), kw_m)
                 bias = torch.add(eps_b *torch.exp(0.5*kb_v), kb_m)
-                pre = F.relu(F.conv2d(input=pre, weight=weights, bias=bias, stride=[i+1]))
+                stride = i//4+1 if self.is_cifar else i+1
+                pre = F.relu(F.conv2d(input=pre, weight=weights, bias=bias, stride=[stride]))
 
             conv_out[samp_ind, :] = pre
 
