@@ -185,7 +185,7 @@ class Vanilla_CNN(Cla_NN):
         in_chan = 3 if self.is_cifar else 1
         act = act.view((-1, in_chan, d, d))
         for idx,(weights,bias) in enumerate(zip(self.kern_weights, self.kern_bias)):
-            stride = idx//4+1 if self.is_cifar else idx+1
+            stride = idx+2 if self.is_cifar else idx+1
             act = F.relu(F.conv2d(input=act, weight=weights, bias=bias, stride=stride))
         #import ipdb; ipdb.set_trace()
         shape_idx = 3 if self.is_cifar else 2
@@ -244,18 +244,25 @@ class Vanilla_CNN(Cla_NN):
 
 
         if self.is_cifar:
-            chanseq = [3,128,64,32,16,8]#[3,32,32,64,64,128,128]
-            kern_weights = []
-            kern_bias = []
-            for in_chan, out_chan in zip(chanseq, chanseq[1:]):
-                kern_weights.append(
-                    truncated_normal([out_chan, in_chan, kern_size,kern_size],
-                                     stddev=0.1,
-                                     variable=True)
-                )
-                kern_bias.append(
-                    truncated_normal([out_chan], stddev=0.1, variable=True)
-                )
+            # chanseq = [3,128,64,32,16,8]#[3,32,32,64,64,128,128]
+            # kern_weights = []
+            # kern_bias = []
+            # for in_chan, out_chan in zip(chanseq, chanseq[1:]):
+            #     kern_weights.append(
+            #         truncated_normal([out_chan, in_chan, kern_size,kern_size],
+            #                          stddev=0.1,
+            #                          variable=True)
+            #     )
+            #     kern_bias.append(
+            #         truncated_normal([out_chan], stddev=0.1, variable=True)
+            #     )
+
+            # 4->1 channels
+            kern_weights = [truncated_normal([32,3,kern_size, kern_size], stddev=0.1, variable=True),
+                            truncated_normal([64,32,kern_size, kern_size], stddev=0.1, variable=True)]
+            kern_bias = [truncated_normal([32], stddev=0.1, variable=True),
+                         truncated_normal([64], stddev=0.1, variable=True)]                
+
         else:
             # 4->1 channels
             kern_weights = [truncated_normal([4,1,kern_size, kern_size], stddev=0.1, variable=True),
@@ -791,11 +798,11 @@ class MFVI_CNN(Cla_NN):
         size = self.size
         d = 32 if self.is_cifar else 28
         in_chan = 3 if self.is_cifar else 1
-        out_chan = 8 if self.is_cifar else 1
+        out_chan = 64 if self.is_cifar else 1
         act = torch.unsqueeze(inputs, 0).repeat([K, 1, 1])
         act = act.view((K, -1, in_chan, d, d))
         #final_conv_shape
-        fcs = 11 if self.is_cifar else 12
+        fcs = 5 if self.is_cifar else 12
         conv_out = torch.zeros((K, inputs.shape[0], out_chan, fcs, fcs)).to(device=device)
         for samp_ind in range(K):     
             pre = act[samp_ind]               
@@ -823,7 +830,7 @@ class MFVI_CNN(Cla_NN):
                 eps_b = get_eps(kb_m)
                 weights = torch.add(eps_w *torch.exp(0.5*kw_v), kw_m)
                 bias = torch.add(eps_b *torch.exp(0.5*kb_v), kb_m)
-                stride = i//4+1 if self.is_cifar else i+1
+                stride = i+2 if self.is_cifar else i+1
                 pre = F.relu(F.conv2d(input=pre, weight=weights, bias=bias, stride=[stride]))
 
             conv_out[samp_ind, :] = pre

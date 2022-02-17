@@ -7,8 +7,8 @@ import utils.test as test
 from utils.vcl import run_vcl_cnn, run_vcl
 from ipdb import set_trace as st
 data_gen = SplitCifarGenerator() #SplitMnistGenerator()
-x_train, y_train, x_test, y_test = data_gen.next_task()
-in_dim_cnn, out_dim_cnn = 968, 2#4*4, 2
+#x_train, y_train, x_test, y_test = data_gen.next_task()
+in_dim_cnn, out_dim_cnn = 1600, 2#4*4, 2
 in_dim_fc, out_dim_fc = data_gen.get_dims()
 hidden_size_cnn = [256,256]#[8,8]
 hidden_size_fc = [256, 256]
@@ -56,8 +56,8 @@ hidden_size_fc = [256, 256]
 # # Save weights before test (and last-minute training on coreset
 # model_cnn.save_weights()
 
-kcen_vcl_result = run_vcl_cnn(in_dim_cnn, hidden_size_cnn, out_dim_cnn, 30, data_gen,
-                              coreset.k_center, 0, 128, False, use_lrt=True, is_cifar=True)
+kcen_vcl_result = run_vcl_cnn(in_dim_cnn, hidden_size_cnn, out_dim_cnn, 500, data_gen,
+                              coreset.k_center, 0, 512, False, use_lrt=True, is_cifar=True)
 # print(kcen_vcl_result)
 
 # kcen_vcl_result = run_vcl(hidden_size_fc, 10, data_gen,

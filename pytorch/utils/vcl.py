@@ -109,7 +109,10 @@ def run_vcl_cnn(input_dims, hidden_size, output_dims, no_epochs, data_gen, cores
             # updated weights of network after SGD on task 1 -- these are means of posterior distribution of weights after task 1 ==> new prior for task 2
             mf_weights = ml_model.get_weights()
             # use these weights to initialise weights of new task model
-            mf_model = MFVI_CNN(input_dims, hidden_size, output_dims, x_train.shape[0], single_head = single_head, prev_means=mf_weights, LRT=use_lrt, is_cifar=is_cifar)
+            if(is_cifar):
+                mf_model = MFVI_CNN(input_dims, hidden_size, output_dims, x_train.shape[0], single_head = single_head, prev_means=mf_weights, LRT=use_lrt, is_cifar=is_cifar, learning_rate=0.01)
+            else:
+                mf_model = MFVI_CNN(input_dims, hidden_size, output_dims, x_train.shape[0], single_head = single_head, prev_means=mf_weights, LRT=use_lrt, is_cifar=is_cifar)
 
         if not gan_bol:
             if coreset_size > 0:
