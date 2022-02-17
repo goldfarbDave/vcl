@@ -675,9 +675,6 @@ class MFVI_NN(Cla_NN):
 
         return [W_m, b_m], [W_v, b_v]
 
-
-
-
     def update_prior(self):
         print("updating prior...")
         # update new prior to be old posterior weights and biases means and vars
