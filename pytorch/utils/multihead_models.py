@@ -163,6 +163,7 @@ class Vanilla_NN(Cla_NN):
     def get_weights(self):
         weights = [self.weights[:self.no_layers-1], self.weights[self.no_layers-1:2*(self.no_layers-1)], [self.weights[-2]], [self.weights[-1]]]
         return weights
+
 """ Neural Network Model """
 class Vanilla_CNN(Cla_NN):
     def __init__(self, input_size, hidden_size, output_size, training_size, learning_rate=0.0001, kern_size=3, is_cifar=False):
@@ -1268,3 +1269,124 @@ class MFVI_CNN(Cla_NN):
             self.prior_b_last_v[i].data.copy_(torch.exp(self.b_last_v[i].clone().detach().data))
 
         return
+
+
+# NON CONTINUAL LEARNING IID MODEL
+
+""" Neural Network Model """
+class Vanilla_IID_CNN(Cla_NN):
+    def __init__(self, input_size, hidden_size, output_size, training_size, learning_rate=0.0001, kern_size=3, is_cifar=False):
+        super(Vanilla_IID_CNN, self).__init__(input_size, hidden_size, output_size, training_size)
+        self.is_cifar = is_cifar
+        # # init weights and biases
+        self.W, self.b, self.kern_weights, self.kern_bias, self.W_last, self.b_last, self.size = self.create_weights(
+                 input_size, hidden_size, output_size, kern_size)
+        # no of hidden + input layers + conv layer
+        self.no_layers = len(hidden_size) + 1
+        # list of all parameters [theta in paper]
+        self.weights = self.W + self.b + self.kern_weights + self.kern_bias + self.W_last + self.b_last
+        self.training_size = training_size
+        self.optimizer = optim.Adam(self.weights, lr=learning_rate)
+
+    def _prediction(self, inputs, task_idx):
+        act = inputs
+        # forward pass through network
+        d = 32 if self.is_cifar else 28
+        in_chan = 3 if self.is_cifar else 1
+        act = act.view((-1, in_chan, d, d))
+        for idx,(weights,bias) in enumerate(zip(self.kern_weights, self.kern_bias)):
+            stride = idx+2 if self.is_cifar else idx+1
+            act = F.relu(F.conv2d(input=act, weight=weights, bias=bias, stride=stride))
+        #import ipdb; ipdb.set_trace()
+        shape_idx = 3 if self.is_cifar else 2
+        act = act.view((-1, np.prod(act.shape[-shape_idx:])))
+
+        for i in range(self.no_layers-1):
+            act = F.relu(torch.add(torch.matmul(act, self.W[i]), self.b[i]))
+        pre = torch.add(torch.matmul(act, self.W_last[task_idx]), self.b_last[task_idx])
+        return pre
+
+    def _logpred(self, inputs, targets, task_idx):
+        # expected log likelihood of data - first term in eqn 4 of paper
+        loss = torch.nn.CrossEntropyLoss()
+        pred = self._prediction(inputs, task_idx)
+        log_lik = - loss(pred, targets.type(torch.long))
+        return log_lik
+
+    def prediction_prob(self, x_test, task_idx):
+        prob = F.softmax(self._prediction(x_test, task_idx), dim=-1)
+        return prob
+
+    def get_loss(self, batch_x, batch_y, task_idx):
+        # no kl term for first task since q_t(theta) = q_t-1(theta) = p(theta)
+        return -self._logpred(batch_x, batch_y, task_idx)
+
+    def create_weights(self, in_dim, hidden_size, out_dim, kern_size):
+        hidden_size = deepcopy(hidden_size)
+        hidden_size.append(out_dim)
+        hidden_size.insert(0, in_dim)
+
+        # no of hidden + input layers
+        no_layers = len(hidden_size) - 1
+        W = []
+        b = []
+        # output layer weights and biases
+        W_last = []
+        b_last = []
+        # iterating over only hidden layers
+        for i in range(no_layers-1):
+            din = hidden_size[i]
+            dout = hidden_size[i+1]
+
+            #Initializiation values of means
+            Wi_m = truncated_normal([din, dout], stddev=0.1, variable = True)
+            bi_m = truncated_normal([dout], stddev=0.1, variable = True)
+
+            #Append to list weights
+            W.append(Wi_m)
+            b.append(bi_m)
+
+        # last layer weight matrix and bias distribution initialisation
+        Wi = truncated_normal([hidden_size[-2], out_dim], stddev=0.1, variable = True)
+        bi = truncated_normal([out_dim], stddev=0.1, variable = True)
+        W_last.append(Wi)
+        b_last.append(bi)
+
+
+        if self.is_cifar:
+            # chanseq = [3,128,64,32,16,8]#[3,32,32,64,64,128,128]
+            # kern_weights = []
+            # kern_bias = []
+            # for in_chan, out_chan in zip(chanseq, chanseq[1:]):
+            #     kern_weights.append(
+            #         truncated_normal([out_chan, in_chan, kern_size,kern_size],
+            #                          stddev=0.1,
+            #                          variable=True)
+            #     )
+            #     kern_bias.append(
+            #         truncated_normal([out_chan], stddev=0.1, variable=True)
+            #     )
+
+            # 4->1 channels
+            kern_weights = [truncated_normal([32,3,kern_size, kern_size], stddev=0.1, variable=True),
+                            truncated_normal([64,32,kern_size, kern_size], stddev=0.1, variable=True)]
+            kern_bias = [truncated_normal([32], stddev=0.1, variable=True),
+                         truncated_normal([64], stddev=0.1, variable=True)]                
+
+        else:
+            # 4->1 channels
+            kern_weights = [truncated_normal([4,1,kern_size, kern_size], stddev=0.1, variable=True),
+                            truncated_normal([1,4,kern_size, kern_size], stddev=0.1, variable=True)]
+            kern_bias = [truncated_normal([4], stddev=0.1, variable=True),
+                         truncated_normal([1], stddev=0.1, variable=True)]
+
+        return W, b, kern_weights, kern_bias, W_last, b_last, hidden_size
+
+    def get_weights(self):
+        w = self.weights
+        return {"DenseWeights": self.W,
+                "DenseBias": self.b,
+                "KernWeights": self.kern_weights,
+                "KernBias":self.kern_bias,
+                "LastWeights":self.W_last,
+                "LastBias":self.b_last}

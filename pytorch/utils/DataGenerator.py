@@ -173,6 +173,9 @@ class SplitCifarGenerator():
         self.cur_iter = 0
         self.max_iter = len(self.tasks)
 
+    def get_non_split(self):
+        return self.train_data, self.train_labels, self.test_data, self.test_labels
+
     def get_dims(self):
         return self.data.shape[1], 2
 
