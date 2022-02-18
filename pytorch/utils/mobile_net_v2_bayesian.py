@@ -8,11 +8,22 @@ import from https://github.com/tonylins/pytorch-mobilenet-v2
 
 import torch.nn as nn
 import math
-from .multihead_models import *
+from scipy.stats import truncnorm
+import torch
 import torch.nn.functional as F
 
 __all__ = ['mobilenetv2']
 
+
+# variable initialization functions
+def truncated_normal(size, stddev=1, variable = False, mean=0, device="cpu"):
+    mu, sigma = mean, stddev
+    lower, upper= -2 * sigma, 2 * sigma
+    X = truncnorm(
+        (lower - mu) / sigma, (upper - mu) / sigma, loc=mu, scale=sigma)
+    X_tensor = torch.Tensor(data = X.rvs(size)).to(device = device)
+    X_tensor.requires_grad = variable
+    return X_tensor
 
 def _make_divisible(v, divisor, min_value=None):
     """
@@ -126,7 +137,7 @@ class MobileNetV2(nn.Module):
         self.classifier = nn.Linear(output_channel, num_classes)
 
         self.kernel_filters = []
-        self.linears = []
+        self.linear = None
 
         # next build the entire network using functional components and this will be used for weight creation of our network
         self.create_weights()
@@ -134,11 +145,13 @@ class MobileNetV2(nn.Module):
     def init_layer(self, layer):
         if(isinstance(layer, nn.Conv2d)):
             self.kernel_filters.append(self.create_kern_weight_bias(layer))
+        
         elif(isinstance(layer, nn.BatchNorm2d)):
             layer.weight.data.fill_(1)
             layer.bias.data.zero_()
+        
         elif(isinstance(layer, nn.Linear)):
-            self.linears.append(self.create_linear_weight_bias(layer))
+            self.linear = self.create_linear_weight_bias(layer)
 
     def create_weights(self):
         # create all convs in features first
@@ -163,13 +176,17 @@ class MobileNetV2(nn.Module):
     def create_kern_weight_bias(self, layer):
         filter_dict = {}
 
+        filter_dict['groups'] = layer.groups
+
         # initialising both H and W of the filter to be the same as kernel_size[0] to ensure square filters
-        filter_dict['weight'] = truncated_normal([layer.out_channels, layer.in_channels, layer.kernel_size[0], layer.kernel_size[0]], stddev=0.1, variable=True)
+        filter_dict['weight'] = truncated_normal([layer.out_channels, layer.in_channels//filter_dict['groups'], layer.kernel_size[0], layer.kernel_size[0]], stddev=0.1, variable=True)
         if(layer.bias is not None):
             filter_dict['bias'] = truncated_normal([layer.out_channels], stddev=0.1, variable=True)
+        else:
+            filter_dict['bias'] = None
+
         filter_dict['padding'] = layer.padding
         filter_dict['dilation'] = layer.dilation
-        filter_dict['groups'] = layer.groups
         filter_dict['stride'] = layer.stride
 
         return filter_dict
@@ -182,13 +199,52 @@ class MobileNetV2(nn.Module):
 
         return {'weight': weight, 'bias': bias}
 
+    def run_layer(self, layer, act, count):
+
+        if(isinstance(layer, nn.Conv2d)):
+            if(self.kernel_filters[count]['bias'] is None):
+                return F.conv2d(input=act, weight=self.kernel_filters[count]['weight'], stride=self.kernel_filters[count]['stride'], padding=self.kernel_filters[count]['padding'], dilation=self.kernel_filters[count]['dilation'], groups=self.kernel_filters[count]['groups']), count+1
+            else:
+                return F.conv2d(input=act, weight=self.kernel_filters[count]['weight'], bias=self.kernel_filters[count]['bias'], stride=self.kernel_filters[count]['stride'], padding=self.kernel_filters[count]['padding'], dilation=self.kernel_filters[count]['dilation'], groups=self.kernel_filters[count]['groups']), count+1
+
+        elif(isinstance(layer, nn.BatchNorm2d)):
+            return layer(act), count
+
+        elif(isinstance(layer, nn.Linear)):
+            return torch.add(torch.matmul(act, self.linear['weight']), self.linear['bias']), count
+
+        elif(isinstance(layer, nn.ReLU6)):
+            return layer(act), count
+
     def forward(self, x):
-        x = self.features(x)
-        x = self.conv(x)
-        x = self.avgpool(x)
-        x = x.view(x.size(0), -1)
-        x = self.classifier(x)
-        return x
+
+        act = x
+
+        # index to access the specific conv layer in the list of conv weights and biases
+        conv_layers_count = 0
+
+        # first run through the features block
+        for feat in self.features:
+            if(isinstance(feat, nn.Sequential)):
+                # iterate through all layers in sequential
+                for layer in feat:
+                    act, conv_layers_count = self.run_layer(layer, act, conv_layers_count)
+
+            if(isinstance(feat, InvertedResidual)):
+                # iterate through all layers in InvertedResidual.conv
+                for layer in feat.conv:
+                    act, conv_layers_count = self.run_layer(layer, act, conv_layers_count)         
+
+        # run the depthwise channel conv 1x1 bn block
+        for layer in self.conv:
+            act, conv_layers_count = self.run_layer(layer, act, conv_layers_count)
+
+        act = self.avgpool(act)
+        act = act.view(act.size(0), -1)
+
+        # get final classification layer output
+        act, _ = self.run_layer(self.classifier, act, conv_layers_count)
+        return act
 
     def _initialize_weights(self):
         for m in self.modules():
@@ -209,3 +265,7 @@ def mobilenetv2_bayesian(**kwargs):
     Constructs a MobileNet V2 model
     """
     return MobileNetV2(**kwargs)
+
+if __name__ == '__main__':
+    mobile_net = mobilenetv2_bayesian(num_classes=10)
+    print(mobile_net.forward(torch.randn(10, 3, 32, 32)).shape)
