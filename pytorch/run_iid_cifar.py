@@ -10,6 +10,7 @@ from utils.mobile_net_v2 import mobilenetv2
 from utils.mobile_net_v2_bayesian import mobilenetv2_bayesian
 import torch.optim as optim
 import torch.nn as nn
+from copy import deepcopy
 
 data_gen = SplitCifarGenerator()
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -19,30 +20,27 @@ in_dim_fc, out_dim_fc = data_gen.get_dims()
 hidden_size_cnn = [512,128]
 hidden_size_fc = [256, 256]
 
-class MobileNet(nn.Module):
-    def __init__(self):
-        super(MobileNet, self).__init__()
-        self.net = torch.nn.Sequential(*list(mobilenetv2_bayesian().children())[:-1])      
-        self.fc = torch.nn.Linear(1280, 10)  
-
-    def forward(self, x):
-        return self.fc(self.net(x).view(-1, 1280))
-
 in_dim, out_dim = data_gen.get_dims()
 x_testsets, y_testsets = [], []
 x_trainsets, y_trainsets = [], []
 gans = []
 all_acc = np.array([])
 
-mobilenet = MobileNet()
+mobilenet = mobilenetv2_bayesian(num_classes=out_dim_cnn, device=device)
+# mobilenet = mobilenetv2(num_classes=out_dim_cnn)
 mobilenet.to(device)
 
 x_train, y_train, x_test, y_test = data_gen.get_non_split()
 head = 0
 bsize = 256
-no_epochs = 100
-optimizer = optim.Adam(list(mobilenet.parameters()), lr=0.006)
+no_epochs = 300
+
+optimizer = optim.Adam(mobilenet.weights, lr=0.01)
+# optimizer = optim.Adam(list(mobilenet.parameters()), lr=0.06)
 loss = torch.nn.CrossEntropyLoss()
+
+# prev_weights = deepcopy(list(mobilenet.parameters()))
+# prev_weights = deepcopy(mobilenet.weights)
 
 costs = []
 # Training cycle
@@ -67,13 +65,20 @@ for epoch in range(no_epochs):
 
         optimizer.zero_grad()
         batch_x = batch_x.view((-1, 3, 32, 32))
-        preds = mobilenet(batch_x)
+        preds = mobilenet(batch_x)        
         cost = loss(preds, batch_y.long())
         cost.backward()
-        optimizer.step()        
-
+        optimizer.step()
+        
         # Compute average loss
         avg_cost += cost / total_batch
+
+    # print((list(mobilenet.parameters())[0] - prev_weights[0]).mean(), (list(mobilenet.parameters())[0] - prev_weights[0]).std())
+    # prev_weights = deepcopy(list(mobilenet.parameters()))
+
+    # print((mobilenet.weights[0] - prev_weights[0]).mean(), (mobilenet.weights[0] - prev_weights[0]).std())
+    # prev_weights = deepcopy(mobilenet.weights)
+
     # Display logs per epoch step
     print("Epoch:", '%04d' % (epoch+1), "cost=", \
             "{:.9f}".format(avg_cost))

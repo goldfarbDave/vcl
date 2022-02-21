@@ -10,6 +10,7 @@ import torch.nn as nn
 import math
 from scipy.stats import truncnorm
 import torch
+import itertools
 import torch.nn.functional as F
 
 __all__ = ['mobilenetv2']
@@ -46,7 +47,6 @@ def _make_divisible(v, divisor, min_value=None):
 
 
 def conv_3x3_bn(inp, oup, stride):
-    # kern_weight = truncated_normal([oup,inp,3,3], stddev=0.1, variable=True)
     return nn.Sequential(nn.Conv2d(inp, oup, 3, stride, 1, bias=False), nn.BatchNorm2d(oup), nn.ReLU6(inplace=True))
 
 
@@ -99,7 +99,7 @@ class InvertedResidual(nn.Module):
 
 
 class MobileNetV2(nn.Module):
-    def __init__(self, num_classes=1000, width_mult=1.):
+    def __init__(self, device="cpu", num_classes=1000, width_mult=1.):
         super(MobileNetV2, self).__init__()
         # setting of inverted residual blocks
         self.cfgs = [
@@ -112,6 +112,8 @@ class MobileNetV2(nn.Module):
             [6, 160, 3, 2],
             [6, 320, 1, 1],
         ]
+
+        self.device = device
 
         # first build the entire network using nn components
 
@@ -139,6 +141,8 @@ class MobileNetV2(nn.Module):
         self.kernel_filters = []
         self.linear = None
 
+        self.weights = []
+
         # next build the entire network using functional components and this will be used for weight creation of our network
         self.create_weights()
 
@@ -153,15 +157,23 @@ class MobileNetV2(nn.Module):
         elif(isinstance(layer, nn.Linear)):
             self.linear = self.create_linear_weight_bias(layer)
 
+        elif(isinstance(layer, nn.ReLU6)):
+            pass
+
+        else:
+            assert False, 'Unknown layer'
+
     def create_weights(self):
         # create all convs in features first
+
         for feat in self.features:
+
             if(isinstance(feat, nn.Sequential)):
                 # iterate through all layers in sequential
                 for layer in feat:
                     self.init_layer(layer)
 
-            if(isinstance(feat, InvertedResidual)):
+            elif(isinstance(feat, InvertedResidual)):
                 # iterate through all layers in InvertedResidual.conv
                 for layer in feat.conv:
                     self.init_layer(layer)
@@ -173,15 +185,38 @@ class MobileNetV2(nn.Module):
         # create the linear layer for final output
         self.init_layer(self.classifier)
 
+        # Collect the batchnorm weights and bias for adding to weights to optimise: For now we won't be bayesian about those
+        src_nm = dict(itertools.chain(self.features.named_modules(), self.conv.named_modules()))
+        ks = [k for k,v in src_nm.items() if isinstance(v, torch.nn.BatchNorm2d)]
+        for k in ks:
+            self.weights.append(src_nm[k].weight)
+            self.weights.append(src_nm[k].bias)    
+
+        # Collect conv filter weights and bias for adding to model weights to optimise
+        for param in self.kernel_filters:
+            self.weights.append(param['weight'])
+            if(param['bias'] is not None):
+                self.weights.append(param['bias'])
+
+        # Collect linear weight and bias for adding to model weights to optimise
+        self.weights.append(self.linear['weight'])
+        self.weights.append(self.linear['bias'])
+
     def create_kern_weight_bias(self, layer):
         filter_dict = {}
 
         filter_dict['groups'] = layer.groups
 
         # initialising both H and W of the filter to be the same as kernel_size[0] to ensure square filters
-        filter_dict['weight'] = truncated_normal([layer.out_channels, layer.in_channels//filter_dict['groups'], layer.kernel_size[0], layer.kernel_size[0]], stddev=0.1, variable=True)
+        n = layer.kernel_size[0] * layer.kernel_size[1] * layer.out_channels
+        # filter_dict['weight'] = torch.normal(torch.zeros((layer.out_channels, layer.in_channels//filter_dict['groups'], layer.kernel_size[0], layer.kernel_size[0]))
+        # , math.sqrt(2. / n)).to(device=self.device)
+        # filter_dict['weight'].requires_grad = True 
+        filter_dict['weight'] = truncated_normal([layer.out_channels, layer.in_channels//filter_dict['groups'], layer.kernel_size[0], layer.kernel_size[0]], stddev=math.sqrt(2. / n), variable=True, device=self.device)
         if(layer.bias is not None):
-            filter_dict['bias'] = truncated_normal([layer.out_channels], stddev=0.1, variable=True)
+            # filter_dict['bias'] = torch.normal(torch.zeros(layer.out_channels), 0.1).to(device=self.device)
+            # filter_dict['bias'].requires_grad = True
+            filter_dict['bias'] = truncated_normal([layer.out_channels], stddev=0.1, variable=True, device=self.device)
         else:
             filter_dict['bias'] = None
 
@@ -194,8 +229,13 @@ class MobileNetV2(nn.Module):
     def create_linear_weight_bias(self, layer):
 
         # initialising weight and bias for linear layer
-        weight = truncated_normal([layer.in_features, layer.out_features], stddev=0.1, variable = True)
-        bias = truncated_normal([layer.out_features], stddev=0.1, variable = True)
+        # weight = torch.normal(torch.zeros((layer.in_features, layer.out_features)), 
+        # 0.01).to(device=self.device)
+        # weight.requires_grad = True
+        weight = truncated_normal([layer.in_features, layer.out_features], stddev=0.01, variable = True, device=self.device)
+        # bias = torch.normal(torch.zeros(layer.out_features), 0.01).to(device=self.device)
+        # bias.requires_grad = True
+        bias = truncated_normal([layer.out_features], stddev=0.01, variable = True, device=self.device)
 
         return {'weight': weight, 'bias': bias}
 
@@ -216,6 +256,9 @@ class MobileNetV2(nn.Module):
         elif(isinstance(layer, nn.ReLU6)):
             return layer(act), count
 
+        else:
+            assert False, 'Unknown layer'
+
     def forward(self, x):
 
         act = x
@@ -230,7 +273,7 @@ class MobileNetV2(nn.Module):
                 for layer in feat:
                     act, conv_layers_count = self.run_layer(layer, act, conv_layers_count)
 
-            if(isinstance(feat, InvertedResidual)):
+            elif(isinstance(feat, InvertedResidual)):
                 # iterate through all layers in InvertedResidual.conv
                 for layer in feat.conv:
                     act, conv_layers_count = self.run_layer(layer, act, conv_layers_count)         
@@ -260,12 +303,12 @@ class MobileNetV2(nn.Module):
                 m.weight.data.normal_(0, 0.01)
                 m.bias.data.zero_()
 
-def mobilenetv2_bayesian(**kwargs):
+def mobilenetv2_bayesian(device, **kwargs):
     """
     Constructs a MobileNet V2 model
     """
-    return MobileNetV2(**kwargs)
+    return MobileNetV2(device, **kwargs)
 
 if __name__ == '__main__':
-    mobile_net = mobilenetv2_bayesian(num_classes=10)
+    mobile_net = mobilenetv2_bayesian(num_classes=10, device='cpu')
     print(mobile_net.forward(torch.randn(10, 3, 32, 32)).shape)
