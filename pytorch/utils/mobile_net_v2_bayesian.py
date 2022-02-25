@@ -452,6 +452,9 @@ class MobileNetV2(nn.Module):
     def _KL_term(self):
         kl = 0
 
+        # implement kl divergence between 2 gaussians:
+        # log(sig_2/sig_1) + (sig_1^2 + (mu_1 - mu_2)^2)/(2.sig_2^2) - 0.5
+
         # conv
         for i, (kernel_weight, prior_kernel_weight) in enumerate(zip(self.kernel_filters, self.prior_kernel_filters)):
             # weight from current posterior - q_t(theta)
