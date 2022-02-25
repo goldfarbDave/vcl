@@ -1,4 +1,6 @@
 import numpy as np
+from utils.mobile_net_v2_vanilla import mobilenetv2_vanilla
+from utils.mobile_net_v2_bayesian import mobilenetv2_bayesian
 import utils.test  as test
 from utils.multihead_models import Vanilla_NN, Vanilla_CNN, MFVI_NN, MFVI_CNN
 from . import flags 
@@ -175,6 +177,72 @@ def run_coreset_only(hidden_size, no_epochs, data_gen, coreset_method, coreset_s
 
         acc = test.get_scores(mf_model, x_trainsets, y_trainsets, x_testsets, y_testsets, no_epochs, single_head, x_coresets, y_coresets, batch_size, just_vanilla =False)
 
+        all_acc = test.concatenate_results(acc, all_acc)
+
+        mf_model.load_weights()
+        mf_model.clean_copy_weights()
+
+        if not single_head:
+            mf_model.create_head()
+
+    return all_acc
+
+def run_vcl_cifar(no_epochs, data_gen, coreset_method, coreset_size=0, batch_size=None, single_head=True, gan_bol = False, use_lrt=False, device="cpu"):
+    x_coresets, y_coresets = [], []
+    x_testsets, y_testsets = [], []
+    x_trainsets, y_trainsets = [], []
+    gans = []
+    all_acc = np.array([])
+
+    in_dim, out_dim = data_gen.get_dims()
+
+    for task_id in range(data_gen.max_iter):
+        print('Current task: '+str(task_id))
+        x_train, y_train, x_test, y_test = data_gen.next_task()
+        x_testsets.append(x_test)
+        y_testsets.append(y_test)
+        x_trainsets.append(x_train)
+        y_trainsets.append(y_train)
+
+        # Set the readout head to train
+        head = 0 if single_head else task_id
+        bsize = x_train.shape[0] if (batch_size is None) else batch_size
+
+        # Train network with maximum likelihood to initialize first model
+        if task_id == 0:
+            print_graph_bol = False #set to True if you want to see the graph
+            ml_model = mobilenetv2_vanilla(device=device, num_classes=out_dim)
+            ml_model.to(device=device)
+            # train for first task
+            ml_model.train(x_train, y_train, task_id, no_epochs, bsize)
+            # updated weights of network after SGD on task 1 -- these are means of posterior distribution of weights after task 1 ==> new prior for task 2
+            mf_weights = ml_model.get_weights_for_bayesian()
+            # use these weights to initialise weights of new task model
+            mf_model = mobilenetv2_bayesian(device=device, num_classes=out_dim, prev_means=mf_weights)
+            mf_model.to(device=device)
+
+        if not gan_bol:
+            if coreset_size > 0:
+                x_coresets, y_coresets, x_train, y_train = coreset_method(x_coresets, y_coresets, x_train, y_train, coreset_size)
+            gans = None
+        if print_graph_bol:
+            #Just if you want to see the computational graph
+            output_tensor = mf_model._KL_term() #mf_model.get_loss(torch.Tensor(x_train).to(device), torch.Tensor(y_train).to(device), task_id), params=params)
+            print_graph(mf_model, output_tensor)
+            print_graph_bol = False
+
+        if gan_bol:
+            gan_i = GAN.VGR(task_id)
+            gan_i.train(x_train, y_train)
+            gans.append(gan_i)
+        mf_model.train(x_train, y_train, head, no_epochs, bsize)
+        mf_model.update_prior()
+        # Save weights before test (and last-minute training on coreset)
+        mf_model.save_weights()
+
+        # TODO: done till here on Friday, resume on monday
+        acc = test.get_scores(mf_model, x_trainsets, y_trainsets, x_testsets, y_testsets, no_epochs, single_head, x_coresets, y_coresets, batch_size, False,gans, is_toy=is_toy)
+        
         all_acc = test.concatenate_results(acc, all_acc)
 
         mf_model.load_weights()
