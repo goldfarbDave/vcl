@@ -784,14 +784,10 @@ class MFVI_CNN(Cla_NN):
         r1 = m1 + v1 + kern_m + kern_v
         self.weights = [item for sublist in r1 for item in sublist]
 
-
         self.optimizer = optim.Adam(self.weights, lr=learning_rate)
 
     def get_loss(self, batch_x, batch_y, task_idx):
         # equation 4
-        # if(task_idx>0):
-        #     import ipdb; ipdb.set_trace()
-
         return torch.div(self._KL_term(), self.training_size) - self._logpred(batch_x, batch_y, task_idx)
 
     def _prediction(self, inputs, task_idx, no_samples):
