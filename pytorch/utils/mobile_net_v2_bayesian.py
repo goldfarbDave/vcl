@@ -103,8 +103,8 @@ class InvertedResidual(nn.Module):
 class MobileNetV2(nn.Module):
     def __init__(self, device="cpu", num_classes=1000, width_mult=1., prev_means=None, learning_rate=0.006):
         super(MobileNetV2, self).__init__()
-        print ("Setting no samples for MC sampling as 10")
-        self.no_samps = 10
+        self.no_samps = 1
+        print ("Setting no samples for MC sampling as "+str(self.no_samps))
         # setting of inverted residual blocks
         self.cfgs = [
             # t, c, n, s
@@ -172,7 +172,10 @@ class MobileNetV2(nn.Module):
 
     def init_layer(self, layer, prev_conv_means, prev_linear_mean, count):
         if(isinstance(layer, nn.Conv2d)):
-            self.kernel_filters.append(self.create_kern_weight_bias(layer, prev_conv_means[count]['weight'], prev_conv_means[count]['bias']))
+            if(prev_conv_means is not None):
+                self.kernel_filters.append(self.create_kern_weight_bias(layer, prev_conv_means[count]['weight'], prev_conv_means[count]['bias']))
+            else:
+                self.kernel_filters.append(self.create_kern_weight_bias(layer, None, None))
             count += 1
 
         elif(isinstance(layer, nn.BatchNorm2d)):
@@ -181,7 +184,10 @@ class MobileNetV2(nn.Module):
             layer.bias.data.zero_()
         
         elif(isinstance(layer, nn.Linear)):
-            self.linears.append(self.create_linear_weight_bias(layer, prev_linear_mean['weight'], prev_linear_mean['bias']))
+            if(prev_linear_mean is not None):
+                self.linears.append(self.create_linear_weight_bias(layer, prev_linear_mean['weight'], prev_linear_mean['bias']))
+            else:
+                self.linears.append(self.create_linear_weight_bias(layer, None, None))
 
         elif(isinstance(layer, nn.ReLU6)):
             pass
@@ -447,7 +453,10 @@ class MobileNetV2(nn.Module):
         return act
 
     def get_loss(self, x, y, task_idx):
-        return torch.div(self._KL_term(), self.training_size) - self._logpred(x, y, task_idx)
+        # scale both terms to similar values 500 magic no
+        kl_term = torch.div(self._KL_term(), self.training_size*500)
+        lik_term = self._logpred(x, y, task_idx)
+        return kl_term - lik_term
 
     def _KL_term(self):
         kl = 0
@@ -512,6 +521,12 @@ class MobileNetV2(nn.Module):
         log_liks = -loss(pred, targets.type(torch.long))
         log_lik = log_liks.mean()
         return log_lik
+
+    def prediction_prob(self, x_test, task_idx):
+        # hard code reshaping of tensor for cifar 3 channel images
+        x_test = x_test.view((-1, 3, 32, 32))
+        prob = F.softmax(self.forward(x_test, task_idx), dim=-1)
+        return prob
 
     def train(self, x_train, y_train, task_idx, no_epochs=1000, batch_size=100, display_epoch=5, device="cpu"):
         N = x_train.shape[0]

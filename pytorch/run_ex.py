@@ -6,7 +6,7 @@ from utils.multihead_models import Vanilla_CNN, Vanilla_NN, MFVI_NN, MFVI_CNN
 import utils.coreset as coreset
 import utils.test as test
 from utils.vcl import run_vcl_cnn, run_vcl
-data_gen = SplitMnistGenerator()
+
 # x_train, y_train, x_test, y_test = data_gen.next_task()
 # in_dim_cnn, out_dim_cnn = 12*12, 2#4*4, 2
 # in_dim_fc, out_dim_fc = data_gen.get_dims()
@@ -31,12 +31,6 @@ data_gen = SplitMnistGenerator()
 #     pickle.dump(fc_weights, f)
 # print(sum(preds_cnn == preds_fc))
 
-in_dim_cnn, out_dim_cnn = 12*12, 2#4*4, 2
-in_dim_fc, out_dim_fc = data_gen.get_dims()
-hidden_size_cnn = [48,48]#[8,8]
-hidden_size_fc = [256, 256]
-no_epochs = 50
-
 # import pickle
 # with open("cnn_weights_init.pkl", 'rb') as f:
 #     cnn_weights = pickle.load(f)
@@ -59,6 +53,14 @@ for i in range(1, N_SEEDS+1):
     torch.cuda.manual_seed_all(i)
     np.random.seed(i)
     random.seed(i)
+
+    data_gen = SplitMnistGenerator()
+
+    in_dim_cnn, out_dim_cnn = 12*12, 2#4*4, 2
+    in_dim_fc, out_dim_fc = data_gen.get_dims()
+    hidden_size_cnn = [48,48]#[8,8]
+    hidden_size_fc = [256, 256]
+    no_epochs = 50
 
     vcl_result = run_vcl_cnn(in_dim_cnn, hidden_size_cnn, out_dim_cnn, no_epochs, data_gen,
         coreset.rand_from_batch, coreset_size=0, batch_size=None, single_head=False, use_lrt=True)

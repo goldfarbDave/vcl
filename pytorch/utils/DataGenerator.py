@@ -4,6 +4,14 @@ import pickle as cp
 import pickle
 from copy import deepcopy
 import matplotlib.pyplot as plt
+plt.rcParams['text.usetex'] = True
+import matplotlib as mpl
+
+mpl.rcParams['font.size'] = 12
+mpl.rcParams['text.usetex'] = True
+mpl.rcParams['text.latex.preamble'] = r'\usepackage{{amsmath}}'
+
+
 '''
 This class replicates the dataset on page 17 of VCL paper. It has two tasks and each task has 2 classes.
 '''
@@ -54,17 +62,29 @@ class ToyDatasetGenerator():
 
         # plot samples to vis
         # plt.figure()
-        # plt.scatter(samples_1_1[:, 0], samples_1_1[:, 1], c='g')
-        # plt.scatter(samples_1_2[:, 0], samples_1_2[:, 1], c='b')
+        # plt.scatter(samples_1_1[:, 0], samples_1_1[:, 1], c='g', label='Class 1')
+        # plt.scatter(samples_1_2[:, 0], samples_1_2[:, 1], c='b', label='Class 2')
         # plt.xlim(-3, 3)
         # plt.ylim(-3, 3)
+        # plt.xlabel(r'$x_1$')
+        # plt.ylabel(r'$x_2$')
+        # plt.text(-2.5, 0, r'$\mathcal{N} \left( \begin{bmatrix} 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0.15, 0 \\ 0, 0.15 \end{bmatrix} \right)$', weight='bold')
+        # plt.text(0, -2.5, r'$\mathcal{N} \left( \begin{bmatrix} 1.5 \\ 0 \end{bmatrix}, \begin{bmatrix} 0.12, 0 \\ 0, 1 \end{bmatrix} \right)$', weight='bold')
+        # plt.legend(loc='best')
+        # plt.title('Task 1')
         # plt.savefig('../data/toy/toy-task-1.png')
 
         # plt.figure()
-        # plt.scatter(samples_2_1[:, 0], samples_2_1[:, 1], c='g')
-        # plt.scatter(samples_2_2[:, 0], samples_2_2[:, 1], c='b')
+        # plt.scatter(samples_2_1[:, 0], samples_2_1[:, 1], c='g', label='Class 1')
+        # plt.scatter(samples_2_2[:, 0], samples_2_2[:, 1], c='b', label='Class 2')
         # plt.xlim(-3, 3)
         # plt.ylim(-3, 3)
+        # plt.xlabel(r'$x_1$')
+        # plt.ylabel(r'$x_2$')        
+        # plt.text(-0.75, 2.5, r'$\mathcal{N} \left( \begin{bmatrix} 0 \\ 0 \end{bmatrix}, \begin{bmatrix} 0.15, 0 \\ 0, 0.15 \end{bmatrix} \right)$', weight='bold')
+        # plt.text(-0.75, -1.5, r'$\mathcal{N} \left( \begin{bmatrix} 0 \\ 1.5 \end{bmatrix}, \begin{bmatrix} 1, 0 \\ 0, 0.12 \end{bmatrix} \right)$', weight='bold')        
+        # plt.legend(loc='best')        
+        # plt.title('Task 2')        
         # plt.savefig('../data/toy/toy-task-2.png')
 
         # each task training set contains 160 samples -- 80 samples from each class

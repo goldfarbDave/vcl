@@ -208,6 +208,8 @@ def run_vcl_cifar(no_epochs, data_gen, coreset_method, coreset_size=0, batch_siz
         head = 0 if single_head else task_id
         bsize = x_train.shape[0] if (batch_size is None) else batch_size
 
+        cur_acc = 0
+
         # Train network with maximum likelihood to initialize first model
         if task_id == 0:
             print_graph_bol = False #set to True if you want to see the graph
@@ -215,6 +217,33 @@ def run_vcl_cifar(no_epochs, data_gen, coreset_method, coreset_size=0, batch_siz
             ml_model.to(device=device)
             # train for first task
             ml_model.train(x_train, y_train, task_id, no_epochs, bsize)
+
+            pred_means = []
+
+            pred=torch.argmax(ml_model.prediction_prob(torch.Tensor(x_test).to(device=device), None), dim=1)
+            y_labs = torch.Tensor(y_test).type(torch.LongTensor).to(device=device)
+            print(pred.shape, y_labs.shape)
+
+            # # # Loop over all batches
+            # for i in range(len(x_test)//bsize):
+            #     start_ind = i*bsize
+            #     end_ind = np.min([(i+1)*bsize, len(x_test)])
+            #     batch_x_test = torch.Tensor(x_test[start_ind:end_ind, :]).to(device = device)
+            #     batch_y_test = torch.Tensor(y_test[start_ind:end_ind]).type(torch.LongTensor).to(device = device)
+            #     pred = ml_model.prediction_prob(batch_x_test, head)
+            #     # pred_mean = pred.mean(0)
+            #     pred_means.extend(list(pred.detach().cpu().numpy()))
+            #     # pred_y = torch.argmax(pred_mean, dim=0)
+            #     # cur_acc += end_ind - start_ind-(pred_y - batch_y_test).nonzero().shape[0]
+
+            print(sum(pred==y_labs)/len(y_labs))
+
+            # cur_acc = float(cur_acc)
+            # cur_acc /= len(x_test)
+            # print(cur_acc)
+            # acc.append(cur_acc)
+            # print("Accuracy is {}".format(cur_acc))
+
             # updated weights of network after SGD on task 1 -- these are means of posterior distribution of weights after task 1 ==> new prior for task 2
             mf_weights = ml_model.get_weights_for_bayesian()
             # use these weights to initialise weights of new task model
@@ -236,22 +265,43 @@ def run_vcl_cifar(no_epochs, data_gen, coreset_method, coreset_size=0, batch_siz
             gan_i.train(x_train, y_train)
             gans.append(gan_i)
         mf_model.train(x_train, y_train, head, no_epochs, bsize)
+
+        for ind_test, x_test_ in enumerate(x_testsets):
+            print('Task:'+str(ind_test))
+            pred=torch.argmax(mf_model.prediction_prob(torch.Tensor(x_test_).to(device=device), head).squeeze(0), dim=1)
+            y_labs = torch.Tensor(y_testsets[ind_test]).type(torch.LongTensor).to(device=device)
+            print(pred.shape, y_labs.shape)
+
+        # # # Loop over all batches
+        # for i in range(len(x_test)//bsize):
+        #     start_ind = i*bsize
+        #     end_ind = np.min([(i+1)*bsize, len(x_test)])
+        #     batch_x_test = torch.Tensor(x_test[start_ind:end_ind, :]).to(device = device)
+        #     batch_y_test = torch.Tensor(y_test[start_ind:end_ind]).type(torch.LongTensor).to(device = device)
+        #     pred = ml_model.prediction_prob(batch_x_test, head)
+        #     # pred_mean = pred.mean(0)
+        #     pred_means.extend(list(pred.detach().cpu().numpy()))
+        #     # pred_y = torch.argmax(pred_mean, dim=0)
+        #     # cur_acc += end_ind - start_ind-(pred_y - batch_y_test).nonzero().shape[0]
+
+            print(sum(pred==y_labs)/len(y_labs))
+            print(len(x_testsets), len(y_testsets))
+
         mf_model.update_prior()
         # Save weights before test (and last-minute training on coreset)
         mf_model.save_weights()
 
-        # TODO: done till here on Friday, resume on monday
-        acc = test.get_scores(mf_model, x_trainsets, y_trainsets, x_testsets, y_testsets, no_epochs, single_head, x_coresets, y_coresets, batch_size, False,gans, is_toy=is_toy)
+        # acc = test.get_scores(mf_model, x_trainsets, y_trainsets, x_testsets, y_testsets, no_epochs, single_head, x_coresets, y_coresets, batch_size, False,gans)
         
-        all_acc = test.concatenate_results(acc, all_acc)
+        # all_acc = test.concatenate_results(acc, all_acc)
 
         mf_model.load_weights()
-        mf_model.clean_copy_weights()
 
         if not single_head:
             mf_model.create_head()
 
-    return all_acc
+    return None
+    # return all_acc
 
 def print_graph(model, output):
     params = dict()

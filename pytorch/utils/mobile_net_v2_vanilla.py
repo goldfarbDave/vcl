@@ -150,6 +150,12 @@ class MobileNetV2(nn.Module):
         # next build the entire network using functional components and this will be used for weight creation of our network
         self.create_weights()
 
+    def prediction_prob(self, x_test, task_idx):
+        # hard code reshaping of tensor for cifar 3 channel images
+        x_test = x_test.view((-1, 3, 32, 32))
+        prob = F.softmax(self.forward(x_test), dim=-1)
+        return prob
+
     def init_layer(self, layer):
         if(isinstance(layer, nn.Conv2d)):
             self.kernel_filters.append(self.create_kern_weight_bias(layer))

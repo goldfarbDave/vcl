@@ -16,7 +16,7 @@ from copy import deepcopy
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-no_epochs = 1
+no_epochs = 20
 batch_size = 256
 single_head = False
 
