@@ -1,4 +1,5 @@
 import numpy as np
+import random
 from utils.DataGenerator import SplitMnistGenerator
 import torch
 from utils.multihead_models import Vanilla_CNN, Vanilla_NN, MFVI_NN, MFVI_CNN
@@ -34,6 +35,7 @@ in_dim_cnn, out_dim_cnn = 12*12, 2#4*4, 2
 in_dim_fc, out_dim_fc = data_gen.get_dims()
 hidden_size_cnn = [48,48]#[8,8]
 hidden_size_fc = [256, 256]
+no_epochs = 50
 
 # import pickle
 # with open("cnn_weights_init.pkl", 'rb') as f:
@@ -48,9 +50,20 @@ hidden_size_fc = [256, 256]
 # # Save weights before test (and last-minute training on coreset
 # model_cnn.save_weights()
 
-kcen_vcl_result = run_vcl_cnn(in_dim_cnn, hidden_size_cnn, out_dim_cnn, 50, data_gen,
-    coreset.k_center, 0, None, False, use_lrt=True)
-print(kcen_vcl_result)
+N_SEEDS = 3
+
+for i in range(1, N_SEEDS+1):
+    # seed everything
+    torch.manual_seed(i)
+    torch.cuda.manual_seed(i)
+    torch.cuda.manual_seed_all(i)
+    np.random.seed(i)
+    random.seed(i)
+
+    vcl_result = run_vcl_cnn(in_dim_cnn, hidden_size_cnn, out_dim_cnn, no_epochs, data_gen,
+        coreset.rand_from_batch, coreset_size=0, batch_size=None, single_head=False, use_lrt=True)
+    print(vcl_result)
+    np.save(f"./results/cnns/VCL-split-CNN-seed{i}", vcl_result)
 
 # kcen_vcl_result = run_vcl(hidden_size_fc, 10, data_gen,
 #     coreset.k_center, 0, None, False, use_lrt=True)
