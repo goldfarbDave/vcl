@@ -24,7 +24,7 @@ for i in range(1, N_SEEDS+1):
     in_dim_fc, out_dim_fc = data_gen.get_dims()
     hidden_size_cnn = [48,48]#[8,8]
     hidden_size_fc = [256, 256]
-    no_epochs = 50
+    no_epochs = 100
 
     # CNN VCL
     vcl_result = run_vcl_cnn(in_dim_cnn, hidden_size_cnn, out_dim_cnn, no_epochs, data_gen,
