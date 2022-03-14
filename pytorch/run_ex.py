@@ -56,7 +56,7 @@ for i in range(1, N_SEEDS+1):
 
     data_gen = SplitMnistGenerator()
 
-    in_dim_cnn, out_dim_cnn = 12*12, 2#4*4, 2
+    in_dim_cnn, out_dim_cnn = 12*12, 2 #4*4, 2
     in_dim_fc, out_dim_fc = data_gen.get_dims()
     hidden_size_cnn = [48,48]#[8,8]
     hidden_size_fc = [256, 256]
