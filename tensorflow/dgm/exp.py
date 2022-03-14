@@ -15,8 +15,6 @@ lr = 1e-4
 K_mc = 10
 checkpoint = -1
 
-#data_path = # TODO
-
 def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint, lbd):
     # set up dataset specific stuff
     from config import config
@@ -70,7 +68,6 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
     else:
         load_params(sess, filename, checkpoint)
     checkpoint += 1
-
     # visualise the samples
     N_gen = 10**2
     path = 'figs/' + path_name
@@ -105,7 +102,7 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
         if data_name == 'mnist':
             X_train, X_test, _, _ = load_mnist(digits = labels[task-1], conv = False)
         if data_name == 'notmnist':
-            X_train, X_test, _, _ = load_notmnist(data_path, digits = labels[task-1], conv = False)
+            X_train, X_test, _, _ = load_notmnist(digits = labels[task-1], conv = False)
         N_train = int(X_train.shape[0] * 0.9)
         X_valid_list.append(X_train[N_train:])
         X_train = X_train[:N_train]

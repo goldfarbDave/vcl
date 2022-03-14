@@ -1,11 +1,13 @@
 import numpy as np
 from scipy.io import loadmat
-from keras.utils import np_utils
+from tensorflow.keras.utils import to_categorical
 
-def load_notmnist(path, digits = None, conv = False, seed=0):
+def load_notmnist(digits = None, conv = False, seed=0):
     # Get MNIST test data
     #X_train, Y_train, X_test, Y_test = data_mnist()
-    out = loadmat(path+'notMNIST/'+'notMNIST_small.mat')
+
+    # Bit of a nasty hack and probably not path independent
+    out = loadmat('data/notMNIST_small.mat')
     X = out['images']; Y = out['labels']
     X = X.transpose(2, 0, 1)
     X /= 255.0
@@ -16,7 +18,7 @@ def load_notmnist(path, digits = None, conv = False, seed=0):
         for i in digits:
             ind = ind + list(np.where(Y == i)[0])
         X = X[ind]; Y = Y[ind] 
-    Y = np_utils.to_categorical(Y, 10)
+    Y = to_categorical(Y, 10)
     np.random.seed(seed)
     N_train = int(X.shape[0]*0.9)
     ind = np.random.permutation(list(range(X.shape[0])))
