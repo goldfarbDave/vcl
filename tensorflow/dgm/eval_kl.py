@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 import sys, os
-import keras
+from tensorflow import keras
 sys.path.extend(['alg/', 'models/', 'utils/'])
 from visualisation import plot_images
 from encoder_no_shared import encoder, recon
@@ -17,7 +17,6 @@ lr = 1e-4
 K_mc = 10
 checkpoint = -1
 
-#data_path = # TODO
 
 def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint, lbd):
     # set up dataset specific stuff
@@ -49,6 +48,7 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
     if method == 'onlinevi' and K_mc > 1:
         string = string + '_K%d' % K_mc
     path_name = data_name + '_%s_no_share_enc/' % string
+    import ipdb; ipdb.set_trace()
     assert os.path.isdir('save/'+path_name)
     filename = 'save/' + path_name + 'checkpoint'
     # load the classifier
@@ -68,7 +68,7 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
             _, X_test, _, Y_test = load_mnist([task])
         if data_name == 'notmnist':
             from notmnist import load_notmnist
-            _, X_test, _, Y_test = load_notmnist(data_path, [task], conv = False)
+            _, X_test, _, Y_test = load_notmnist([task], conv = False)
         test_acc = 0.0; test_kl = 0.0
         N_test = X_test.shape[0]
         for i in range(N_test / batch_size):
@@ -118,6 +118,6 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
 if __name__ == '__main__':
     data_name = str(sys.argv[1])
     method = str(sys.argv[2])
-    lbd = float(sys.argv[3])
+    lbd = float(sys.argv[3]) if method != "onlinevi" else 1.0
     main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint, lbd)
     

@@ -2,7 +2,8 @@
 
 
 
-import keras, os
+from tensorflow import keras
+import os
 from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense, Dropout

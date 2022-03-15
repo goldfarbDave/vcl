@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 import time
-import keras
+from tensorflow import keras
 
 def KL_generated_images(dec, cla, N, dimZ, task, sample_W = True):
     z = tf.random_normal(shape=(N, dimZ))
