@@ -1,16 +1,13 @@
 # for keras 1.2.0
-
-
-
 from tensorflow import keras
 import os
-from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers import Dense, Dropout
-from keras.optimizers import Adam
+from tensorflow.keras.datasets import mnist
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.optimizers import Adam
 import tensorflow as tf
 import numpy as np
-
+import sys
 batch_size = 100
 num_classes = 10
 epochs = 500
@@ -21,22 +18,24 @@ sess = tf.Session(config=config)
 keras.backend.set_session(sess)
 
 # the data, shuffled and split between train and test sets
-data_name = 'notmnist'
+data_name = sys.argv[1]
+
 if data_name == 'mnist':
     from mnist import load_mnist
     x_train, x_test, y_train, y_test = load_mnist()
-if data_name == 'notmnist':
+elif data_name == 'notmnist':
     from notmnist import load_notmnist
-    #data_path = # TODO
     x_train, x_test, y_train, y_test = [], [], [], []
     for i in range(10):
-        a, b, c, d = load_notmnist(data_path, [i], ratio=0.995)
+        a, b, c, d = load_notmnist([i], ratio=0.995)
         x_train.append(a); x_test.append(b)
         y_train.append(c); y_test.append(d)
     x_train = np.concatenate(x_train, 0)
     x_test = np.concatenate(x_test, 0)
     y_train = np.concatenate(y_train, 0)
     y_test = np.concatenate(y_test, 0)
+else:
+    assert False
 print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)
 
 model = Sequential()

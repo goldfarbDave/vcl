@@ -1,5 +1,6 @@
 tensorflow==1.14
 tensorflow-gpu==1.14
+h5py==2.10
 torch
 torchvision
 numpy==1.16.4

@@ -47,10 +47,10 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
         string = string + '_lbd%.1f' % lbd
     if method == 'onlinevi' and K_mc > 1:
         string = string + '_K%d' % K_mc
-    path_name = data_name + '_%s_no_share_enc/' % string
-    import ipdb; ipdb.set_trace()
-    assert os.path.isdir('save/'+path_name)
-    filename = 'save/' + path_name + 'checkpoint'
+    #path_name = data_name + '_%s_no_share_enc/' % string
+    path_name = f"save/{data_name}_{string}"
+    assert os.path.isdir(path_name)
+    filename = path_name + '/checkpoint'
     # load the classifier
     cla = load_model(data_name)
     # print test error
@@ -71,7 +71,7 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
             _, X_test, _, Y_test = load_notmnist([task], conv = False)
         test_acc = 0.0; test_kl = 0.0
         N_test = X_test.shape[0]
-        for i in range(N_test / batch_size):
+        for i in range(N_test // batch_size):
             indl = i * batch_size; indr = min((i+1)*batch_size, N_test)
             tmp1, tmp2 = sess.run((acc, kl), feed_dict={X_ph: X_test[indl:indr],
                                        y_ph: Y_test[indl:indr],

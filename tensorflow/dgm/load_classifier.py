@@ -11,7 +11,7 @@ FLAGS = flags.FLAGS
 
 def load_model(data_name = 'mnist'):
 
-    path = 'classifier/save/'
+    path = 'save/'
     file_name = path + data_name
     model = Sequential()
     dimH = 1000
