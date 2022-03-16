@@ -85,11 +85,16 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
     N_task = len(labels)
     eval_func_list = []
     result_list = []
+    # keys are different task models
+    # values are ll values across all prev tasks till key task
+    results_dict = {}
 
     n_layers_head = 2
     n_layers_enc = n_layers_shared + n_layers_head - 1
     for task in range(1, N_task+1):
         
+        results_dict[task] = {}
+
         # define the head net and the generator ops
         dec = generator(generator_head(dimZ, dimH, n_layers_head, 'gen_%d' % task), dec_shared)
         eval_func_list.append(construct_eval_func(dec, cla, batch_size_ph, \
@@ -97,13 +102,16 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
         
         # then load the trained model
         load_params(sess, filename, checkpoint=task-1, init_all = False)
-        
+
         # print test-ll on all tasks
         tmp_list = []
+        print(str(len(eval_func_list))+'task:'+str(task))
         for i in range(len(eval_func_list)):
             print('task %d' % (i+1), end=' ')
             kl = eval_func_list[i](sess)
+            print(kl)
             tmp_list.append(kl)
+            results_dict[task][i] = kl
         result_list.append(tmp_list)
     
     for i in range(len(result_list)):
@@ -114,6 +122,8 @@ def main(data_name, method, dimZ, dimH, n_channel, batch_size, K_mc, checkpoint,
     import pickle
     pickle.dump(result_list, open(fname, 'wb'))
     print('test-ll results saved in', fname)
+    with open('results/'+data_name+'-res-dict-kl.pkl', 'wb') as f:
+        pickle.dump(results_dict, f)
 
 if __name__ == '__main__':
     data_name = str(sys.argv[1])

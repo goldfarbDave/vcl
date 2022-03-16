@@ -1,2 +1,4 @@
 vclvenv
 *__pycache__*
+tensorflow/dgm/save/
+tensorflow/dgm/save.tar.lzma
